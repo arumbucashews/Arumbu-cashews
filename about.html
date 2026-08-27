@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="meta.title.about">About | Arumbu Cashews</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="images/favicon/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon/favicon-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="images/favicon/favicon-512x512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-light">
+  <header class="site-header" id="siteHeader">
+    <div class="nav-wrap">
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" data-i18n-aria="header.openMenu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a href="index.html" class="brand">
+        <img src="images/arumbu-logo.png" alt="Arumbu Cashews logo" class="brand-logo-img">
+        <span class="brand-wordmark">ARUMBU CASHEWS</span>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <div class="nav-drawer-head">
+          <img src="images/arumbu-logo.png" alt="Arumbu Cashews logo" class="nav-drawer-logo">
+          <button class="nav-drawer-close" id="navDrawerClose" aria-label="Close menu" data-i18n-aria="header.closeMenu">
+            <svg width="18" height="18" viewBox="0 0 18 17" fill="none"><path d="M.865 15.978a.5.5 0 0 0 .707.707l7.433-7.431 7.579 7.282a.501.501 0 0 0 .846-.37.5.5 0 0 0-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 1 0-.707-.708L8.991 7.853 1.413.573a.5.5 0 1 0-.693.72l7.563 7.268-7.418 7.417Z" fill="currentColor"/></svg>
+          </button>
+        </div>
+
+        <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="about.html" class="nav-link active" data-i18n="nav.about">About</a>
+
+        <details class="nav-dropdown">
+          <summary class="nav-link nav-dropdown-trigger">
+            <span data-i18n="nav.products">Products</span>
+            <svg class="nav-caret" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="nav-dropdown-menu">
+            <a href="products.html" data-i18n="nav.allProducts">All Products</a>
+            <a href="wholesale.html" data-i18n="nav.wholesaleEnquiry">Wholesale Enquiry</a>
+          </div>
+        </details>
+
+        <a href="wholesale.html" class="nav-link" data-i18n="nav.wholesale">Wholesale</a>
+        <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+
+        <div class="header-contact">
+          <a href="tel:+919976055524" class="nav-call">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+91 99760 55524</span>
+          </a>
+          <div class="header-social">
+            <a href="https://wa.me/919976055524" class="social-icon" aria-label="Chat on WhatsApp" data-i18n-aria="header.chatWhatsapp" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 3.4a8.94 8.94 0 0 0-7.75 13.4L3 21l4.32-1.24a8.9 8.9 0 0 0 4.7 1.33h.01a8.94 8.94 0 0 0 8.94-8.94 8.86 8.86 0 0 0-3.37-6.83Zm-5.58 13.7h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.8.75-2.74-.18-.28a7.44 7.44 0 1 1 13.8-3.9 7.45 7.45 0 0 1-7.51 7.32Zm4.07-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.37-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.78-.79 1.9s.81 2.2.92 2.35c.11.15 1.6 2.48 3.89 3.47.54.24.97.38 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.97.13-1.06-.06-.1-.2-.15-.42-.26Z"/></svg>
+            </a>
+          </div>
+          <a href="admin/login.html" class="header-admin-link" data-i18n="footer.adminLogin">Admin Login</a>
+        </div>
+        <div class="lang-switch lang-switch--drawer" role="group" aria-label="Language / மொழி">
+          <button type="button" class="lang-switch-btn" data-lang="en" aria-pressed="false">EN</button>
+          <span class="lang-switch-divider">|</span>
+          <button type="button" class="lang-switch-btn" data-lang="ta" aria-pressed="false">தமிழ்</button>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Language / மொழி">
+          <button type="button" class="lang-switch-btn" data-lang="en" aria-pressed="false">EN</button>
+          <span class="lang-switch-divider">|</span>
+          <button type="button" class="lang-switch-btn" data-lang="ta" aria-pressed="false">தமிழ்</button>
+        </div>
+        <button class="action-icon" id="searchToggle" aria-label="Search" data-i18n-aria="header.search" aria-expanded="false" aria-controls="searchPanel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg>
+        </button>
+
+        <div class="action-item">
+          <button class="action-icon" id="accountToggle" aria-label="Account" data-i18n-aria="header.account" aria-expanded="false" aria-controls="accountPanel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6" stroke-linecap="round"/></svg>
+          </button>
+          <div class="action-panel" id="accountPanel">
+            <h4 data-i18n="account.welcome">Welcome to Arumbu Cashews</h4>
+            <p data-i18n="account.desc">Create an account to save your favourites and track enquiries. Customer accounts are launching soon.</p>
+            <a href="#" class="btn btn-gold-sm action-panel-btn" data-auth-action="login" data-i18n="account.login">Log In</a>
+            <a href="#" class="btn btn-outline action-panel-btn" data-auth-action="signup" data-i18n="account.signup">Create Account</a>
+          </div>
+        </div>
+
+        <div class="action-item">
+          <button class="action-icon" id="cartToggle" aria-label="Cart" data-i18n-aria="header.cart" aria-expanded="false" aria-controls="cartPanel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.5 3h2l2.3 11.4a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.6L21 7H6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="action-badge" id="cartCount">0</span>
+          </button>
+          <div class="action-panel" id="cartPanel">
+            <h4 data-i18n="cart.title">Your Cart</h4>
+            <p id="cartEmptyState" data-i18n="cart.empty">Your cart is empty. Browse our cashew grades and add what you need.</p>
+            <a href="products.html" class="btn btn-gold-sm action-panel-btn" data-i18n="products.browse">Browse Products</a>
+          </div>
+        </div>
+
+        <div class="action-item">
+          <button class="action-icon" id="wishlistToggle" aria-label="Wishlist" data-i18n-aria="header.wishlist" aria-expanded="false" aria-controls="wishlistPanel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.4 2 5 5.4 5c2 0 3.4 1 4.6 2.6C11.2 6 12.6 5 14.6 5 18 5 19.6 8.4 18 11.7 15.5 16.4 12 21 12 21Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="action-badge" id="wishlistCount">0</span>
+          </button>
+          <div class="action-panel" id="wishlistPanel">
+            <h4 data-i18n="wishlist.title">Your Wishlist</h4>
+            <p id="wishlistEmptyState" data-i18n="wishlist.empty">Save the grades you love here and come back to them anytime.</p>
+            <a href="products.html" class="btn btn-gold-sm action-panel-btn" data-i18n="products.browse">Browse Products</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="search-panel" id="searchPanel" role="dialog" aria-modal="true" aria-label="Search">
+      <div class="search-panel-inner">
+        <div class="search-panel-brand">
+          <img src="images/arumbu-logo.png" alt="Arumbu Cashews" class="search-panel-logo">
+          <span class="search-panel-brand-name">ARUMBU CASHEWS</span>
+        </div>
+        <div class="search-field">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg>
+          <input type="text" id="searchInput" placeholder="Search cashew grades — e.g. WW180, JH, JK…" data-i18n-placeholder="search.placeholder" autocomplete="off">
+          <button type="button" class="search-close" id="searchClose" data-i18n="search.close">Close</button>
+        </div>
+        <ul class="search-results" id="searchResults"></ul>
+        <p class="search-empty" id="searchEmpty" hidden data-i18n="search.noResults">No matching grade found.</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-overlay" id="navOverlay"></div>
+
+<section class="page-hero">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow-center" data-i18n="about.hero.eyebrow">Our Story</p>
+    <h1 data-i18n="about.hero.title">From the Cashew Tree to Arumbu Cashews</h1>
+    <p data-i18n="about.hero.desc">A family journey that began with cashew cultivation and raw cashews, and gradually grew into full-fledged cashew processing.</p>
+  </div>
+</section>
+
+<!-- ============ OUR STORY ============ -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow-center" data-i18n="about.story.eyebrow">Our Story</p>
+    <h2 class="section-title" style="text-align:center;margin-left:auto;margin-right:auto;" data-i18n="about.story.heading">Roots in cashew cultivation</h2>
+    <div class="about-block">
+      <p data-i18n="about.story.p1">Arumbu Cashews did not begin as a brand entering the cashew business. It began at the cultivation level, with a family that grew cashews and harvested raw cashews directly from the trees.</p>
+      <p data-i18n="about.story.p2">In the early years, the family sold the harvested cashews as raw produce, without processing them into finished kernels. That raw-cashew trade was the foundation of the family's relationship with cashews — years spent understanding the crop before ever processing a single kernel.</p>
+      <p data-i18n="about.story.p3">Over time, the business gradually evolved. Arumbu Cashews was started as the family moved towards processing cashews themselves, rather than only selling them raw. Today, that evolution continues — Arumbu Cashews is focused on processing cashews and providing good-quality cashew products.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE JOURNEY ============ -->
+<section class="section section-light-alt">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow-center" data-i18n="about.journey.eyebrow">The Journey</p>
+    <h2 class="section-title" style="text-align:center;margin-left:auto;margin-right:auto;" data-i18n="about.journey.heading">Cultivation to processing</h2>
+
+    <div class="journey-timeline">
+      <div class="journey-step">
+        <div class="journey-index">01</div>
+        <div>
+          <h3 data-i18n="about.journey.step1.title">Roots in Cashew Cultivation</h3>
+          <p data-i18n="about.journey.step1.desc">The family's journey began with cashew cultivation and harvesting raw cashews from their own agricultural experience.</p>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-index">02</div>
+        <div>
+          <h3 data-i18n="about.journey.step2.title">Raw Cashew Trade</h3>
+          <p data-i18n="about.journey.step2.desc">The harvested raw cashews were sold as raw produce, without processing them into finished kernels.</p>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-index">03</div>
+        <div>
+          <h3 data-i18n="about.journey.step3.title">A New Beginning</h3>
+          <p data-i18n="about.journey.step3.desc">With the establishment of Arumbu Cashews, the family began moving into cashew processing.</p>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-index">04</div>
+        <div>
+          <h3 data-i18n="about.journey.step4.title">Learning &amp; Growing</h3>
+          <p data-i18n="about.journey.step4.desc">The transition from raw cashew sales to processing happened gradually, building experience at every stage.</p>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-index">05</div>
+        <div>
+          <h3 data-i18n="about.journey.step5.title">Processing Today</h3>
+          <p data-i18n="about.journey.step5.desc">Today, Arumbu Cashews is focused on full-fledged cashew processing and supplying quality cashew grades.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE PEOPLE BEHIND ARUMBU ============ -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow-center" data-i18n="about.people.eyebrow">The People Behind Arumbu</p>
+    <h2 class="section-title" style="text-align:center;margin-left:auto;margin-right:auto;" data-i18n="about.people.heading">A family name</h2>
+
+    <div class="people-grid">
+      <div class="people-card">
+        <h3 data-i18n="about.people.card1.title">Mr. Shivakumar</h3>
+        <p data-i18n="about.people.card1.desc">Founder of Arumbu Cashews, carrying forward the family's journey with cashews — from cultivation to processing.</p>
+      </div>
+      <div class="people-card">
+        <h3 data-i18n="about.people.card2.title">Mr. Lakshmanaperumal</h3>
+        <p data-i18n="about.people.card2.desc">Shivakumar's father, part of the family's early journey with cashew cultivation and raw cashews.</p>
+      </div>
+      <div class="people-card people-card-full">
+        <h3 data-i18n="about.people.card3.title">The name Arumbu</h3>
+        <p data-i18n="about.people.card3.desc">The name "Arumbu" comes from Shivakumar's mother. The business is named Arumbu Cashews in her memory.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FROM RAW TO PROCESSED ============ -->
+<section class="section section-light-alt">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow-center" data-i18n="about.raw.eyebrow">From Raw to Processed</p>
+    <h2 class="section-title" style="text-align:center;margin-left:auto;margin-right:auto;" data-i18n="about.raw.heading">A gradual transition</h2>
+    <div class="about-block">
+      <p data-i18n="about.raw.p1">The move from raw cashew trading to processing did not happen overnight. It happened gradually, one stage at a time — learning how the cashew behaves at every step, from harvest to the finished kernel.</p>
+      <p data-i18n="about.raw.p2">That gradual approach means Arumbu Cashews understands cashews from their origin through to processing, not just from the processing floor.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUR PHILOSOPHY ============ -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow-center" data-i18n="about.philosophy.eyebrow">Our Philosophy</p>
+    <h2 class="section-title" style="text-align:center;margin-left:auto;margin-right:auto;" data-i18n="about.philosophy.heading">From the tree to the finished kernel</h2>
+    <div class="about-block">
+      <p data-i18n="about.philosophy.p1">We believe quality begins with understanding the raw cashew. Because the family has been connected with cashew cultivation and raw cashews, the business understands that good finished cashews begin with good raw material and careful processing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUR COMMITMENT ============ -->
+<section class="section section-light-alt">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow-center" data-i18n="about.commitment.eyebrow">Our Commitment</p>
+    <h2 class="section-title" style="text-align:center;margin-left:auto;margin-right:auto;" data-i18n="about.commitment.heading">A good product should speak for itself</h2>
+    <div class="about-block">
+      <p data-i18n="about.commitment.p1">Arumbu Cashews is being built with a simple intention: to provide properly processed, carefully handled and good-quality cashew products.</p>
+      <p data-i18n="about.commitment.p2">The focus is not only on selling cashews, but on continuously improving the product and giving customers a quality product they can trust.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ARUMBU CASHEWS ============ -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow-center" data-i18n="about.why.eyebrow">Why Arumbu Cashews</p>
+    <h2 class="section-title" style="text-align:center;margin-left:auto;margin-right:auto;" data-i18n="about.why.heading">What sets us apart</h2>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 6c8 6 14 14 14 22a14 14 0 1 1-28 0c0-8 6-16 14-22Z"/></svg>
+        </div>
+        <h3 data-i18n="about.why.card1.title">Rooted in Cultivation</h3>
+        <p data-i18n="about.why.card1.desc">Our journey began with cashew cultivation and raw cashews.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 24h32M20 12l12 12-12 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 data-i18n="about.why.card2.title">From Raw to Processed</h3>
+        <p data-i18n="about.why.card2.desc">We gradually moved from selling raw cashews to processing cashews ourselves.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="16"/><path d="M24 15v9l6 4" stroke-linecap="round"/></svg>
+        </div>
+        <h3 data-i18n="about.why.card3.title">Family-Led Journey</h3>
+        <p data-i18n="about.why.card3.desc">Arumbu Cashews carries forward a family journey built around cashews.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 14h28l-2 20a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4L10 14Z"/><path d="M17 14a7 7 0 0 1 14 0" stroke-linecap="round"/></svg>
+        </div>
+        <h3 data-i18n="about.why.card4.title">Quality First</h3>
+        <p data-i18n="about.why.card4.desc">Our focus is on giving customers a properly processed and good-quality product.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="about-cta">
+  <div class="section-inner">
+    <h2 class="section-title" data-i18n="about.cta.heading">Explore Our Cashew Range</h2>
+    <a href="products.html" class="btn btn-gold" data-i18n="about.cta.button">See Our Products</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <a href="index.html" class="brand">
+        <img src="images/arumbu-logo.png" alt="Arumbu Cashews logo" class="brand-logo-img">
+        <span class="brand-wordmark">ARUMBU CASHEWS</span>
+      </a>
+      <p data-i18n="footer.taglineOther">Premium, farm-fresh cashews from Tamil Nadu.</p>
+      <p class="footer-follow-label" data-i18n="footer.followUs">Follow Us</p>
+      <div class="footer-social">
+        <a href="https://wa.me/919976055524" class="social-icon" aria-label="Chat on WhatsApp" data-i18n-aria="header.chatWhatsapp" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 3.4a8.94 8.94 0 0 0-7.75 13.4L3 21l4.32-1.24a8.9 8.9 0 0 0 4.7 1.33h.01a8.94 8.94 0 0 0 8.94-8.94 8.86 8.86 0 0 0-3.37-6.83Zm-5.58 13.7h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.8.75-2.74-.18-.28a7.44 7.44 0 1 1 13.8-3.9 7.45 7.45 0 0 1-7.51 7.32Zm4.07-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.37-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.78-.79 1.9s.81 2.2.92 2.35c.11.15 1.6 2.48 3.89 3.47.54.24.97.38 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.97.13-1.06-.06-.1-.2-.15-.42-.26Z"/></svg>
+        </a>
+        <a href="#" class="social-icon social-icon-pending" aria-label="Facebook (link pending)" data-i18n-aria="header.facebookPending">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.4-3H13.5V8.4c0-.87.24-1.46 1.5-1.46h1.6V4.2C16.3 4.14 15.3 4 14.2 4c-2.3 0-3.9 1.4-3.9 4v2.5H7.9v3h2.4V21h3.2Z"/></svg>
+        </a>
+        <a href="#" class="social-icon social-icon-pending" aria-label="Instagram (link pending)" data-i18n-aria="header.instagramPending">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.explore">Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="wholesale.html">Wholesale</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.getInTouch">Get in Touch</h4>
+      <a href="tel:+919976055524">+91 99760 55524</a>
+      <a href="tel:+919080656477">+91 90806 56477</a>
+      <a href="https://wa.me/919976055524" target="_blank" rel="noopener" data-i18n="footer.whatsappUs">WhatsApp Us</a>
+      <a href="mailto:hello@arumbucashews.com">hello@arumbucashews.com</a>
+    </div>
+  </div>
+    <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <p data-i18n="footer.copyright">&copy; 2026 Arumbu Cashews. All rights reserved.</p>
+      <p class="footer-credit" data-i18n-html="footer.credit.html">Website created by <span class="footer-heart">&#10084;&#65039;</span> Sanjay Gandhi</p>
+    </div>
+    <p class="footer-admin-link"><a href="admin/login.html" data-i18n="footer.adminLogin">Admin Login</a></p>
+  </div>
+</footer>
+
+<a href="https://wa.me/919976055524" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" data-i18n-aria="header.chatWhatsapp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 3.4a8.94 8.94 0 0 0-7.75 13.4L3 21l4.32-1.24a8.9 8.9 0 0 0 4.7 1.33h.01a8.94 8.94 0 0 0 8.94-8.94 8.86 8.86 0 0 0-3.37-6.83Zm-5.58 13.7h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.8.75-2.74-.18-.28a7.44 7.44 0 1 1 13.8-3.9 7.45 7.45 0 0 1-7.51 7.32Zm4.07-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.37-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.78-.79 1.9s.81 2.2.92 2.35c.11.15 1.6 2.48 3.89 3.47.54.24.97.38 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.97.13-1.06-.06-.1-.2-.15-.42-.26Z"/></svg>
+</a>
+
+<!-- ============ BACK TO TOP BUTTON ============ -->
+<button id="backToTop" class="back-to-top" aria-label="Back to top" data-i18n-aria="backToTop.aria">↑</button>
+
+<script src="js/i18n-dictionary.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

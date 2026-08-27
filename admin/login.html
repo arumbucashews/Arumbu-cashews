@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login | Arumbu Cashews</title>
+<!-- Internal utility page — deliberately excluded from search results,
+     matching the "do not show prominently" requirement for the whole
+     admin area. -->
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="../images/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* Scoped to this page only — a minimal, self-contained admin
+     screen rather than the full public header/nav/footer, since an
+     admin login has no reason to invite public browsing around it. */
+  body.admin-standalone {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ivory);
+    padding: 2rem 1.5rem;
+  }
+  .admin-card {
+    max-width: 420px;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid var(--border-ink);
+    border-radius: var(--radius);
+    padding: 2.6rem 2.2rem;
+    text-align: center;
+    box-shadow: 0 24px 60px rgba(27, 14, 6, 0.08);
+  }
+  .admin-card img { width: 56px; height: 56px; object-fit: contain; margin-bottom: 1.2rem; }
+  .admin-card .eyebrow { justify-content: center; margin-bottom: 0.6rem; }
+  .admin-card h1 {
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin-bottom: 0.9rem;
+  }
+  .admin-card p {
+    font-size: 0.92rem;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .admin-card p:last-of-type { margin-bottom: 1.8rem; }
+  .admin-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--ivory-2);
+    border: 1px solid var(--border-ink);
+    border-radius: 999px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.76rem;
+    color: var(--gold-ink);
+    letter-spacing: 0.03em;
+    margin-bottom: 1.6rem;
+  }
+  .admin-status::before {
+    content: '';
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--gold-ink);
+  }
+  .admin-back {
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    border-bottom: 1px solid transparent;
+    transition: color var(--transition), border-color var(--transition);
+  }
+  .admin-back:hover { color: var(--gold-ink); border-color: var(--gold-ink); }
+</style>
+</head>
+<body class="page-light admin-standalone">
+
+  <div class="admin-card">
+    <img src="../images/arumbu-logo.png" alt="Arumbu Cashews">
+    <p class="eyebrow">Arumbu Cashews</p>
+    <h1>Admin Panel</h1>
+
+    <span class="admin-status">Not yet connected</span>
+
+    <p>Admin sign-in will use Supabase Authentication once the backend for this site is set up and connected — email/password login, restricted to authorised admin accounts only.</p>
+    <p>This page is a placeholder on purpose: it intentionally does not include a login form, since a form here couldn't actually verify anyone yet. Building it for real is the next step, in an environment connected to the live Supabase project.</p>
+
+    <a href="../index.html" class="admin-back">← Back to Arumbu Cashews</a>
+  </div>
+
+</body>
+</html>
