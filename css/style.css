@@ -918,6 +918,7 @@ p { color: var(--text-muted); }
 }
 .product-body { padding: 1.4rem; }
 .product-body h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
+.product-grade-name { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.7rem; }
 .product-desc { font-size: 0.85rem; margin-bottom: 1rem; min-height: 2.6em; }
 .product-meta {
   display: flex;
@@ -1468,6 +1469,7 @@ body.page-light .product-media.no-image::after { border-color: var(--border-ink)
 body.page-light .product-body h3 { color: var(--ink); }
 body.page-light .product-meta { border-bottom-color: var(--border-ink); }
 body.page-light .product-price { color: var(--gold-ink); }
+body.page-light .product-grade-name { color: var(--ink-muted); }
 body.page-light .btn-gold-sm { color: var(--gold-ink); border-color: var(--border-ink); }
 body.page-light .btn-gold-sm:hover { background: rgba(138, 106, 20, 0.08); }
 body.page-light .btn-outline { color: var(--ink); border-color: var(--border-ink); }
