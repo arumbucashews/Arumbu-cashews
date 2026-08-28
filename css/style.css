@@ -463,7 +463,7 @@ p { color: var(--text-muted); }
 .action-panel-btn:last-child { margin-bottom: 0; }
 .action-panel .btn-gold-sm { color: var(--gold-ink); border-color: var(--border-ink); }
 .action-panel .btn-gold-sm:hover { background: rgba(138, 106, 20, 0.08); border-color: var(--gold-ink); }
-.action-panel .btn-outline { color: var(--ink); border-color: var(--border-ink); }
+.action-panel .btn-outline { color: var(--ink); border-color: var(--gold-ink); }
 .action-panel .btn-outline:hover { border-color: var(--gold-ink); color: var(--gold-ink); }
 
 /* ============ SEARCH PANEL ============
@@ -1160,16 +1160,17 @@ p { color: var(--text-muted); }
   margin-bottom: 0.7rem;
 }
 .footer-social { display: flex; align-items: center; gap: 0.7rem; }
-/* Larger, filled circular badges for the footer's social row — more
-   prominent than the small outlined icons used in the header, so the
-   footer reads as its own deliberate "follow us" moment. */
+/* Icons only — no circular badge/border, per explicit request. Size
+   and spacing preserved so the row still reads as neat and aligned.
+   Icon color left as the inherited base .social-icon color — only
+   the background/border are removed, nothing recolored. */
 .footer-social .social-icon {
   width: 38px; height: 38px;
-  background: rgba(212, 163, 44, 0.1);
-  border-color: rgba(212, 163, 44, 0.3);
+  background: none;
+  border: none;
 }
 .footer-social .social-icon svg { width: 17px; height: 17px; }
-.footer-social .social-icon:hover { background: rgba(212, 163, 44, 0.18); }
+.footer-social .social-icon:hover { background: none; }
 .footer-col h4 {
   font-family: var(--font-body);
   font-size: 0.78rem;
@@ -1211,7 +1212,7 @@ p { color: var(--text-muted); }
 .footer-bottom p { font-size: 0.8rem; color: var(--text-muted); }
 .footer-credit {
   font-size: 0.72rem !important;
-  color: rgba(217, 208, 190, 0.45) !important;
+  color: rgba(217, 208, 190, 0.68) !important;
   margin-top: 0 !important;
   letter-spacing: 0.01em;
 }
@@ -1804,36 +1805,46 @@ html[lang="ta"] #contactForm .btn-gold { white-space: normal; text-align: center
    Scoped specifically to the homepage's "Why buyers trust the
    Arumbu mark" (#why) and "OUR CASHEW RANGE" (#products) sections.
    Their outer section background is already light ivory/ivory-2 —
-   only the individual cards on top were still using the site's dark
-   panel treatment, which is what actually reads as a big dark block.
+   the individual cards on top are switched from the site's dark
+   panel treatment to a clean white card with dark, readable text.
    Nothing else is touched: the About page's own "Why Arumbu Cashews"
    section (different section, no #why id) and the Products page's
    own catalogue cards (already white via body.page-light) are
-   unaffected by these rules. */
+   unaffected by these rules — they already have their own,
+   independent white-card treatment. */
+#why .why-card {
+  background: #ffffff;
+  border-color: var(--border-ink);
+}
+#why .why-card:hover { border-color: var(--gold-ink); }
+#why .why-icon { color: var(--gold-ink); }
+#why .why-card h3 { color: var(--ink); }
+#why .why-card p { color: var(--ink-muted); }
 
-/* REVERTED per the latest explicit instruction: the card background
-   must stay as the site's existing dark panel treatment — only the
-   TEXT inside needs to be brighter/more readable. (An earlier pass
-   had switched these cards to a white background; that is undone
-   here since the current instruction explicitly says not to change
-   the card background, only the text visibility.) */
-#why .why-card h3 { color: #ffffff; }
-#why .why-card p { color: var(--cream); }
-#why .why-icon { color: var(--gold-light); }
+/* "OUR CASHEW RANGE" — same treatment as #why above. */
+#products .product-card {
+  background: #ffffff;
+  border-color: var(--border-ink);
+}
+#products .product-card:hover { border-color: var(--gold-ink); }
+#products .product-media,
+#products .product-media.no-image { background: #f3ece0; }
+#products .product-media.no-image::after { border-color: var(--border-ink); }
+#products .product-meta { border-bottom-color: var(--border-ink); }
+#products .product-body h3 { color: var(--ink); }
+#products .product-grade-name { color: var(--ink-muted); }
+#products .product-price { color: var(--gold-ink); }
+#products .btn-gold-sm { color: var(--gold-ink); border-color: var(--border-ink); }
+#products .btn-gold-sm:hover { background: rgba(138, 106, 20, 0.08); border-color: var(--gold-ink); }
 
-/* "OUR CASHEW RANGE" — same situation as #why above: the product
-   cards keep their original dark-panel background (never changed to
-   white), but the grade-name heading gets an explicit bright white
-   so it's unambiguous rather than relying on the slightly warm
-   default --cream tone. The price/accent text already uses the
-   site's existing gold treatment (--gold-light) and is left as-is,
-   per "keep the existing gold/accent text where it already exists". */
-#products .product-body h3 { color: #ffffff; }
-
-/* REVERTED per the latest explicit instruction: "Keep the existing
-   product cards... Do NOT redesign anything." The white-card
-   treatment from an earlier pass is undone — product cards return to
-   the site's original dark-panel styling. Only the section heading
-   text (title/eyebrow) gets a contrast check below, since that's the
-   only "text hard to read" complaint that survives this instruction
-   once the cards themselves are off the table. */
+/* "Trusted by homes and businesses" — same treatment as #why/#products
+   above. Section background is already light (.section-light-alt);
+   only the individual cards switch from dark panel to white, with
+   dark ink text for readability. Layout, spacing, card size and
+   position are untouched — only background/text/border colors. */
+#testimonials .testimonial-card {
+  background: #ffffff;
+  border-color: var(--border-ink);
+}
+#testimonials .testimonial-card p { color: var(--ink); }
+#testimonials .testimonial-card footer { color: var(--gold-ink); }

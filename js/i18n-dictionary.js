@@ -70,8 +70,8 @@ var ARUMBU_TRANSLATIONS = {
   "header.cart": { en: "Cart", ta: "கார்ட்" },
   "header.wishlist": { en: "Wishlist", ta: "விருப்பப் பட்டியல்" },
   "header.chatWhatsapp": { en: "Chat on WhatsApp", ta: "வாட்ஸ்அப்பில் பேசுங்கள்" },
-  "header.facebookPending": { en: "Facebook (link pending)", ta: "பேஸ்புக் (இணைப்பு விரைவில்)" },
-  "header.instagramPending": { en: "Instagram (link pending)", ta: "இன்ஸ்டாகிராம் (இணைப்பு விரைவில்)" },
+  "header.facebookPending": { en: "Facebook", ta: "பேஸ்புக்" },
+  "header.instagramPending": { en: "Instagram", ta: "இன்ஸ்டாகிராம்" },
 
   "account.welcome": { en: "Welcome to Arumbu Cashews", ta: "அரும்பு காஜுவிற்கு வரவேற்கிறோம்" },
   "account.desc": {
