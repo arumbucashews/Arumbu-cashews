@@ -17,10 +17,26 @@
      )
    RLS (0002_rls_policies.sql): "products_admin_all" — authenticated
    users where public.is_admin() get full SELECT/INSERT/UPDATE/DELETE.
-   grade_name is unique (case-insensitive) at the database level. */
+   grade_name is unique (case-insensitive) at the database level.
+
+   Product image management (added — reuses existing infrastructure,
+   nothing new was created in Supabase):
+     public.product_images (
+       id, product_id, storage_path, alt_text, is_primary,
+       display_order, created_at
+     ) — already existed; a unique index enforces at most one
+     is_primary=true row per product_id, which this file treats as
+     "the" product image (one image per grade, per the brief).
+   Storage bucket "product-images" — already existed (public read,
+   admin write, 10MB limit, jpeg/png/webp only). File paths are
+   namespaced by product id (<product_id>/<timestamp>-<rand>.<ext>)
+   so replacing one grade's image can never collide with another's. */
 
 (function () {
   'use strict';
+
+  var IMAGE_MIME_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
+  var MAX_IMAGE_BYTES = 8 * 1024 * 1024; // 8MB — safely under the bucket's 10MB hard limit
 
   var STATUS_OPTIONS = [
     { value: 'active', label: 'Active' },
@@ -97,8 +113,12 @@
 
   function renderCard(p) {
     var desc = p.short_description ? escapeHtml(p.short_description) : '<em>No description yet.</em>';
+    var thumbHtml = p.primary_image_path
+      ? '<img class="product-thumb" src="' + publicProductImageUrl(p.primary_image_path) + '" alt="">'
+      : '<div class="product-thumb product-thumb-empty"></div>';
     return (
       '<article class="product-card" data-id="' + p.id + '">' +
+        thumbHtml +
         '<div class="product-card-head">' +
           '<h3>' + escapeHtml(p.grade_name) + '</h3>' +
           '<span class="product-status-pill" data-status="' + p.status + '">' + (STATUS_LABEL[p.status] || p.status) + '</span>' +
@@ -165,7 +185,7 @@
     var client = window.ArumbuAdminAuth.getClient();
     client
       .from('products')
-      .select('id, grade_name, slug, short_description, full_description, status, is_featured, is_published, display_order')
+      .select('id, grade_name, slug, short_description, full_description, status, is_featured, is_published, display_order, product_images(storage_path, is_primary)')
       .order('display_order', { ascending: true })
       .order('created_at', { ascending: true })
       .then(function (res) {
@@ -174,7 +194,12 @@
           state.error = 'Could not load products: ' + res.error.message;
           state.products = null;
         } else {
-          state.products = res.data || [];
+          state.products = (res.data || []).map(function (p) {
+            var images = Array.isArray(p.product_images) ? p.product_images : (p.product_images ? [p.product_images] : []);
+            var primary = images.find(function (img) { return img.is_primary; }) || null;
+            p.primary_image_path = primary ? primary.storage_path : null;
+            return p;
+          });
         }
         render();
       });
@@ -261,6 +286,19 @@
               '<label class="product-form-check"><input type="checkbox" id="pfPublished" name="is_published" ' + (p.is_published ? 'checked' : '') + '> Published</label>' +
               '<label class="product-form-check"><input type="checkbox" id="pfFeatured" name="is_featured" ' + (p.is_featured ? 'checked' : '') + '> Featured</label>' +
             '</div>' +
+            (isEdit ?
+              '<div class="form-field form-field-full">' +
+                '<label>Product Image</label>' +
+                '<div class="upload-field" id="productImageManager">' +
+                  '<div class="products-message" style="padding:0.9rem 1.2rem;">Loading image…</div>' +
+                '</div>' +
+              '</div>'
+              :
+              '<div class="form-field form-field-full">' +
+                '<label>Product Image</label>' +
+                '<p style="font-size:0.82rem; color:var(--ink-muted); margin:0;">Save this product first, then edit it to add an image.</p>' +
+              '</div>'
+            ) +
             '<div class="product-form-actions">' +
               '<button type="button" class="product-form-cancel" id="productFormCancelBtn">Cancel</button>' +
               '<button type="submit" class="product-form-submit" id="productFormSubmitBtn">' + (isEdit ? 'Save Changes' : 'Add Product') + '</button>' +
@@ -277,6 +315,10 @@
       e.preventDefault();
       submitForm(isEdit ? product.id : null);
     });
+
+    if (isEdit) {
+      initProductImageManager(product.id);
+    }
   }
 
   function submitForm(existingId) {
@@ -403,6 +445,152 @@
           label.lastChild.textContent = nextValue ? 'Published' : 'Unpublished';
         }
       });
+  }
+
+  // ---------------------------------------------------------------
+  // Product Image (public.product_images + "product-images" bucket)
+  // ---------------------------------------------------------------
+
+  function extFromFile(file) {
+    var m = /\.([a-zA-Z0-9]+)$/.exec(file.name);
+    return m ? m[1].toLowerCase() : 'jpg';
+  }
+
+  function publicProductImageUrl(path) {
+    if (!path) { return null; }
+    return window.ArumbuAdminAuth.getClient().storage.from('product-images').getPublicUrl(path).data.publicUrl;
+  }
+
+  function initProductImageManager(productId) {
+    var client = window.ArumbuAdminAuth.getClient();
+    client
+      .from('product_images')
+      .select('id, storage_path')
+      .eq('product_id', productId)
+      .eq('is_primary', true)
+      .maybeSingle()
+      .then(function (res) {
+        var managerEl = document.getElementById('productImageManager');
+        if (!managerEl) { return; } // modal was closed before this resolved
+        if (res.error) {
+          managerEl.innerHTML = '<div class="products-message is-error" style="padding:0.9rem 1.2rem;">Could not load image: ' + escapeHtml(res.error.message) + '</div>';
+          return;
+        }
+        renderImageManager(productId, res.data || null);
+      });
+  }
+
+  function renderImageManager(productId, imageRow) {
+    var managerEl = document.getElementById('productImageManager');
+    if (!managerEl) { return; }
+
+    var hasImage = !!imageRow;
+    var previewSrc = hasImage ? publicProductImageUrl(imageRow.storage_path) : '';
+
+    managerEl.innerHTML =
+      (hasImage
+        ? '<img class="upload-preview is-product-photo" id="productImagePreview" src="' + previewSrc + '" alt="Current product image">'
+        : '<div class="upload-preview is-product-photo" id="productImagePreview"></div>') +
+      '<div>' +
+        '<label style="font-size:0.78rem; color:var(--ink-muted); display:block; margin-bottom:0.35rem;">' +
+          (hasImage ? 'Replace Image' : 'Upload Image') +
+        '</label>' +
+        '<input type="file" id="productImageFileInput" accept="image/jpeg,image/png,image/webp">' +
+        (hasImage
+          ? '<button type="button" class="product-form-cancel" id="productImageRemoveBtn" style="padding:0.4rem 0.85rem; font-size:0.78rem; margin-top:0.55rem; display:block;">Remove Image</button>'
+          : '') +
+        '<div class="upload-status" id="productImageStatus"></div>' +
+      '</div>';
+
+    document.getElementById('productImageFileInput').addEventListener('change', function (e) {
+      handleProductImageUpload(e, productId, imageRow);
+    });
+    var removeBtn = document.getElementById('productImageRemoveBtn');
+    if (removeBtn) {
+      removeBtn.addEventListener('click', function () { handleProductImageRemove(productId, imageRow); });
+    }
+  }
+
+  function handleProductImageUpload(e, productId, existingImageRow) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) { return; }
+
+    var statusEl = document.getElementById('productImageStatus');
+
+    if (IMAGE_MIME_TYPES.indexOf(file.type) === -1) {
+      statusEl.textContent = 'Please choose a JPG, PNG, or WebP image.';
+      statusEl.className = 'upload-status is-error';
+      return;
+    }
+    if (file.size > MAX_IMAGE_BYTES) {
+      statusEl.textContent = 'Image is too large — please choose a file under 8MB.';
+      statusEl.className = 'upload-status is-error';
+      return;
+    }
+
+    statusEl.textContent = 'Uploading…';
+    statusEl.className = 'upload-status';
+
+    var client = window.ArumbuAdminAuth.getClient();
+    // Namespaced by product id so replacing one grade's image can
+    // never collide with or overwrite another grade's file.
+    var path = productId + '/' + Date.now() + '-' + Math.random().toString(36).slice(2, 8) + '.' + extFromFile(file);
+
+    client.storage.from('product-images').upload(path, file, { upsert: true, contentType: file.type }).then(function (uploadRes) {
+      if (uploadRes.error) {
+        statusEl.textContent = 'Upload failed: ' + uploadRes.error.message;
+        statusEl.className = 'upload-status is-error';
+        return;
+      }
+
+      var oldPath = existingImageRow ? existingImageRow.storage_path : null;
+      var dbQuery = existingImageRow
+        ? client.from('product_images').update({ storage_path: path }).eq('id', existingImageRow.id).select().single()
+        : client.from('product_images').insert({ product_id: productId, storage_path: path, is_primary: true, display_order: 0 }).select().single();
+
+      dbQuery.then(function (res) {
+        if (res.error) {
+          statusEl.textContent = 'File uploaded, but could not save it to the product: ' + res.error.message;
+          statusEl.className = 'upload-status is-error';
+          return;
+        }
+
+        statusEl.textContent = 'Image updated.';
+        statusEl.className = 'upload-status is-success';
+        renderImageManager(productId, res.data);
+
+        // Clean up the file this one replaced — don't let storage
+        // silently accumulate a copy of every past image.
+        if (oldPath && oldPath !== path) {
+          client.storage.from('product-images').remove([oldPath]).then(function (removeRes) {
+            if (removeRes.error) { console.warn('Could not remove old product image:', removeRes.error.message); }
+          });
+        }
+      });
+    });
+  }
+
+  function handleProductImageRemove(productId, imageRow) {
+    if (!imageRow) { return; }
+    var confirmed = window.confirm('Remove this product image? The grade will show no image until a new one is uploaded.');
+    if (!confirmed) { return; }
+
+    var statusEl = document.getElementById('productImageStatus');
+    statusEl.textContent = 'Removing…';
+    statusEl.className = 'upload-status';
+
+    var client = window.ArumbuAdminAuth.getClient();
+    client.from('product_images').delete().eq('id', imageRow.id).then(function (res) {
+      if (res.error) {
+        statusEl.textContent = 'Could not remove image: ' + res.error.message;
+        statusEl.className = 'upload-status is-error';
+        return;
+      }
+      client.storage.from('product-images').remove([imageRow.storage_path]).then(function (removeRes) {
+        if (removeRes.error) { console.warn('Could not remove storage file:', removeRes.error.message); }
+      });
+      renderImageManager(productId, null);
+    });
   }
 
   // ---------------------------------------------------------------
