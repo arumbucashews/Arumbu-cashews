@@ -11,5 +11,5 @@
    by the browser and is fully visible to anyone who opens
    admin/login.html or admin/dashboard.html. */
 
-window.ARUMBU_SUPABASE_URL = 'https://YOUR-PROJECT-REF.supabase.co';
-window.ARUMBU_SUPABASE_ANON_KEY = 'YOUR-PUBLISHABLE-KEY';
+window.ARUMBU_SUPABASE_URL = 'https://hnuvzzefwxizhvehwoxa.supabase.co';
+window.ARUMBU_SUPABASE_ANON_KEY = 'sb_publishable_sf_X-uRBuo9LKDDCq0qrqg_4wJkXO0T';
