@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel | Arumbu Cashews</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="../images/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  body.admin-standalone { min-height: 100vh; background: var(--ivory); }
+  .admin-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 1.8rem;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-ink);
+  }
+  .admin-topbar-left { display: flex; align-items: center; gap: 0.8rem; }
+  .admin-topbar-left img { width: 34px; height: 34px; object-fit: contain; }
+  .admin-topbar-left span { font-family: var(--font-body); color: var(--ink); font-weight: 500; }
+  .admin-topbar-right { display: flex; align-items: center; gap: 1rem; }
+  .admin-user-email { font-size: 0.85rem; color: var(--ink-muted); }
+  .admin-logout-btn {
+    background: transparent;
+    border: 1px solid var(--border-ink);
+    color: var(--ink);
+    border-radius: var(--radius);
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: border-color var(--transition), color var(--transition);
+  }
+  .admin-logout-btn:hover { border-color: var(--gold-ink); color: var(--gold-ink); }
+  .admin-main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 3rem 1.8rem;
+  }
+  .admin-main h1 { color: var(--ink); font-size: 1.8rem; margin-bottom: 0.6rem; }
+  .admin-main p { color: var(--ink-muted); line-height: 1.6; }
+  .admin-gate {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body class="page-light admin-standalone" style="display:none;" id="adminBody">
+
+  <!-- Shown only while the session check is in progress, before we
+       know whether to render the panel or bounce to login.html. -->
+  <div class="admin-gate" id="adminGate">Checking session…</div>
+
+  <div id="adminPanel" style="display:none;">
+    <div class="admin-topbar">
+      <div class="admin-topbar-left">
+        <img src="../images/arumbu-logo.png" alt="Arumbu Cashews">
+        <span>Arumbu Cashews — Admin</span>
+      </div>
+      <div class="admin-topbar-right">
+        <span class="admin-user-email" id="adminUserEmail"></span>
+        <button class="admin-logout-btn" id="adminLogoutBtn">Log Out</button>
+      </div>
+    </div>
+
+    <main class="admin-main">
+      <h1>Welcome back</h1>
+      <p>You're signed in as an authorised admin. This panel is the foundation
+        for the Arumbu Cashews CMS — product editing, rate cards, wholesale
+        enquiries, and site content will be built here next.</p>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="admin-auth.js"></script>
+  <script>
+  (function () {
+    var bodyEl = document.getElementById('adminBody');
+    var gateEl = document.getElementById('adminGate');
+    var panelEl = document.getElementById('adminPanel');
+    var emailEl = document.getElementById('adminUserEmail');
+    var logoutBtn = document.getElementById('adminLogoutBtn');
+
+    // Protect the panel: no session -> login.html. Session but not an
+    // authorised admin/editor profile -> sign out, then login.html with
+    // an access-denied message.
+    async function guard() {
+      bodyEl.style.display = '';
+      try {
+        var result = await window.ArumbuAdminAuth.getAuthorisedSession();
+
+        if (!result.session) {
+          window.location.replace('login.html');
+          return;
+        }
+        if (!result.profile) {
+          await window.ArumbuAdminAuth.signOut();
+          window.location.replace('login.html?denied=1');
+          return;
+        }
+
+        emailEl.textContent = result.profile.email || result.session.user.email || '';
+        gateEl.style.display = 'none';
+        panelEl.style.display = '';
+      } catch (err) {
+        gateEl.textContent = err.message || 'Could not verify your session.';
+      }
+    }
+
+    logoutBtn.addEventListener('click', async function () {
+      logoutBtn.disabled = true;
+      try {
+        await window.ArumbuAdminAuth.signOut();
+      } finally {
+        window.location.replace('login.html');
+      }
+    });
+
+    guard();
+  })();
+  </script>
+
+</body>
+</html>

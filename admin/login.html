@@ -41,13 +41,6 @@
     color: var(--ink);
     margin-bottom: 0.9rem;
   }
-  .admin-card p {
-    font-size: 0.92rem;
-    color: var(--ink-muted);
-    line-height: 1.6;
-    margin-bottom: 1rem;
-  }
-  .admin-card p:last-of-type { margin-bottom: 1.8rem; }
   .admin-status {
     display: inline-flex;
     align-items: center;
@@ -67,6 +60,7 @@
     border-radius: 50%;
     background: var(--gold-ink);
   }
+  .admin-status.is-checking::before { background: var(--ink-muted); }
   .admin-back {
     font-size: 0.85rem;
     color: var(--ink-muted);
@@ -74,6 +68,25 @@
     transition: color var(--transition), border-color var(--transition);
   }
   .admin-back:hover { color: var(--gold-ink); border-color: var(--gold-ink); }
+
+  /* Login form — reuses the site's existing .form-field / .btn-gold
+     patterns so it doesn't introduce a second visual language. */
+  .admin-login-form { text-align: left; margin-bottom: 1.4rem; }
+  .admin-login-form .form-field { margin-bottom: 1.1rem; }
+  .admin-login-form .btn-gold { width: 100%; justify-content: center; margin-top: 0.4rem; }
+  .admin-login-form .btn-gold:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .admin-error {
+    display: none;
+    background: rgba(178, 44, 44, 0.08);
+    border: 1px solid rgba(178, 44, 44, 0.35);
+    color: #9a2b2b;
+    border-radius: var(--radius);
+    padding: 0.7rem 0.9rem;
+    font-size: 0.85rem;
+    margin-bottom: 1.1rem;
+    text-align: left;
+  }
+  .admin-error.is-visible { display: block; }
 </style>
 </head>
 <body class="page-light admin-standalone">
@@ -81,15 +94,120 @@
   <div class="admin-card">
     <img src="../images/arumbu-logo.png" alt="Arumbu Cashews">
     <p class="eyebrow">Arumbu Cashews</p>
-    <h1>Admin Panel</h1>
+    <h1>Admin Login</h1>
 
-    <span class="admin-status">Not yet connected</span>
+    <span class="admin-status is-checking" id="adminStatus">Checking session…</span>
 
-    <p>Admin sign-in will use Supabase Authentication once the backend for this site is set up and connected — email/password login, restricted to authorised admin accounts only.</p>
-    <p>This page is a placeholder on purpose: it intentionally does not include a login form, since a form here couldn't actually verify anyone yet. Building it for real is the next step, in an environment connected to the live Supabase project.</p>
+    <div id="adminLoginArea" style="display:none;">
+      <p id="adminError" class="admin-error"></p>
+
+      <form class="admin-login-form" id="adminLoginForm">
+        <div class="form-field">
+          <label for="adminEmail">Email</label>
+          <input type="email" id="adminEmail" name="email" autocomplete="username" required>
+        </div>
+        <div class="form-field">
+          <label for="adminPassword">Password</label>
+          <input type="password" id="adminPassword" name="password" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn btn-gold" id="adminLoginBtn">Log In</button>
+      </form>
+    </div>
 
     <a href="../index.html" class="admin-back">← Back to Arumbu Cashews</a>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="admin-auth.js"></script>
+  <script>
+  (function () {
+    var statusEl = document.getElementById('adminStatus');
+    var loginArea = document.getElementById('adminLoginArea');
+    var errorEl = document.getElementById('adminError');
+    var form = document.getElementById('adminLoginForm');
+    var loginBtn = document.getElementById('adminLoginBtn');
+
+    function showError(message) {
+      errorEl.textContent = message;
+      errorEl.classList.add('is-visible');
+    }
+    function clearError() {
+      errorEl.textContent = '';
+      errorEl.classList.remove('is-visible');
+    }
+    function showLoginForm(statusText) {
+      statusEl.textContent = statusText || 'Not signed in';
+      statusEl.classList.remove('is-checking');
+      loginArea.style.display = 'block';
+    }
+
+    // If already authenticated AND authorised, skip straight to the panel
+    // (requirement 9). Otherwise show the login form, signing out any
+    // authenticated-but-unauthorised session first.
+    async function init() {
+      try {
+        var result = await window.ArumbuAdminAuth.getAuthorisedSession();
+        if (result.session && result.profile) {
+          window.location.replace('dashboard.html');
+          return;
+        }
+        if (result.session && !result.profile) {
+          await window.ArumbuAdminAuth.signOut();
+          showLoginForm('Not signed in');
+          showError('This account is not authorised for Admin access.');
+          return;
+        }
+        showLoginForm('Not signed in');
+        if (window.location.search.indexOf('denied=1') !== -1) {
+          showError('This account is not authorised for Admin access.');
+        }
+      } catch (err) {
+        showLoginForm('Not signed in');
+        showError(err.message || 'Could not reach Supabase. Check admin/supabase-config.js.');
+      }
+    }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      clearError();
+      loginBtn.disabled = true;
+      loginBtn.textContent = 'Logging in…';
+
+      try {
+        var client = window.ArumbuAdminAuth.getClient();
+        var email = document.getElementById('adminEmail').value.trim();
+        var password = document.getElementById('adminPassword').value;
+
+        var signInRes = await client.auth.signInWithPassword({ email: email, password: password });
+        if (signInRes.error) {
+          showError('Invalid email or password.');
+          loginBtn.disabled = false;
+          loginBtn.textContent = 'Log In';
+          return;
+        }
+
+        // Authenticated — now verify the authorised public.profiles row.
+        var result = await window.ArumbuAdminAuth.getAuthorisedSession();
+        if (!result.profile) {
+          await window.ArumbuAdminAuth.signOut();
+          showError('This account is not authorised for Admin access.');
+          loginBtn.disabled = false;
+          loginBtn.textContent = 'Log In';
+          return;
+        }
+
+        window.location.replace('dashboard.html');
+      } catch (err) {
+        showError(err.message || 'Something went wrong. Please try again.');
+        loginBtn.disabled = false;
+        loginBtn.textContent = 'Log In';
+      }
+    });
+
+    init();
+  })();
+  </script>
 
 </body>
 </html>
