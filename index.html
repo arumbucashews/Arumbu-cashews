@@ -4,10 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-i18n="meta.title.home">Arumbu Cashews | Farm-Fresh Premium Cashews from Tamil Nadu</title>
-<meta name="description" content="Arumbu Cashews — hand-sorted, farm-direct premium cashews from Tamil Nadu. Order retail packs or enquire for wholesale." data-i18n-content="meta.description.home">
+<meta name="description" content="Arumbu Cashews — premium cashews from Tamil Nadu in 13 grades, from WW180 to baby bits. Order 250 g, 500 g or 1 kg packs on WhatsApp, or enquire for wholesale." data-i18n-content="meta.description.homeV2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
@@ -16,9 +15,11 @@
 <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/favicon-192x192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="images/favicon/favicon-512x512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/home.css">
 </head>
-<body class="home no-js">
+<body class="home home-v2 no-js">
 <script>document.body.classList.replace('no-js','js');</script>
 
 <!-- ============ OPENING / SPLASH SCREEN ============
@@ -50,13 +51,8 @@
   <button type="button" class="splash-skip" id="splashSkip" data-i18n="splash.skip">Skip</button>
 </div>
 
-<!-- ============ HERO SECTION (Header lives INSIDE the Hero — one single connected block, header scrolls away with the video, never fixed/sticky) ============ -->
+<!-- ============ HERO SECTION (Header lives INSIDE the Hero — one connected block that scrolls away together, never fixed/sticky) ============ -->
 <section class="hero-wrap" id="heroWrap">
-
-  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="images/hero-poster.jpg">
-    <source src="assets/video/arumbu-processing.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
 
   <header class="site-header" id="siteHeader">
     <div class="nav-wrap">
@@ -180,369 +176,265 @@
 
   <div class="nav-overlay" id="navOverlay"></div>
 
-  <div class="hero-inner">
-    <p class="eyebrow" data-i18n="hero.eyebrow">Est. in the cashew belt of Tamil Nadu</p>
-    <h1 class="hero-title" data-i18n-html="hero.title.html">Sourced with care. <em>Processed with precision.</em></h1>
-    <p class="hero-sub" data-i18n="hero.sub">From the orchard to the sorting floor, every batch under the Arumbu name is handled with the same attention to detail — sorted, roasted and sealed within days of harvest.</p>
-    <div class="hero-actions">
-      <a href="https://wa.me/919976055524?text=Hi%20Arumbu%20Cashews%2C%20I%27d%20like%20to%20order" class="btn btn-gold" target="_blank" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 3.4a8.94 8.94 0 0 0-7.75 13.4L3 21l4.32-1.24a8.9 8.9 0 0 0 4.7 1.33h.01a8.94 8.94 0 0 0 8.94-8.94 8.86 8.86 0 0 0-3.37-6.83Zm-5.58 13.7h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.8.75-2.74-.18-.28a7.44 7.44 0 1 1 13.8-3.9 7.45 7.45 0 0 1-7.51 7.32Zm4.07-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.37-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.78-.79 1.9s.81 2.2.92 2.35c.11.15 1.6 2.48 3.89 3.47.54.24.97.38 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.97.13-1.06-.06-.1-.2-.15-.42-.26Z"/></svg>
-        <span data-i18n="hero.ctaWhatsapp">Order on WhatsApp</span>
-      </a>
-      <a href="products.html" class="btn btn-outline" data-i18n="hero.ctaViewProducts">View Products</a>
+  <div class="hero-v2">
+    <div class="hero-v2-copy">
+      <h1 class="hero-v2-title" data-i18n-html="hero.title.html">Sourced with care. <em>Processed with precision.</em></h1>
+      <span class="hero-v2-rule" aria-hidden="true"></span>
+      <p class="hero-v2-sub" data-i18n="hero.subV2">Thirteen cashew grades, from WW180 to Baby Bits, in 250 g, 500 g and 1 kg packs. Wholesale on enquiry.</p>
+      <div class="hero-v2-actions">
+        <a href="https://wa.me/919976055524?text=Hi%20Arumbu%20Cashews%2C%20I%27d%20like%20to%20order" class="btn btn-gold" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 3.4a8.94 8.94 0 0 0-7.75 13.4L3 21l4.32-1.24a8.9 8.9 0 0 0 4.7 1.33h.01a8.94 8.94 0 0 0 8.94-8.94 8.86 8.86 0 0 0-3.37-6.83Zm-5.58 13.7h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.8.75-2.74-.18-.28a7.44 7.44 0 1 1 13.8-3.9 7.45 7.45 0 0 1-7.51 7.32Zm4.07-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.37-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.78-.79 1.9s.81 2.2.92 2.35c.11.15 1.6 2.48 3.89 3.47.54.24.97.38 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.97.13-1.06-.06-.1-.2-.15-.42-.26Z"/></svg>
+          <span data-i18n="hero.ctaWhatsapp">Order on WhatsApp</span>
+        </a>
+        <a href="#products" class="btn hero-v2-secondary" data-i18n="hero.ctaViewGrades">View Our Grades</a>
+      </div>
+      <a href="tel:+919976055524" class="hero-v2-phone">+91 99760 55524</a>
     </div>
 
-    <dl class="hero-stats">
-      <div><dt>0</dt><dd data-i18n="hero.stat1">Preservatives Added</dd></div>
-      <div><dt>48hr</dt><dd data-i18n="hero.stat2">Harvest to Pack</dd></div>
-      <div><dt>100%</dt><dd data-i18n="hero.stat3">Tamil Nadu Sourced</dd></div>
+    <!-- 3-image rotating hero. Drop the photos into images/hero/ with these
+         names; a slide whose file is missing removes itself, and slide 1
+         falls back to the existing WW210 product photo until hero-1 exists.
+           hero-1.jpg  product   — premium finished cashews
+           hero-2.jpg  origin    — cashew tree, flowers and cashew apples
+           hero-3.jpg  heritage  — cultivation / harvest / farm -->
+    <div class="hero-v2-visual" data-hero-slider>
+      <span class="hero-v2-arch" aria-hidden="true"></span>
+      <div class="hero-v2-frame">
+        <img class="hero-slide is-active" src="images/hero/hero-1.jpg" alt="Arumbu cashews" fetchpriority="high"
+             onerror="this.onerror=null;this.src='images/products/ww210.png';this.alt='Cashews in a wooden bowl'">
+        <img class="hero-slide" src="images/hero/hero-2.jpg" alt="Cashew tree with flowers and cashew apples"
+             onerror="this.remove()">
+        <img class="hero-slide" src="images/hero/hero-3.jpg" alt="Cashew cultivation and harvest"
+             onerror="this.remove()">
+      </div>
+      <div class="hero-dots" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<main id="main" class="home-main">
+
+<!-- ============ OUR GRADES ============ -->
+<section class="section grades-section" id="products">
+  <div class="section-inner">
+    <div class="grades-head" data-reveal>
+      <div>
+        <p class="eyebrow" data-i18n="grades.eyebrow">Our Grades</p>
+        <h2 class="section-title" data-i18n-html="grades.heading.html">Explore all <em>thirteen grades</em></h2>
+      </div>
+      <div class="grades-head-actions">
+        <a href="products.html" class="grades-link" data-i18n="grades.viewAll">View all grades</a>
+        <div class="rail-arrows">
+          <button type="button" class="rail-arrow" data-dir="-1" aria-label="Previous" data-i18n-aria="rail.prev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" class="rail-arrow" data-dir="1" aria-label="Next" data-i18n-aria="rail.next"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grades-rail" data-rail data-reveal>
+      <article class="grade-item" data-grade="WW180">
+        <div class="grade-media"><img src="images/products/ww180.jpg" alt="Arumbu Cashews WW180" loading="lazy"></div>
+        <h3 class="grade-code">WW180</h3>
+        <p class="grade-name" data-i18n="grade.WW180">White Wholes 180</p>
+        <div class="pack-pills" role="group" aria-label="Pack size" data-i18n-aria="grades.packSize"><button type="button" class="pack-pill" data-pack="250 g" aria-pressed="false">250 g</button><button type="button" class="pack-pill is-active" data-pack="500 g" aria-pressed="true">500 g</button><button type="button" class="pack-pill" data-pack="1 kg" aria-pressed="false">1 kg</button></div>
+        <a href="https://wa.me/919976055524?text=Hi%20Arumbu%20Cashews%2C%20I%27d%20like%20to%20order%20WW180%20cashews%20%E2%80%94%20500%20g%20pack." class="grade-order" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 3.4a8.94 8.94 0 0 0-7.75 13.4L3 21l4.32-1.24a8.9 8.9 0 0 0 4.7 1.33h.01a8.94 8.94 0 0 0 8.94-8.94 8.86 8.86 0 0 0-3.37-6.83Zm-5.58 13.7h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.8.75-2.74-.18-.28a7.44 7.44 0 1 1 13.8-3.9 7.45 7.45 0 0 1-7.51 7.32Zm4.07-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.37-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.78-.79 1.9s.81 2.2.92 2.35c.11.15 1.6 2.48 3.89 3.47.54.24.97.38 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.97.13-1.06-.06-.1-.2-.15-.42-.26Z"/></svg><span data-i18n="productCard.orderWhatsapp">Order on WhatsApp</span></a>
+      </article>
+      <article class="grade-item" data-grade="WW210">
+        <div class="grade-media"><img src="images/products/ww210.png" alt="Arumbu Cashews WW210" loading="lazy"></div>
+        <h3 class="grade-code">WW210</h3>
+        <p class="grade-name" data-i18n="grade.WW210">White Wholes 210</p>
+        <div class="pack-pills" role="group" aria-label="Pack size" data-i18n-aria="grades.packSize"><button type="button" class="pack-pill" data-pack="250 g" aria-pressed="false">250 g</button><button type="button" class="pack-pill is-active" data-pack="500 g" aria-pressed="true">500 g</button><button type="button" class="pack-pill" data-pack="1 kg" aria-pressed="false">1 kg</button></div>
+        <a href="https://wa.me/919976055524?text=Hi%20Arumbu%20Cashews%2C%20I%27d%20like%20to%20order%20WW210%20cashews%20%E2%80%94%20500%20g%20pack." class="grade-order" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 3.4a8.94 8.94 0 0 0-7.75 13.4L3 21l4.32-1.24a8.9 8.9 0 0 0 4.7 1.33h.01a8.94 8.94 0 0 0 8.94-8.94 8.86 8.86 0 0 0-3.37-6.83Zm-5.58 13.7h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.8.75-2.74-.18-.28a7.44 7.44 0 1 1 13.8-3.9 7.45 7.45 0 0 1-7.51 7.32Zm4.07-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.37-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.78-.79 1.9s.81 2.2.92 2.35c.11.15 1.6 2.48 3.89 3.47.54.24.97.38 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.97.13-1.06-.06-.1-.2-.15-.42-.26Z"/></svg><span data-i18n="productCard.orderWhatsapp">Order on WhatsApp</span></a>
+      </article>
+      <article class="grade-item" data-grade="WW240">
+        <div class="grade-media"><img src="images/products/ww240.jpg" alt="Arumbu Cashews WW240" loading="lazy"></div>
+        <h3 class="grade-code">WW240</h3>
+        <p class="grade-name" data-i18n="grade.WW240">White Wholes 240</p>
+        <div class="pack-pills" role="group" aria-label="Pack size" data-i18n-aria="grades.packSize"><button type="button" class="pack-pill" data-pack="250 g" aria-pressed="false">250 g</button><button type="button" class="pack-pill is-active" data-pack="500 g" aria-pressed="true">500 g</button><button type="button" class="pack-pill" data-pack="1 kg" aria-pressed="false">1 kg</button></div>
+        <a href="https://wa.me/919976055524?text=Hi%20Arumbu%20Cashews%2C%20I%27d%20like%20to%20order%20WW240%20cashews%20%E2%80%94%20500%20g%20pack." class="grade-order" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 3.4a8.94 8.94 0 0 0-7.75 13.4L3 21l4.32-1.24a8.9 8.9 0 0 0 4.7 1.33h.01a8.94 8.94 0 0 0 8.94-8.94 8.86 8.86 0 0 0-3.37-6.83Zm-5.58 13.7h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.8.75-2.74-.18-.28a7.44 7.44 0 1 1 13.8-3.9 7.45 7.45 0 0 1-7.51 7.32Zm4.07-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.37-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.78-.79 1.9s.81 2.2.92 2.35c.11.15 1.6 2.48 3.89 3.47.54.24.97.38 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.97.13-1.06-.06-.1-.2-.15-.42-.26Z"/></svg><span data-i18n="productCard.orderWhatsapp">Order on WhatsApp</span></a>
+      </article>
+      <article class="grade-item" data-grade="WW320">
+        <div class="grade-media"><img src="images/products/ww320.jpg" alt="Arumbu Cashews WW320" loading="lazy"></div>
+        <h3 class="grade-code">WW320</h3>
+        <p class="grade-name" data-i18n="grade.WW320">White Wholes 320</p>
+        <div class="pack-pills" role="group" aria-label="Pack size" data-i18n-aria="grades.packSize"><button type="button" class="pack-pill" data-pack="250 g" aria-pressed="false">250 g</button><button type="button" class="pack-pill is-active" data-pack="500 g" aria-pressed="true">500 g</button><button type="button" class="pack-pill" data-pack="1 kg" aria-pressed="false">1 kg</button></div>
+        <a href="https://wa.me/919976055524?text=Hi%20Arumbu%20Cashews%2C%20I%27d%20like%20to%20order%20WW320%20cashews%20%E2%80%94%20500%20g%20pack." class="grade-order" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 3.4a8.94 8.94 0 0 0-7.75 13.4L3 21l4.32-1.24a8.9 8.9 0 0 0 4.7 1.33h.01a8.94 8.94 0 0 0 8.94-8.94 8.86 8.86 0 0 0-3.37-6.83Zm-5.58 13.7h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.8.75-2.74-.18-.28a7.44 7.44 0 1 1 13.8-3.9 7.45 7.45 0 0 1-7.51 7.32Zm4.07-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.37-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.78-.79 1.9s.81 2.2.92 2.35c.11.15 1.6 2.48 3.89 3.47.54.24.97.38 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.97.13-1.06-.06-.1-.2-.15-.42-.26Z"/></svg><span data-i18n="productCard.orderWhatsapp">Order on WhatsApp</span></a>
+      </article>
+      <article class="grade-item" data-grade="WW400">
+        <div class="grade-media"><img src="images/products/ww400.jpg" alt="Arumbu Cashews WW400" loading="lazy"></div>
+        <h3 class="grade-code">WW400</h3>
+        <p class="grade-name" data-i18n="grade.WW400">White Wholes 400</p>
+        <div class="pack-pills" role="group" aria-label="Pack size" data-i18n-aria="grades.packSize"><button type="button" class="pack-pill" data-pack="250 g" aria-pressed="false">250 g</button><button type="button" class="pack-pill is-active" data-pack="500 g" aria-pressed="true">500 g</button><button type="button" class="pack-pill" data-pack="1 kg" aria-pressed="false">1 kg</button></div>
+        <a href="https://wa.me/919976055524?text=Hi%20Arumbu%20Cashews%2C%20I%27d%20like%20to%20order%20WW400%20cashews%20%E2%80%94%20500%20g%20pack." class="grade-order" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 3.4a8.94 8.94 0 0 0-7.75 13.4L3 21l4.32-1.24a8.9 8.9 0 0 0 4.7 1.33h.01a8.94 8.94 0 0 0 8.94-8.94 8.86 8.86 0 0 0-3.37-6.83Zm-5.58 13.7h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.8.75-2.74-.18-.28a7.44 7.44 0 1 1 13.8-3.9 7.45 7.45 0 0 1-7.51 7.32Zm4.07-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.37-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.78-.79 1.9s.81 2.2.92 2.35c.11.15 1.6 2.48 3.89 3.47.54.24.97.38 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.97.13-1.06-.06-.1-.2-.15-.42-.26Z"/></svg><span data-i18n="productCard.orderWhatsapp">Order on WhatsApp</span></a>
+      </article>
+      <article class="grade-item" data-grade="SW">
+        <div class="grade-media"><img src="images/products/sw.png" alt="Arumbu Cashews SW" loading="lazy"></div>
+        <h3 class="grade-code">SW</h3>
+        <p class="grade-name" data-i18n="grade.SW">Scorched Wholes</p>
+        <div class="pack-pills" role="group" aria-label="Pack size" data-i18n-aria="grades.packSize"><button type="button" class="pack-pill" data-pack="250 g" aria-pressed="false">250 g</button><button type="button" class="pack-pill is-active" data-pack="500 g" aria-pressed="true">500 g</button><button type="button" class="pack-pill" data-pack="1 kg" aria-pressed="false">1 kg</button></div>
+        <a href="https://wa.me/919976055524?text=Hi%20Arumbu%20Cashews%2C%20I%27d%20like%20to%20order%20SW%20cashews%20%E2%80%94%20500%20g%20pack." class="grade-order" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 3.4a8.94 8.94 0 0 0-7.75 13.4L3 21l4.32-1.24a8.9 8.9 0 0 0 4.7 1.33h.01a8.94 8.94 0 0 0 8.94-8.94 8.86 8.86 0 0 0-3.37-6.83Zm-5.58 13.7h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.8.75-2.74-.18-.28a7.44 7.44 0 1 1 13.8-3.9 7.45 7.45 0 0 1-7.51 7.32Zm4.07-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.37-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.78-.79 1.9s.81 2.2.92 2.35c.11.15 1.6 2.48 3.89 3.47.54.24.97.38 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.97.13-1.06-.06-.1-.2-.15-.42-.26Z"/></svg><span data-i18n="productCard.orderWhatsapp">Order on WhatsApp</span></a>
+      </article>
+      <article class="grade-item" data-grade="SSW">
+        <div class="grade-media"><img src="images/products/ssw.png" alt="Arumbu Cashews SSW" loading="lazy"></div>
+        <h3 class="grade-code">SSW</h3>
+        <p class="grade-name" data-i18n="grade.SSW">Scorched Second Wholes</p>
+        <div class="pack-pills" role="group" aria-label="Pack size" data-i18n-aria="grades.packSize"><button type="button" class="pack-pill" data-pack="250 g" aria-pressed="false">250 g</button><button type="button" class="pack-pill is-active" data-pack="500 g" aria-pressed="true">500 g</button><button type="button" class="pack-pill" data-pack="1 kg" aria-pressed="false">1 kg</button></div>
+        <a href="https://wa.me/919976055524?text=Hi%20Arumbu%20Cashews%2C%20I%27d%20like%20to%20order%20SSW%20cashews%20%E2%80%94%20500%20g%20pack." class="grade-order" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 3.4a8.94 8.94 0 0 0-7.75 13.4L3 21l4.32-1.24a8.9 8.9 0 0 0 4.7 1.33h.01a8.94 8.94 0 0 0 8.94-8.94 8.86 8.86 0 0 0-3.37-6.83Zm-5.58 13.7h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.8.75-2.74-.18-.28a7.44 7.44 0 1 1 13.8-3.9 7.45 7.45 0 0 1-7.51 7.32Zm4.07-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.37-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.78-.79 1.9s.81 2.2.92 2.35c.11.15 1.6 2.48 3.89 3.47.54.24.97.38 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.97.13-1.06-.06-.1-.2-.15-.42-.26Z"/></svg><span data-i18n="productCard.orderWhatsapp">Order on WhatsApp</span></a>
+      </article>
+      <article class="grade-item" data-grade="LWP">
+        <div class="grade-media"><span class="grade-placeholder"><span>LWP</span><small data-i18n="grades.imageSoon">Image coming soon</small></span><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Arumbu Cashews LWP"></div>
+        <h3 class="grade-code">LWP</h3>
+        <p class="grade-name" data-i18n="grade.LWP">Large White Pieces</p>
+        <div class="pack-pills" role="group" aria-label="Pack size" data-i18n-aria="grades.packSize"><button type="button" class="pack-pill" data-pack="250 g" aria-pressed="false">250 g</button><button type="button" class="pack-pill is-active" data-pack="500 g" aria-pressed="true">500 g</button><button type="button" class="pack-pill" data-pack="1 kg" aria-pressed="false">1 kg</button></div>
+        <a href="https://wa.me/919976055524?text=Hi%20Arumbu%20Cashews%2C%20I%27d%20like%20to%20order%20LWP%20cashews%20%E2%80%94%20500%20g%20pack." class="grade-order" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 3.4a8.94 8.94 0 0 0-7.75 13.4L3 21l4.32-1.24a8.9 8.9 0 0 0 4.7 1.33h.01a8.94 8.94 0 0 0 8.94-8.94 8.86 8.86 0 0 0-3.37-6.83Zm-5.58 13.7h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.8.75-2.74-.18-.28a7.44 7.44 0 1 1 13.8-3.9 7.45 7.45 0 0 1-7.51 7.32Zm4.07-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.37-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.78-.79 1.9s.81 2.2.92 2.35c.11.15 1.6 2.48 3.89 3.47.54.24.97.38 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.97.13-1.06-.06-.1-.2-.15-.42-.26Z"/></svg><span data-i18n="productCard.orderWhatsapp">Order on WhatsApp</span></a>
+      </article>
+      <article class="grade-item" data-grade="CSP">
+        <div class="grade-media"><img src="images/products/csp.jpg" alt="Arumbu Cashews CSP" loading="lazy"></div>
+        <h3 class="grade-code">CSP</h3>
+        <p class="grade-name" data-i18n="grade.CSP">Cashew Small Pieces</p>
+        <div class="pack-pills" role="group" aria-label="Pack size" data-i18n-aria="grades.packSize"><button type="button" class="pack-pill" data-pack="250 g" aria-pressed="false">250 g</button><button type="button" class="pack-pill is-active" data-pack="500 g" aria-pressed="true">500 g</button><button type="button" class="pack-pill" data-pack="1 kg" aria-pressed="false">1 kg</button></div>
+        <a href="https://wa.me/919976055524?text=Hi%20Arumbu%20Cashews%2C%20I%27d%20like%20to%20order%20CSP%20cashews%20%E2%80%94%20500%20g%20pack." class="grade-order" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 3.4a8.94 8.94 0 0 0-7.75 13.4L3 21l4.32-1.24a8.9 8.9 0 0 0 4.7 1.33h.01a8.94 8.94 0 0 0 8.94-8.94 8.86 8.86 0 0 0-3.37-6.83Zm-5.58 13.7h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.8.75-2.74-.18-.28a7.44 7.44 0 1 1 13.8-3.9 7.45 7.45 0 0 1-7.51 7.32Zm4.07-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.37-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.78-.79 1.9s.81 2.2.92 2.35c.11.15 1.6 2.48 3.89 3.47.54.24.97.38 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.97.13-1.06-.06-.1-.2-.15-.42-.26Z"/></svg><span data-i18n="productCard.orderWhatsapp">Order on WhatsApp</span></a>
+      </article>
+      <article class="grade-item" data-grade="BB">
+        <div class="grade-media"><img src="images/products/bb.jpg" alt="Arumbu Cashews BB" loading="lazy"></div>
+        <h3 class="grade-code">BB</h3>
+        <p class="grade-name" data-i18n="grade.BB">Baby Bits</p>
+        <div class="pack-pills" role="group" aria-label="Pack size" data-i18n-aria="grades.packSize"><button type="button" class="pack-pill" data-pack="250 g" aria-pressed="false">250 g</button><button type="button" class="pack-pill is-active" data-pack="500 g" aria-pressed="true">500 g</button><button type="button" class="pack-pill" data-pack="1 kg" aria-pressed="false">1 kg</button></div>
+        <a href="https://wa.me/919976055524?text=Hi%20Arumbu%20Cashews%2C%20I%27d%20like%20to%20order%20BB%20cashews%20%E2%80%94%20500%20g%20pack." class="grade-order" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 3.4a8.94 8.94 0 0 0-7.75 13.4L3 21l4.32-1.24a8.9 8.9 0 0 0 4.7 1.33h.01a8.94 8.94 0 0 0 8.94-8.94 8.86 8.86 0 0 0-3.37-6.83Zm-5.58 13.7h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.8.75-2.74-.18-.28a7.44 7.44 0 1 1 13.8-3.9 7.45 7.45 0 0 1-7.51 7.32Zm4.07-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.37-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.78-.79 1.9s.81 2.2.92 2.35c.11.15 1.6 2.48 3.89 3.47.54.24.97.38 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.97.13-1.06-.06-.1-.2-.15-.42-.26Z"/></svg><span data-i18n="productCard.orderWhatsapp">Order on WhatsApp</span></a>
+      </article>
+      <article class="grade-item" data-grade="JH">
+        <div class="grade-media"><img src="images/products/jh.jpg" alt="Arumbu Cashews JH" loading="lazy"></div>
+        <h3 class="grade-code">JH</h3>
+        <p class="grade-name" data-i18n="grade.JH">Jumbo Halves</p>
+        <div class="pack-pills" role="group" aria-label="Pack size" data-i18n-aria="grades.packSize"><button type="button" class="pack-pill" data-pack="250 g" aria-pressed="false">250 g</button><button type="button" class="pack-pill is-active" data-pack="500 g" aria-pressed="true">500 g</button><button type="button" class="pack-pill" data-pack="1 kg" aria-pressed="false">1 kg</button></div>
+        <a href="https://wa.me/919976055524?text=Hi%20Arumbu%20Cashews%2C%20I%27d%20like%20to%20order%20JH%20cashews%20%E2%80%94%20500%20g%20pack." class="grade-order" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 3.4a8.94 8.94 0 0 0-7.75 13.4L3 21l4.32-1.24a8.9 8.9 0 0 0 4.7 1.33h.01a8.94 8.94 0 0 0 8.94-8.94 8.86 8.86 0 0 0-3.37-6.83Zm-5.58 13.7h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.8.75-2.74-.18-.28a7.44 7.44 0 1 1 13.8-3.9 7.45 7.45 0 0 1-7.51 7.32Zm4.07-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.37-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.78-.79 1.9s.81 2.2.92 2.35c.11.15 1.6 2.48 3.89 3.47.54.24.97.38 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.97.13-1.06-.06-.1-.2-.15-.42-.26Z"/></svg><span data-i18n="productCard.orderWhatsapp">Order on WhatsApp</span></a>
+      </article>
+      <article class="grade-item" data-grade="SJH">
+        <div class="grade-media"><img src="images/products/sjh.png" alt="Arumbu Cashews SJH" loading="lazy"></div>
+        <h3 class="grade-code">SJH</h3>
+        <p class="grade-name" data-i18n="grade.SJH">Scorched Jumbo Halves</p>
+        <div class="pack-pills" role="group" aria-label="Pack size" data-i18n-aria="grades.packSize"><button type="button" class="pack-pill" data-pack="250 g" aria-pressed="false">250 g</button><button type="button" class="pack-pill is-active" data-pack="500 g" aria-pressed="true">500 g</button><button type="button" class="pack-pill" data-pack="1 kg" aria-pressed="false">1 kg</button></div>
+        <a href="https://wa.me/919976055524?text=Hi%20Arumbu%20Cashews%2C%20I%27d%20like%20to%20order%20SJH%20cashews%20%E2%80%94%20500%20g%20pack." class="grade-order" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 3.4a8.94 8.94 0 0 0-7.75 13.4L3 21l4.32-1.24a8.9 8.9 0 0 0 4.7 1.33h.01a8.94 8.94 0 0 0 8.94-8.94 8.86 8.86 0 0 0-3.37-6.83Zm-5.58 13.7h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.8.75-2.74-.18-.28a7.44 7.44 0 1 1 13.8-3.9 7.45 7.45 0 0 1-7.51 7.32Zm4.07-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.37-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.78-.79 1.9s.81 2.2.92 2.35c.11.15 1.6 2.48 3.89 3.47.54.24.97.38 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.97.13-1.06-.06-.1-.2-.15-.42-.26Z"/></svg><span data-i18n="productCard.orderWhatsapp">Order on WhatsApp</span></a>
+      </article>
+      <article class="grade-item" data-grade="JK">
+        <div class="grade-media"><img src="images/products/jk.png" alt="Arumbu Cashews JK" loading="lazy"></div>
+        <h3 class="grade-code">JK</h3>
+        <p class="grade-name" data-i18n="grade.JK">Jumbo Kudka</p>
+        <div class="pack-pills" role="group" aria-label="Pack size" data-i18n-aria="grades.packSize"><button type="button" class="pack-pill" data-pack="250 g" aria-pressed="false">250 g</button><button type="button" class="pack-pill is-active" data-pack="500 g" aria-pressed="true">500 g</button><button type="button" class="pack-pill" data-pack="1 kg" aria-pressed="false">1 kg</button></div>
+        <a href="https://wa.me/919976055524?text=Hi%20Arumbu%20Cashews%2C%20I%27d%20like%20to%20order%20JK%20cashews%20%E2%80%94%20500%20g%20pack." class="grade-order" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 3.4a8.94 8.94 0 0 0-7.75 13.4L3 21l4.32-1.24a8.9 8.9 0 0 0 4.7 1.33h.01a8.94 8.94 0 0 0 8.94-8.94 8.86 8.86 0 0 0-3.37-6.83Zm-5.58 13.7h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.8.75-2.74-.18-.28a7.44 7.44 0 1 1 13.8-3.9 7.45 7.45 0 0 1-7.51 7.32Zm4.07-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.37-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.78-.79 1.9s.81 2.2.92 2.35c.11.15 1.6 2.48 3.89 3.47.54.24.97.38 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.97.13-1.06-.06-.1-.2-.15-.42-.26Z"/></svg><span data-i18n="productCard.orderWhatsapp">Order on WhatsApp</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOUNDER / OUR STORY ============
+     Existing founder content (founder.* dictionary keys) and the
+     existing photo, unchanged. Flow: People → Heritage → Brand → Product. -->
+<section class="founder-v2" id="founder">
+  <div class="founder-v2-intro">
+    <div class="founder-v2-inner">
+      <figure class="founder-v2-portrait" data-reveal>
+        <div class="founder-v2-photo">
+          <img src="images/founder-sivakumar.jpg" alt="Sivakumar L, Founder of Arumbu Cashews" width="673" height="768" loading="lazy">
+        </div>
+        <figcaption class="founder-v2-plate">
+          <span class="founder-v2-name">Sivakumar L</span>
+          <span class="founder-v2-role" data-i18n="founder.role">Founder, Arumbu Cashews</span>
+          <span class="founder-v2-tags" data-i18n="founder.tags">Farmer-Entrepreneur · Cashew &amp; Jackfruit Cultivation</span>
+        </figcaption>
+      </figure>
+
+      <div class="founder-v2-copy" data-reveal>
+        <p class="eyebrow" data-i18n="founder.eyebrow">The Founder</p>
+        <h2 class="founder-v2-heading" data-i18n-html="founder.heading.html">Rooted in Agriculture. <em>Built on Trust.</em></h2>
+        <p class="founder-v2-lede" data-i18n="founder.lede">The story behind Arumbu Cashews begins with hard work, agriculture and a commitment to doing things the right way.</p>
+        <blockquote class="founder-v2-quote">
+          <p data-i18n="founder.quote">It is the name of his mother, Arumbu, and it now carries her name forward as the identity of the brand.</p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="founder-v2-journey">
+    <ol class="founder-v2-steps" data-reveal>
+      <li>
+        <span class="founder-v2-step"><b>01</b> <span data-i18n="founder.stepPeople">People</span></span>
+        <p data-i18n="founder.p1">Sivakumar L comes from a farming family and has spent his life working the land — cultivating a range of crops, with jackfruit and cashew as his main areas of focus. Years of hands-on agricultural experience shaped the way he thinks about quality: nothing beats produce that's grown, harvested and handled with genuine care.</p>
+      </li>
+      <li>
+        <span class="founder-v2-step"><b>02</b> <span data-i18n="founder.stepHeritage">Heritage</span></span>
+        <p data-i18n="founder.p3">The name Arumbu carries personal meaning. It is the name of his mother, Arumbu, and it now carries her name forward as the identity of the brand. His father, Late Lakshmanaperumal, was an important part of the family's agricultural journey — and his legacy continues to shape the values behind the business.</p>
+      </li>
+      <li>
+        <span class="founder-v2-step"><b>03</b> <span data-i18n="founder.stepBrand">Brand</span></span>
+        <p data-i18n="founder.p2">His approach has always been simple — work hard, stay genuine, maintain transparency, and give customers exactly what the product actually is, without unnecessary claims or exaggeration. That same mindset became the foundation Arumbu Cashews was built on.</p>
+      </li>
+      <li>
+        <span class="founder-v2-step"><b>04</b> <span data-i18n="founder.stepProduct">Product</span></span>
+        <p data-i18n="founder.p4">Arumbu Cashews carries that legacy forward — rooted in family, grounded in agriculture, and built on the same honesty Sivakumar has practiced his entire working life.</p>
+        <a href="#products" class="founder-v2-link" data-i18n="founder.explore">Explore our grades</a>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ WHY ARUMBU ============
+     Only facts already in the project: the 13 grades (database),
+     pack sizes, WhatsApp ordering and wholesale enquiries. -->
+<section class="section why-v2" id="why">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow-center" data-i18n="why.eyebrow">The Arumbu Difference</p>
+    <h2 class="section-title" data-i18n-html="whyV2.heading.html">Why <em>Arumbu</em></h2>
+    <ol class="why-v2-list" data-reveal>
+      <li>
+        <span class="why-v2-num">01</span>
+        <h3 data-i18n="whyV2.p1.title">Thirteen grades</h3>
+        <p data-i18n="whyV2.p1.desc">From WW180 to Baby Bits — choose the grade that suits your kitchen, shop or gift box.</p>
+      </li>
+      <li>
+        <span class="why-v2-num">02</span>
+        <h3 data-i18n="whyV2.p2.title">Packs for every need</h3>
+        <p data-i18n="whyV2.p2.desc">Retail packs of 250 g, 500 g and 1 kg, and wholesale quantities on enquiry.</p>
+      </li>
+      <li>
+        <span class="why-v2-num">03</span>
+        <h3 data-i18n="whyV2.p3.title">Order directly</h3>
+        <p data-i18n="whyV2.p3.desc">Message us on WhatsApp with the grade and pack size — you deal directly with the Arumbu team.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ WHOLESALE ============ -->
+<section class="wholesale-cta" id="wholesale">
+  <div class="wholesale-inner" data-reveal>
+    <div>
+      <p class="eyebrow" data-i18n="wholesaleCta.eyebrow">For Businesses &amp; Retailers</p>
+      <h2 data-i18n="wholesaleCta.heading">Buying in bulk? Let's talk rates.</h2>
+      <p data-i18n="wholesaleCta.descV2">Sweet shops, gifting companies, exporters and retailers — send us your grade and quantity for wholesale rates.</p>
+    </div>
+    <a href="wholesale.html" class="btn btn-gold" data-i18n="wholesaleCta.button">Wholesale Enquiry</a>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact-v2" id="contact">
+  <div class="section-inner contact-v2-grid" data-reveal>
+    <div>
+      <p class="eyebrow" data-i18n="contactV2.eyebrow">Contact</p>
+      <h2 class="section-title" data-i18n-html="contactV2.heading.html">Talk to <em>Arumbu</em></h2>
+      <p class="contact-v2-lede" data-i18n="contactV2.lede">Call or message us to place an order or ask about a grade.</p>
+    </div>
+    <dl class="contact-v2-list">
+      <div><dt data-i18n="contactV2.phone">Phone</dt><dd><a href="tel:+919976055524">+91 99760 55524</a><a href="tel:+919080656477">+91 90806 56477</a></dd></div>
+      <div><dt>WhatsApp</dt><dd><a href="https://wa.me/919976055524?text=Hi%20Arumbu%20Cashews%2C%20I%27d%20like%20to%20know%20more" target="_blank" rel="noopener">+91 99760 55524</a></dd></div>
+      <div><dt data-i18n="contactV2.email">Email</dt><dd><a href="mailto:hello@arumbucashews.com">hello@arumbucashews.com</a></dd></div>
+      <div class="contact-v2-more"><a href="contact.html" class="grades-link" data-i18n="contactV2.more">Contact page &amp; enquiry form</a></div>
     </dl>
   </div>
 </section>
 
-<!-- ============ FOUNDER STORY ============ -->
-<section class="section founder-section" id="founder">
-  <div class="founder-leaf-bg" aria-hidden="true"></div>
-  <div class="section-inner founder-grid">
-
-    <div class="founder-media">
-      <div class="founder-leaf-accent" aria-hidden="true">
-        <svg viewBox="0 0 200 200" fill="none"><path d="M100 10c40 25 70 65 70 105 0 38-31 65-70 65s-70-27-70-65c0-40 30-80 70-105Z" stroke="currentColor" stroke-width="1.5"/><path d="M100 25v150M100 70c-18 6-32 18-40 34M100 110c22 4 40 16 50 32" stroke="currentColor" stroke-width="1.2"/></svg>
-      </div>
-      <div class="founder-frame-border" aria-hidden="true"></div>
-      <div class="founder-photo-frame">
-        <img src="images/founder-sivakumar.jpg" alt="Sivakumar L, Founder of Arumbu Cashews" class="founder-photo">
-      </div>
-    </div>
-
-    <div class="founder-content">
-      <p class="eyebrow founder-eyebrow" data-i18n="founder.eyebrow">The Founder</p>
-      <h2 class="section-title founder-heading" data-i18n-html="founder.heading.html">Rooted in Agriculture. <em>Built on Trust.</em></h2>
-      <p class="founder-lede" data-i18n="founder.lede">The story behind Arumbu Cashews begins with hard work, agriculture and a commitment to doing things the right way.</p>
-
-      <div class="founder-namecard">
-        <h3 class="founder-name">Sivakumar L</h3>
-        <span class="founder-role" data-i18n="founder.role">Founder, Arumbu Cashews</span>
-        <span class="founder-tags" data-i18n="founder.tags">Farmer-Entrepreneur &middot; Cashew &amp; Jackfruit Cultivation</span>
-      </div>
-
-      <div class="founder-copy">
-        <p data-i18n="founder.p1">Sivakumar L comes from a farming family and has spent his life working the land — cultivating a range of crops, with jackfruit and cashew as his main areas of focus. Years of hands-on agricultural experience shaped the way he thinks about quality: nothing beats produce that's grown, harvested and handled with genuine care.</p>
-        <p data-i18n="founder.p2">His approach has always been simple — work hard, stay genuine, maintain transparency, and give customers exactly what the product actually is, without unnecessary claims or exaggeration. That same mindset became the foundation Arumbu Cashews was built on.</p>
-        <p data-i18n="founder.p3">The name Arumbu carries personal meaning. It is the name of his mother, Arumbu, and it now carries her name forward as the identity of the brand. His father, Late Lakshmanaperumal, was an important part of the family's agricultural journey — and his legacy continues to shape the values behind the business.</p>
-        <p data-i18n="founder.p4">Arumbu Cashews carries that legacy forward — rooted in family, grounded in agriculture, and built on the same honesty Sivakumar has practiced his entire working life.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ============ WHY CHOOSE US ============ -->
-<section class="section why-section section-light" id="why">
-  <div class="section-inner">
-    <p class="eyebrow eyebrow-center" data-i18n="why.eyebrow">The Arumbu Difference</p>
-    <h2 class="section-title" data-i18n="why.heading">Why buyers trust the Arumbu mark</h2>
-
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 6c8 6 14 14 14 22a14 14 0 1 1-28 0c0-8 6-16 14-22Z"/></svg>
-        </div>
-        <h3 data-i18n="why.card1.title">Farm Direct</h3>
-        <p data-i18n="why.card1.desc">Sourced straight from growers in the Tamil Nadu cashew belt — no middle-layer traders, no ageing stock.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 24h32M20 12l12 12-12 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3 data-i18n="why.card2.title">Hand-Sorted Grading</h3>
-        <p data-i18n="why.card2.desc">Every batch is sorted by hand for size and quality — WW180, WW240 and every grade sorted separately.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="16"/><path d="M24 15v9l6 4" stroke-linecap="round"/></svg>
-        </div>
-        <h3 data-i18n="why.card3.title">Fresh, Never Stockpiled</h3>
-        <p data-i18n="why.card3.desc">We pack in small batches so what reaches you was roasted days — not months — before it arrived.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 14h28l-2 20a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4L10 14Z"/><path d="M17 14a7 7 0 0 1 14 0" stroke-linecap="round"/></svg>
-        </div>
-        <h3 data-i18n="why.card4.title">Sealed for Freshness</h3>
-        <p data-i18n="why.card4.desc">Vacuum-sealed, tamper-proof packaging keeps every kernel crisp from our unit to your kitchen.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ OUR CASHEW RANGE ============ -->
-<section class="section products-section section-light-alt" id="products">
-  <div class="section-inner">
-    <p class="eyebrow eyebrow-center" data-i18n="products.eyebrow">Premium grades currently available</p>
-    <h2 class="section-title" data-i18n="products.heading">OUR CASHEW RANGE</h2>
-
-    <div class="product-grid">
-      <article class="product-card">
-        <div class="product-media">
-          <img src="images/products/ww180.jpg" alt="Arumbu Cashews WW180" loading="lazy">
-        </div>
-        <div class="product-body">
-          <h3>WW180</h3>
-          <div class="product-meta">
-            <span class="product-price"></span>
-          </div>
-          <a href="https://wa.me/919976055524?text=Hi%2C%20I%27d%20like%20to%20order%20WW180%20cashews" class="btn btn-gold-sm" target="_blank" rel="noopener" data-i18n="productCard.orderWhatsapp">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-media">
-          
-        <img src="images/products/ww210.png" alt="Arumbu Cashews WW210" loading="lazy"></div>
-        <div class="product-body">
-          <h3>WW210</h3>
-          <div class="product-meta">
-            <span class="product-price"></span>
-          </div>
-          <a href="https://wa.me/919976055524?text=Hi%2C%20I%27d%20like%20to%20order%20WW210%20cashews" class="btn btn-gold-sm" target="_blank" rel="noopener" data-i18n="productCard.orderWhatsapp">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-media">
-          <img src="images/products/ww240.jpg" alt="Arumbu Cashews WW240" loading="lazy">
-        </div>
-        <div class="product-body">
-          <h3>WW240</h3>
-          <div class="product-meta">
-            <span class="product-price"></span>
-          </div>
-          <a href="https://wa.me/919976055524?text=Hi%2C%20I%27d%20like%20to%20order%20WW240%20cashews" class="btn btn-gold-sm" target="_blank" rel="noopener" data-i18n="productCard.orderWhatsapp">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-media">
-          <img src="images/products/ww320.jpg" alt="Arumbu Cashews WW320" loading="lazy">
-        </div>
-        <div class="product-body">
-          <h3>WW320</h3>
-          <div class="product-meta">
-            <span class="product-price"></span>
-          </div>
-          <a href="https://wa.me/919976055524?text=Hi%2C%20I%27d%20like%20to%20order%20WW320%20cashews" class="btn btn-gold-sm" target="_blank" rel="noopener" data-i18n="productCard.orderWhatsapp">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-media">
-          <img src="images/products/ww400.jpg" alt="Arumbu Cashews WW400" loading="lazy">
-        </div>
-        <div class="product-body">
-          <h3>WW400</h3>
-          <div class="product-meta">
-            <span class="product-price"></span>
-          </div>
-          <a href="https://wa.me/919976055524?text=Hi%2C%20I%27d%20like%20to%20order%20WW400%20cashews" class="btn btn-gold-sm" target="_blank" rel="noopener" data-i18n="productCard.orderWhatsapp">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-media">
-          
-        <img src="images/products/sw.png" alt="Arumbu Cashews SW" loading="lazy"></div>
-        <div class="product-body">
-          <h3>SW</h3>
-          <div class="product-meta">
-            <span class="product-price"></span>
-          </div>
-          <a href="https://wa.me/919976055524?text=Hi%2C%20I%27d%20like%20to%20order%20SW%20cashews" class="btn btn-gold-sm" target="_blank" rel="noopener" data-i18n="productCard.orderWhatsapp">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-media">
-          
-        <img src="images/products/ssw.png" alt="Arumbu Cashews SSW" loading="lazy"></div>
-        <div class="product-body">
-          <h3>SSW</h3>
-          <div class="product-meta">
-            <span class="product-price"></span>
-          </div>
-          <a href="https://wa.me/919976055524?text=Hi%2C%20I%27d%20like%20to%20order%20SSW%20cashews" class="btn btn-gold-sm" target="_blank" rel="noopener" data-i18n="productCard.orderWhatsapp">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-media no-image">
-          
-        </div>
-        <div class="product-body">
-          <h3>LWP</h3>
-          <div class="product-meta">
-            <span class="product-price"></span>
-          </div>
-          <a href="https://wa.me/919976055524?text=Hi%2C%20I%27d%20like%20to%20order%20LWP%20cashews" class="btn btn-gold-sm" target="_blank" rel="noopener" data-i18n="productCard.orderWhatsapp">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-media">
-          
-        <img src="images/products/csp.jpg" alt="Arumbu Cashews CSP" loading="lazy"></div>
-        <div class="product-body">
-          <h3>CSP</h3>
-          <div class="product-meta">
-            <span class="product-price"></span>
-          </div>
-          <a href="https://wa.me/919976055524?text=Hi%2C%20I%27d%20like%20to%20order%20CSP%20cashews" class="btn btn-gold-sm" target="_blank" rel="noopener" data-i18n="productCard.orderWhatsapp">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-media">
-          
-        <img src="images/products/bb.jpg" alt="Arumbu Cashews BB" loading="lazy"></div>
-        <div class="product-body">
-          <h3>BB</h3>
-          <div class="product-meta">
-            <span class="product-price"></span>
-          </div>
-          <a href="https://wa.me/919976055524?text=Hi%2C%20I%27d%20like%20to%20order%20BB%20cashews" class="btn btn-gold-sm" target="_blank" rel="noopener" data-i18n="productCard.orderWhatsapp">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-media">
-          <img src="images/products/jh.jpg" alt="Arumbu Cashews JH" loading="lazy">
-        </div>
-        <div class="product-body">
-          <h3>JH</h3>
-          <div class="product-meta">
-            <span class="product-price"></span>
-          </div>
-          <a href="https://wa.me/919976055524?text=Hi%2C%20I%27d%20like%20to%20order%20JH%20cashews" class="btn btn-gold-sm" target="_blank" rel="noopener" data-i18n="productCard.orderWhatsapp">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-media">
-          
-        <img src="images/products/sjh.png" alt="Arumbu Cashews SJH" loading="lazy"></div>
-        <div class="product-body">
-          <h3>SJH</h3>
-          <div class="product-meta">
-            <span class="product-price"></span>
-          </div>
-          <a href="https://wa.me/919976055524?text=Hi%2C%20I%27d%20like%20to%20order%20SJH%20cashews" class="btn btn-gold-sm" target="_blank" rel="noopener" data-i18n="productCard.orderWhatsapp">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-media">
-          
-        <img src="images/products/jk.png" alt="Arumbu Cashews JK" loading="lazy"></div>
-        <div class="product-body">
-          <h3>JK</h3>
-          <div class="product-meta">
-            <span class="product-price"></span>
-          </div>
-          <a href="https://wa.me/919976055524?text=Hi%2C%20I%27d%20like%20to%20order%20JK%20cashews" class="btn btn-gold-sm" target="_blank" rel="noopener" data-i18n="productCard.orderWhatsapp">Order on WhatsApp</a>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="products-cta">
-      <a href="products.html" class="btn btn-outline" data-i18n="products.cta">See Full Product Range</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============ STORY ============ -->
-<section class="section story-section" id="story">
-  <div class="story-grid">
-    <div class="story-media">
-      <img src="https://images.pexels.com/photos/10615955/pexels-photo-10615955.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Cashew fruit ripening on the tree, Tamil Nadu" loading="lazy">
-    </div>
-    <div class="story-content">
-      <p class="eyebrow" data-i18n="story.eyebrow">Our Story</p>
-      <h2 class="section-title" data-i18n="story.heading">A family name, a standard to live up to</h2>
-      <p data-i18n="story.p1">Arumbu started with a simple frustration — most "premium" cashews on shelves were anything but fresh. We set out to shorten the distance between farm and family, working directly with growers across Tamil Nadu who share our obsession with quality.</p>
-      <p data-i18n="story.p2">Every sack that reaches our sorting floor is inspected by hand before it earns the Arumbu name. It's slower than buying in bulk from traders — but it's the only way we know how to do this properly.</p>
-      <a href="about.html" class="text-link" data-i18n="story.readMore">Read our full story →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ QUALITY ============ -->
-<section class="section quality-section section-light" id="quality">
-  <div class="section-inner">
-    <p class="eyebrow eyebrow-center" data-i18n="quality.eyebrow">Quality &amp; Sourcing</p>
-    <h2 class="section-title" data-i18n="quality.heading">From orchard to your kitchen</h2>
-
-    <div class="quality-steps">
-      <div class="quality-step">
-        <span class="quality-index" data-i18n="quality.step1.index">Sourcing</span>
-        <h3 data-i18n="quality.step1.title">Selected Farms</h3>
-        <p data-i18n="quality.step1.desc">We partner with trusted growers across the Tamil Nadu cashew belt, chosen for soil, harvest practice and consistency.</p>
-      </div>
-      <div class="quality-step">
-        <span class="quality-index" data-i18n="quality.step2.index">Grading</span>
-        <h3 data-i18n="quality.step2.title">Hand-Sorted</h3>
-        <p data-i18n="quality.step2.desc">Every kernel passes through hand-grading — size, colour and breakage checked before anything is packed.</p>
-      </div>
-      <div class="quality-step">
-        <span class="quality-index" data-i18n="quality.step3.index">Packing</span>
-        <h3 data-i18n="quality.step3.title">Sealed Fresh</h3>
-        <p data-i18n="quality.step3.desc">Vacuum-sealed within days of processing, locking in crunch and flavour until it reaches you.</p>
-      </div>
-    </div>
-
-    <div class="quality-badges">
-      <span class="badge" data-i18n="quality.badge1">FSSAI Licensed</span>
-      <span class="badge" data-i18n="quality.badge2">Lab Tested Batches</span>
-      <span class="badge" data-i18n="quality.badge3">No Preservatives</span>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TESTIMONIALS ============ -->
-<section class="section testimonial-section section-light-alt" id="testimonials">
-  <div class="section-inner">
-    <p class="eyebrow eyebrow-center" data-i18n="testimonials.eyebrow">What Customers Say</p>
-    <h2 class="section-title" data-i18n="testimonials.heading">Trusted by homes and businesses</h2>
-
-    <div class="testimonial-grid">
-      <blockquote class="testimonial-card">
-        <p data-i18n="testimonial1.text">"The freshest cashews I've bought in years. You can actually taste the difference — no staleness at all."</p>
-        <footer data-i18n="testimonial1.author">— Priya R., Chennai</footer>
-      </blockquote>
-      <blockquote class="testimonial-card">
-        <p data-i18n="testimonial2.text">"We order our festive gift boxes from Arumbu every year now. Packaging and quality are both excellent."</p>
-        <footer data-i18n="testimonial2.author">— Karthik S., Coimbatore</footer>
-      </blockquote>
-      <blockquote class="testimonial-card">
-        <p data-i18n="testimonial3.text">"As a sweet shop owner, consistency matters most. Arumbu's bulk batches have never let me down."</p>
-        <footer data-i18n="testimonial3.author">— Meena Stores, Madurai</footer>
-      </blockquote>
-    </div>
-  </div>
-</section>
-
-<!-- ============ WHOLESALE CTA ============ -->
-<section class="wholesale-cta">
-  <div class="wholesale-inner">
-    <div>
-      <p class="eyebrow" data-i18n="wholesaleCta.eyebrow">For Businesses &amp; Retailers</p>
-      <h2 data-i18n="wholesaleCta.heading">Buying in bulk? Let's talk rates.</h2>
-      <p data-i18n="wholesaleCta.desc">Sweet shops, gifting companies, exporters and retailers — get wholesale pricing, GST invoicing and consistent batch supply.</p>
-    </div>
-    <a href="wholesale.html" class="btn btn-outline btn-light" data-i18n="wholesaleCta.button">Wholesale Enquiry</a>
-  </div>
-</section>
+</main>
 
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
@@ -552,7 +444,7 @@
         <img src="images/arumbu-logo.png" alt="Arumbu Cashews logo" class="brand-logo-img">
         <span class="brand-wordmark">ARUMBU CASHEWS</span>
       </a>
-      <p data-i18n="footer.taglineHome">Premium, farm-fresh cashews from Tamil Nadu — sorted by hand, sealed for freshness.</p>
+      <p data-i18n="footer.taglineHomeV2">Premium cashews from Tamil Nadu.</p>
       <p class="footer-follow-label" data-i18n="footer.followUs">Follow Us</p>
       <div class="footer-social">
         <a href="https://wa.me/919976055524" class="social-icon" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
@@ -619,6 +511,7 @@
 <script src="js/i18n-dictionary.js"></script>
 <script src="js/i18n.js"></script>
 <script src="js/script.js"></script>
+<script src="js/home.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-public.js"></script>
 <script src="js/product-images.js"></script>

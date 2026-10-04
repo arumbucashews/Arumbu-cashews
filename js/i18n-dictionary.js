@@ -441,6 +441,47 @@ var ARUMBU_TRANSLATIONS = {
   "grade.BB": { en: "Baby Bits", ta: "சிறு துணுக்குகள்" },
   "grade.JH": { en: "Jumbo Halves", ta: "ஜம்போ பாதி பருப்பு" },
   "grade.SJH": { en: "Scorched Jumbo Halves", ta: "வறுத்த ஜம்போ பாதி பருப்பு" },
-  "grade.JK": { en: "Jumbo Kudka", ta: "ஜம்போ குட்கா" }
+  "grade.JK": { en: "Jumbo Kudka", ta: "ஜம்போ குட்கா" },
+
+  /* ---------- Homepage (warm-white redesign) ---------- */
+  "meta.description.homeV2": { en: "Arumbu Cashews — premium cashews from Tamil Nadu in 13 grades, from WW180 to baby bits. Order 250 g, 500 g or 1 kg packs on WhatsApp, or enquire for wholesale.", ta: "அரும்பு முந்திரி — தமிழ்நாட்டின் பிரீமியம் முந்திரி, WW180 முதல் சிறு துணுக்குகள் வரை 13 தரங்களில். 250 கி, 500 கி அல்லது 1 கி.கி பொட்டலங்களை வாட்ஸ்அப்பில் ஆர்டர் செய்யுங்கள், அல்லது மொத்த விற்பனைக்கு விசாரியுங்கள்." },
+  "hero.subV2": { en: "Thirteen cashew grades, from WW180 to Baby Bits, in 250 g, 500 g and 1 kg packs. Wholesale on enquiry.", ta: "WW180 முதல் சிறு துணுக்குகள் வரை பதிமூன்று முந்திரி தரங்கள், 250 கி, 500 கி மற்றும் 1 கி.கி பொட்டலங்களில். மொத்த விற்பனை விசாரணையின் பேரில்." },
+  "hero.ctaViewGrades": { en: "View Our Grades", ta: "எங்கள் தரங்களைக் காண்க" },
+
+  "grades.eyebrow": { en: "Our Grades", ta: "எங்கள் தரங்கள்" },
+  "grades.heading.html": { en: "Explore all <em>thirteen grades</em>", ta: "அனைத்து <em>பதிமூன்று தரங்களையும்</em> காண்க" },
+  "grades.viewAll": { en: "View all grades", ta: "அனைத்து தரங்களையும் காண்க" },
+  "grades.packSize": { en: "Pack size", ta: "பொட்டல அளவு" },
+  "grades.imageSoon": { en: "Image coming soon", ta: "படம் விரைவில்" },
+  "rail.prev": { en: "Previous", ta: "முந்தையது" },
+  "rail.next": { en: "Next", ta: "அடுத்தது" },
+
+  "whyV2.heading.html": { en: "Why <em>Arumbu</em>", ta: "ஏன் <em>அரும்பு</em>" },
+  "whyV2.p1.title": { en: "Thirteen grades", ta: "பதிமூன்று தரங்கள்" },
+  "whyV2.p1.desc": { en: "From WW180 to Baby Bits — choose the grade that suits your kitchen, shop or gift box.", ta: "WW180 முதல் சிறு துணுக்குகள் வரை — உங்கள் சமையலறை, கடை அல்லது பரிசுப் பெட்டிக்கு ஏற்ற தரத்தைத் தேர்ந்தெடுங்கள்." },
+  "whyV2.p2.title": { en: "Packs for every need", ta: "ஒவ்வொரு தேவைக்கும் பொட்டலங்கள்" },
+  "whyV2.p2.desc": { en: "Retail packs of 250 g, 500 g and 1 kg, and wholesale quantities on enquiry.", ta: "250 கி, 500 கி மற்றும் 1 கி.கி சில்லறைப் பொட்டலங்கள்; மொத்த அளவுகள் விசாரணையின் பேரில்." },
+  "whyV2.p3.title": { en: "Order directly", ta: "நேரடியாக ஆர்டர் செய்யுங்கள்" },
+  "whyV2.p3.desc": { en: "Message us on WhatsApp with the grade and pack size — you deal directly with the Arumbu team.", ta: "தரம் மற்றும் பொட்டல அளவுடன் வாட்ஸ்அப்பில் செய்தி அனுப்புங்கள் — நீங்கள் நேரடியாக அரும்பு குழுவுடன் தொடர்பு கொள்கிறீர்கள்." },
+
+  "wholesaleCta.descV2": { en: "Sweet shops, gifting companies, exporters and retailers — send us your grade and quantity for wholesale rates.", ta: "இனிப்பகங்கள், பரிசு நிறுவனங்கள், ஏற்றுமதியாளர்கள் மற்றும் சில்லறை விற்பனையாளர்கள் — மொத்த விலைக்கு உங்கள் தரம் மற்றும் அளவை எங்களுக்கு அனுப்புங்கள்." },
+
+  "contactV2.eyebrow": { en: "Contact", ta: "தொடர்பு" },
+  "contactV2.heading.html": { en: "Talk to <em>Arumbu</em>", ta: "<em>அரும்பு</em>வுடன் பேசுங்கள்" },
+  "contactV2.lede": { en: "Call or message us to place an order or ask about a grade.", ta: "ஆர்டர் செய்ய அல்லது ஒரு தரத்தைப் பற்றி கேட்க எங்களை அழையுங்கள் அல்லது செய்தி அனுப்புங்கள்." },
+  "contactV2.phone": { en: "Phone", ta: "தொலைபேசி" },
+  "contactV2.email": { en: "Email", ta: "மின்னஞ்சல்" },
+  "contactV2.more": { en: "Contact page & enquiry form", ta: "தொடர்புப் பக்கம் & விசாரணைப் படிவம்" },
+
+
+  /* Founder: pull-quote is an exact sentence from founder.p3 (both languages) */
+  "founder.quote": { en: "It is the name of his mother, Arumbu, and it now carries her name forward as the identity of the brand.", ta: "இது அவரது தாயார் அரும்பு அவர்களின் பெயர், இப்போது அது பிராண்டின் அடையாளமாக அவரது பெயரை முன்னெடுத்துச் செல்கிறது." },
+  "founder.stepPeople": { en: "People", ta: "மனிதர்கள்" },
+  "founder.stepHeritage": { en: "Heritage", ta: "பாரம்பரியம்" },
+  "founder.stepBrand": { en: "Brand", ta: "பிராண்ட்" },
+  "founder.stepProduct": { en: "Product", ta: "தயாரிப்பு" },
+  "founder.explore": { en: "Explore our grades", ta: "எங்கள் தரங்களைக் காண்க" },
+
+  "footer.taglineHomeV2": { en: "Premium cashews from Tamil Nadu.", ta: "தமிழ்நாட்டின் பிரீமியம் முந்திரி." }
 
 };
