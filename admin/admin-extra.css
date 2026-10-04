@@ -1,0 +1,42 @@
+/* Arumbu Cashews — admin styles for the commerce modules. */
+.admin-toolbar { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; margin-bottom: 1rem; }
+.admin-toolbar input, .admin-toolbar select { padding: .55rem .75rem; border: 1px solid var(--border-ink); border-radius: var(--radius); background: #fff; font: inherit; font-size: .86rem; color: var(--ink); }
+.admin-toolbar input[type="search"] { min-width: 240px; flex: 1 1 240px; }
+.admin-inline-label { font-size: .8rem; color: var(--ink-muted); display: flex; align-items: center; gap: .35rem; }
+.admin-help { margin: 0 0 1rem; max-width: 780px; line-height: 1.55; }
+.admin-subhead { font-family: var(--font-display); font-size: 1.05rem; color: var(--ink); margin: 1.2rem 0 .6rem; }
+.admin-modal-wide { max-width: 1040px !important; width: calc(100vw - 32px); }
+.acm-body .form-field { margin-bottom: .8rem; }
+.acm-body .form-field input, .acm-body .form-field select, .acm-body .form-field textarea { width: 100%; }
+.order-admin-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 1.4rem; align-items: start; }
+.order-totals { display: grid; grid-template-columns: 1fr auto; gap: .35rem 1rem; margin: 1rem 0 0 auto; max-width: 320px; font-size: .9rem; }
+.order-totals dd { text-align: right; }
+.inv-input { width: 100%; min-width: 70px; padding: .4rem .5rem; border: 1px solid var(--border-ink); border-radius: var(--radius); font: inherit; font-size: .85rem; background: #fff; color: var(--ink); }
+.inv-num { max-width: 110px; }
+.inv-table td { vertical-align: middle; }
+.admin-table tr.row-low td { background: rgba(212, 163, 44, .07); }
+.admin-table tr.row-out td { background: rgba(155, 44, 44, .05); }
+.admin-table tr.row-unread td { background: rgba(212, 163, 44, .06); }
+.pill-count { opacity: .7; font-size: .75em; }
+.nav-badge { margin-left: auto; min-width: 20px; padding: 0 6px; border-radius: 999px; background: var(--gold); color: #1B0E06; font-size: .7rem; line-height: 20px; text-align: center; font-weight: 600; }
+.admin-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: .9rem; margin-bottom: 1.6rem; }
+.admin-stat { text-align: left; background: #fff; border: 1px solid var(--border-ink); border-radius: var(--radius); padding: 1rem 1.1rem; cursor: pointer; font: inherit; color: var(--ink); }
+.admin-stat:hover { border-color: var(--gold-ink); }
+.admin-stat strong { display: block; font-family: var(--font-display); font-size: 1.6rem; font-weight: 500; }
+.admin-stat span { font-size: .78rem; color: var(--ink-muted); }
+.cms-block { border-top: 1px solid var(--border-ink); padding-top: .9rem; margin-top: .9rem; }
+.cms-block:first-of-type { border-top: 0; margin-top: 0; padding-top: 0; }
+.cms-block-head { margin-bottom: .5rem; font-size: .88rem; color: var(--ink); }
+.cms-block-head code { font-size: .72rem; color: var(--ink-muted); margin-left: .4rem; }
+.link-like { background: none; border: 0; padding: 0; color: var(--gold-ink); cursor: pointer; text-decoration: underline; font: inherit; }
+.admin-toast { position: fixed; bottom: 22px; left: 50%; transform: translate(-50%, 16px); opacity: 0; pointer-events: none; background: #121212; color: #fff; padding: .75rem 1.1rem; border-radius: 6px; z-index: 3000; transition: opacity .2s, transform .2s; font-size: .88rem; }
+.admin-toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
+.admin-toast.is-error { background: #9b2c2c; }
+.slide-card { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; align-items: start; }
+.slide-card img, .slide-card .upload-preview { width: 160px; height: 100px; object-fit: cover; }
+.admin-nav-item { display: flex; }
+@media (max-width: 900px) {
+  .order-admin-grid, .slide-card { grid-template-columns: 1fr; }
+}
+[hidden] { display: none !important; }
+.order-totals dt { color: var(--ink-muted); } .order-totals dd { color: var(--ink); margin: 0; }

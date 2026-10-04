@@ -28,7 +28,7 @@ plan) and need a real dev environment with network access — this repo's
 
 ## 2. Run the SQL migrations
 
-Run the five files in `/supabase/migrations/` **in order** — each one
+Run the files in `/supabase/migrations/` **in order** — each one
 depends on the previous:
 
 | Order | File | What it does |
@@ -38,6 +38,10 @@ depends on the previous:
 | 3 | `0003_seed_data.sql` | Seeds the 13 product/grade rows, blank rate cards, default site settings, social link rows, hero settings, and About page content. |
 | 4 | `0004_storage_buckets.sql` | Creates the `product-images` and `media` storage buckets and their access policies. |
 | 5 | `0005_customer_commerce.sql` | Adds the customer-facing schema: `customer_profiles` (auto-created on signup), `favourites`, `cart` + `cart_items`, `orders` + `order_items`, and full-text search on `products`. |
+| 6 | `0006_commerce_platform.sql` | Commerce platform: pack sizes/prices, inventory, orders lifecycle, payments, coupons, CMS tables, RLS and functions. See `COMMERCE_DEPLOYMENT.md`. |
+| 7 | `0007_seed_catalogue_and_content.sql` | Seeds pack sizes (no prices), store setting keys, hero slides, homepage text blocks and policy page titles. |
+| 8 | `0008_favourites_unique.sql` | One wishlist row per customer and product. |
+| 9 | `0009_payment_confirm_guard.sql` | A Razorpay payment id can settle only one order. |
 
 ### Option A — Supabase Dashboard (simplest)
 

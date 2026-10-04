@@ -3,7 +3,7 @@
    1. Header: in normal flow at the top of the hero. Once scrolled
       past, it hides while scrolling down and slides back in while
       scrolling up. Never permanently fixed.
-   2. Hero: up to three photos crossfade (6.5 s each). Slides whose
+   2. Hero: three photos crossfade (6.5 s each). Slides whose
       image is missing remove themselves; one photo = no rotation.
    3. Pack-size pills rewrite each grade's WhatsApp link with the
       grade + selected pack size (to +91 99760 55524).

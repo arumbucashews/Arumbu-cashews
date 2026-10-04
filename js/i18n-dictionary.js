@@ -27,8 +27,8 @@ var ARUMBU_TRANSLATIONS = {
 
   /* ---------- <title> / meta ---------- */
   "meta.title.home": {
-    en: "Arumbu Cashews | Farm-Fresh Premium Cashews from Tamil Nadu",
-    ta: "அரும்பு காஜு | தமிழ்நாட்டின் பண்ணைப் புத்தம் புதிய பிரீமியம் முந்திரி"
+    en: "Arumbu Cashews | Premium Cashews from Tamil Nadu",
+    ta: "அரும்பு காஜு | தமிழ்நாட்டின் பிரீமியம் முந்திரி"
   },
   "meta.title.about": {
     en: "About | Arumbu Cashews",
@@ -45,10 +45,6 @@ var ARUMBU_TRANSLATIONS = {
   "meta.title.contact": {
     en: "Contact | Arumbu Cashews",
     ta: "தொடர்பு கொள்ள | அரும்பு காஜு"
-  },
-  "meta.description.home": {
-    en: "Arumbu Cashews — hand-sorted, farm-direct premium cashews from Tamil Nadu. Order retail packs or enquire for wholesale.",
-    ta: "அரும்பு காஜு — தமிழ்நாட்டிலிருந்து நேரடியாக, கையால் தரம் பிரிக்கப்பட்ட பிரீமியம் முந்திரி. சில்லறை பொட்டலங்களை ஆர்டர் செய்யவும் அல்லது மொத்த விற்பனைக்கு விசாரிக்கவும்."
   },
 
   /* ---------- Splash screen ---------- */
@@ -106,13 +102,8 @@ var ARUMBU_TRANSLATIONS = {
     en: "Sourced with care. <em>Processed with precision.</em>",
     ta: "அக்கறையுடன் சேகரிக்கப்பட்டது. <em>துல்லியமாக பதப்படுத்தப்பட்டது.</em>"
   },
-  "hero.sub": {
-    en: "From the orchard to the sorting floor, every batch under the Arumbu name is handled with the same attention to detail — sorted, roasted and sealed within days of harvest.",
-    ta: "தோட்டத்திலிருந்து தரம் பிரிக்கும் தளம் வரை, அரும்பு பெயரில் வரும் ஒவ்வொரு தொகுப்பும் ஒரே அக்கறையுடன் கையாளப்படுகிறது — அறுவடை செய்த சில நாட்களுக்குள் தரம் பிரிக்கப்பட்டு, வறுக்கப்பட்டு, சீல் வைக்கப்படுகிறது."
-  },
   "hero.ctaWhatsapp": { en: "Order on WhatsApp", ta: "வாட்ஸ்அப்பில் ஆர்டர் செய்யுங்கள்" },
   "hero.ctaViewProducts": { en: "View Products", ta: "பொருட்களைப் பார்க்க" },
-  "hero.stat1": { en: "Preservatives Added", ta: "சேர்க்கப்பட்ட பாதுகாப்புப் பொருட்கள்" },
   "hero.stat2": { en: "Harvest to Pack", ta: "அறுவடையிலிருந்து பொட்டலம் வரை" },
   "hero.stat3": { en: "Tamil Nadu Sourced", ta: "தமிழ்நாட்டிலிருந்து சேகரிக்கப்பட்டது" },
 
@@ -148,12 +139,10 @@ var ARUMBU_TRANSLATIONS = {
   /* ---------- Homepage: Why choose us ---------- */
   "why.eyebrow": { en: "The Arumbu Difference", ta: "அரும்பு வேறுபாடு" },
   "why.heading": { en: "Why buyers trust the Arumbu mark", ta: "வாங்குபவர்கள் ஏன் அரும்பு அடையாளத்தை நம்புகிறார்கள்" },
-  "why.card1.title": { en: "Farm Direct", ta: "நேரடி பண்ணை" },
   "why.card1.desc": {
     en: "Sourced straight from growers in the Tamil Nadu cashew belt — no middle-layer traders, no ageing stock.",
     ta: "தமிழ்நாட்டு முந்திரி பெல்ட்டில் உள்ள விவசாயிகளிடமிருந்து நேரடியாக சேகரிக்கப்படுகிறது — இடைத்தரகர்கள் இல்லை, பழைய கையிருப்பு இல்லை."
   },
-  "why.card2.title": { en: "Hand-Sorted Grading", ta: "கையால் தரம் பிரிக்கப்படுதல்" },
   "why.card2.desc": {
     en: "Every batch is sorted by hand for size and quality — WW180, WW240 and every grade sorted separately.",
     ta: "ஒவ்வொரு தொகுப்பும் அளவு மற்றும் தரத்திற்காக கையால் தரம் பிரிக்கப்படுகிறது — WW180, WW240 மற்றும் ஒவ்வொரு தரமும் தனித்தனியாக பிரிக்கப்படுகிறது."
@@ -162,11 +151,6 @@ var ARUMBU_TRANSLATIONS = {
   "why.card3.desc": {
     en: "We pack in small batches so what reaches you was roasted days — not months — before it arrived.",
     ta: "நாங்கள் சிறிய தொகுப்புகளாக பொட்டலமிடுகிறோம், எனவே உங்களை வந்தடையும் பொருள் மாதங்களுக்கு முன் அல்ல, சில நாட்களுக்கு முன்பே வறுக்கப்பட்டதாக இருக்கும்."
-  },
-  "why.card4.title": { en: "Sealed for Freshness", ta: "புத்தம் புதிதாக இருக்க சீல் வைக்கப்பட்டது" },
-  "why.card4.desc": {
-    en: "Vacuum-sealed, tamper-proof packaging keeps every kernel crisp from our unit to your kitchen.",
-    ta: "வெற்றிடமாக சீல் வைக்கப்பட்ட, பாதுகாப்பான பொட்டலம் எங்கள் யூனிட்டிலிருந்து உங்கள் சமையலறை வரை ஒவ்வொரு பருப்பையும் மொறுமொறுப்பாக வைத்திருக்கும்."
   },
 
   /* ---------- Homepage: Our Cashew Range ---------- */
@@ -198,20 +182,11 @@ var ARUMBU_TRANSLATIONS = {
     ta: "மண், அறுவடை முறை மற்றும் நிலைத்தன்மைக்காக தேர்ந்தெடுக்கப்பட்ட தமிழ்நாடு முந்திரி பெல்ட் முழுவதும் உள்ள நம்பகமான விவசாயிகளுடன் நாங்கள் இணைந்து பணியாற்றுகிறோம்."
   },
   "quality.step2.index": { en: "Grading", ta: "தரம் பிரித்தல்" },
-  "quality.step2.title": { en: "Hand-Sorted", ta: "கையால் தரம் பிரிக்கப்பட்டது" },
   "quality.step2.desc": {
     en: "Every kernel passes through hand-grading — size, colour and breakage checked before anything is packed.",
     ta: "ஒவ்வொரு பருப்பும் கையால் தரம் பிரிக்கப்படுகிறது — பொட்டலமிடுவதற்கு முன் அளவு, நிறம் மற்றும் உடைவு சரிபார்க்கப்படுகிறது."
   },
   "quality.step3.index": { en: "Packing", ta: "பொட்டலமிடுதல்" },
-  "quality.step3.title": { en: "Sealed Fresh", ta: "புதியதாக சீல் வைக்கப்பட்டது" },
-  "quality.step3.desc": {
-    en: "Vacuum-sealed within days of processing, locking in crunch and flavour until it reaches you.",
-    ta: "பதப்படுத்திய சில நாட்களுக்குள் வெற்றிடமாக சீல் வைக்கப்படுகிறது, அது உங்களை வந்தடையும் வரை மொறுமொறுப்பையும் சுவையையும் பூட்டி வைக்கிறது."
-  },
-  "quality.badge1": { en: "FSSAI Licensed", ta: "FSSAI உரிமம் பெற்றது" },
-  "quality.badge2": { en: "Lab Tested Batches", ta: "ஆய்வகத்தில் சோதிக்கப்பட்ட தொகுப்புகள்" },
-  "quality.badge3": { en: "No Preservatives", ta: "பாதுகாப்புப் பொருட்கள் இல்லை" },
 
   /* ---------- Homepage: Testimonials ---------- */
   "testimonials.eyebrow": { en: "What Customers Say", ta: "வாடிக்கையாளர்கள் கூறுவது" },
@@ -242,14 +217,6 @@ var ARUMBU_TRANSLATIONS = {
   "wholesaleCta.button": { en: "Wholesale Enquiry", ta: "மொத்த விற்பனை விசாரணை" },
 
   /* ---------- Footer ---------- */
-  "footer.taglineHome": {
-    en: "Premium, farm-fresh cashews from Tamil Nadu.",
-    ta: "தமிழ்நாட்டின் பிரீமியம், பண்ணைப் புத்தம் புதிய முந்திரி."
-  },
-  "footer.taglineOther": {
-    en: "Premium, farm-fresh cashews from Tamil Nadu — sorted by hand, sealed for freshness.",
-    ta: "தமிழ்நாட்டின் பிரீமியம், பண்ணைப் புத்தம் புதிய முந்திரி — கையால் தரம் பிரிக்கப்பட்டு, புத்தம் புதிதாக சீல் வைக்கப்பட்டது."
-  },
   "footer.followUs": { en: "Follow Us", ta: "எங்களைப் பின்தொடருங்கள்" },
   "footer.explore": { en: "Explore", ta: "உலாவுக" },
   "footer.getInTouch": { en: "Get in Touch", ta: "தொடர்பு கொள்ளுங்கள்" },
@@ -315,19 +282,19 @@ var ARUMBU_TRANSLATIONS = {
   },
   "about.people.eyebrow": { en: "The People Behind Arumbu", ta: "அரும்புவின் பின்னணியில் உள்ளவர்கள்" },
   "about.people.heading": { en: "A family name", ta: "ஒரு குடும்பப் பெயர்" },
-  "about.people.card1.title": { en: "Mr. Shivakumar", ta: "திரு. சிவகுமார்" },
+  "about.people.card1.title": { en: "Sivakumar L", ta: "Sivakumar L" },
   "about.people.card1.desc": {
     en: "Founder of Arumbu Cashews, carrying forward the family's journey with cashews — from cultivation to processing.",
     ta: "அரும்பு காஜுவின் நிறுவனர், முந்திரியுடனான குடும்பத்தின் பயணத்தை — சாகுபடியிலிருந்து பதப்படுத்துதல் வரை — முன்னெடுத்துச் செல்கிறார்."
   },
   "about.people.card2.title": { en: "Mr. Lakshmanaperumal", ta: "திரு. லக்ஷ்மணபெருமாள்" },
   "about.people.card2.desc": {
-    en: "Shivakumar's father, part of the family's early journey with cashew cultivation and raw cashews.",
+    en: "Sivakumar's father, part of the family's early journey with cashew cultivation and raw cashews.",
     ta: "சிவகுமாரின் தந்தை, முந்திரி சாகுபடி மற்றும் பச்சை முந்திரியுடனான குடும்பத்தின் ஆரம்ப பயணத்தின் ஒரு பகுதி."
   },
   "about.people.card3.title": { en: "The name Arumbu", ta: "அரும்பு என்ற பெயர்" },
   "about.people.card3.desc": {
-    en: "The name \"Arumbu\" comes from Shivakumar's mother. The business is named Arumbu Cashews in her memory.",
+    en: "The name \"Arumbu\" comes from Sivakumar's mother. The business is named Arumbu Cashews in her memory.",
     ta: "\"அரும்பு\" என்ற பெயர் சிவகுமாரின் தாயாரிடமிருந்து வந்தது. அவரது நினைவாக இந்த வணிகம் அரும்பு காஜு என பெயரிடப்பட்டுள்ளது."
   },
   "about.raw.eyebrow": { en: "From Raw to Processed", ta: "பச்சையிலிருந்து பதப்படுத்தப்பட்டது வரை" },
@@ -372,10 +339,6 @@ var ARUMBU_TRANSLATIONS = {
   /* ---------- Products page ---------- */
   "products.page.eyebrow": { en: "Full Range", ta: "முழு வரம்பு" },
   "products.page.heading": { en: "Every Arumbu Cashews grade", ta: "ஒவ்வொரு அரும்பு காஜு தரமும்" },
-  "products.page.desc": {
-    en: "Hand-sorted at source in Panruti, Tamil Nadu. Choose your grade below and order directly on WhatsApp.",
-    ta: "தமிழ்நாடு பன்ருட்டியில் மூலத்திலேயே கையால் தரம் பிரிக்கப்படுகிறது. கீழே உங்கள் தரத்தைத் தேர்ந்தெடுத்து நேரடியாக வாட்ஸ்அப்பில் ஆர்டர் செய்யுங்கள்."
-  },
 
   /* ---------- Wholesale page ---------- */
   "wholesale.eyebrow": { en: "For Businesses & Retailers", ta: "வணிகங்கள் & சில்லறை விற்பனையாளர்களுக்கு" },

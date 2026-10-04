@@ -1,7 +1,7 @@
 /* ============================================
    ARUMBU CASHEWS — STYLE SYSTEM
    Palette: roasted espresso dark + antique gold
-   Type: Cormorant Garamond (display) + Jost (body)
+   Type: Playfair Display (display) + Inter (body); Bahamas for the wordmark
 ============================================ */
 
 @font-face {
@@ -31,9 +31,14 @@
   /* Warm ivory content palette */
   --ivory: #F7F1E3;
   --ivory-2: #EFE6D0;
+  --warm-white: #FCFAF5; /* white-first section background */
+  /* Botanical canvas: warm-white page + translucent tints (see BOTANICAL CANVAS) */
+  --canvas: #FFFEFA;
+  --tint-cream: rgba(250, 243, 228, 0.55);
+  --tint-beige: rgba(241, 231, 208, 0.5);
   --ink: #1B0E06;
   --ink-muted: rgba(27, 14, 6, 0.68);
-  --gold-ink: #8a6a14;
+  --gold-ink: #7a5c10; /* darkened from #8a6a14 for WCAG AA text contrast on ivory */
   --border-ink: rgba(27, 14, 6, 0.14);
 
   /* Rich espresso / dark chocolate brown — blended into the hero scrim
@@ -48,8 +53,8 @@
   --forest-deep: #3B211D;
 
   /* Type */
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Jost', -apple-system, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
 
   /* Layout */
   --max-width: 1200px;
@@ -217,7 +222,7 @@ p { color: var(--text-muted); }
   display: block;
 }
 .brand-wordmark {
-  font-family: "Bahamas", "Cormorant Garamond", Georgia, serif;
+  font-family: "Bahamas", "Playfair Display", Georgia, serif;
   font-weight: 400;
   font-size: 1.6rem;
   letter-spacing: 0.04em;
@@ -874,17 +879,17 @@ p { color: var(--text-muted); }
   margin-top: 3.5rem;
 }
 .why-card {
-  background: var(--bg-panel);
-  border: 1px solid var(--border-soft);
+  background: #ffffff;
+  border: 1px solid var(--border-ink);
   border-radius: var(--radius);
   padding: 2.2rem 1.6rem;
   transition: border-color var(--transition), transform var(--transition);
 }
-.why-card:hover { border-color: var(--gold); transform: translateY(-4px); }
-.why-icon { width: 40px; height: 40px; color: var(--gold-light); margin-bottom: 1.2rem; }
+.why-card:hover { border-color: var(--gold-ink); transform: translateY(-4px); }
+.why-icon { width: 40px; height: 40px; color: var(--gold-ink); margin-bottom: 1.2rem; }
 .why-icon svg { width: 100%; height: 100%; }
-.why-card h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
-.why-card p { font-size: 0.9rem; }
+.why-card h3 { font-size: 1.15rem; margin-bottom: 0.6rem; color: var(--ink); }
+.why-card p { font-size: 0.9rem; color: var(--ink-muted); }
 
 /* ============ PRODUCTS ============ */
 .products-section { background: var(--bg-darker); }
@@ -1140,7 +1145,8 @@ p { color: var(--text-muted); }
 }
 
 /* ============ FOOTER ============ */
-.site-footer { background: var(--bg-darker); border-top: 1px solid var(--border-soft); }
+.site-footer { position: relative; background: var(--tint-beige); border-top: 2px solid var(--gold); }
+.site-footer .brand-wordmark { color: var(--gold-ink); }
 .footer-inner {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -1149,13 +1155,13 @@ p { color: var(--text-muted); }
   grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
   gap: 2.5rem;
 }
-.footer-brand p { font-size: 0.88rem; margin-top: 1rem; max-width: 280px; }
+.footer-brand p { font-size: 0.88rem; margin-top: 1rem; max-width: 280px; color: var(--ink-muted); }
 .footer-follow-label {
   font-family: var(--font-body);
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--cream-dim);
+  color: var(--ink-muted);
   margin-top: 1.4rem;
   margin-bottom: 0.7rem;
 }
@@ -1170,34 +1176,35 @@ p { color: var(--text-muted); }
   border: none;
 }
 .footer-social .social-icon svg { width: 17px; height: 17px; }
-.footer-social .social-icon:hover { background: none; }
+.footer-social .social-icon { color: var(--ink); }
+.footer-social .social-icon:hover { background: none; color: var(--gold-ink); }
 .footer-col h4 {
   font-family: var(--font-body);
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gold-light);
+  color: var(--gold-ink);
   margin-bottom: 1.1rem;
   font-weight: 500;
 }
 .footer-col a {
   display: block;
   font-size: 0.9rem;
-  color: var(--cream-dim);
+  color: var(--ink);
   margin-bottom: 0.7rem;
   transition: color var(--transition);
   width: fit-content;
 }
-.footer-col a:hover { color: var(--gold-light); }
+.footer-col a:hover { color: var(--gold-ink); }
 .map-embed {
   border-radius: var(--radius);
   overflow: hidden;
-  border: 1px solid var(--border-soft);
+  border: 1px solid var(--border-ink);
   aspect-ratio: 4/3;
 }
-.map-embed iframe { width: 100%; height: 100%; border: 0; filter: grayscale(0.3) invert(0.92) contrast(0.9); }
+.map-embed iframe { width: 100%; height: 100%; border: 0; filter: grayscale(0.3); }
 .footer-bottom {
-  border-top: 1px solid var(--border-soft);
+  border-top: 1px solid var(--border-ink);
   padding: 1.5rem;
 }
 .footer-bottom-inner {
@@ -1209,14 +1216,14 @@ p { color: var(--text-muted); }
   gap: 1rem;
   flex-wrap: wrap;
 }
-.footer-bottom p { font-size: 0.8rem; color: var(--text-muted); }
+.footer-bottom p { font-size: 0.8rem; color: var(--ink-muted); }
 .footer-credit {
   font-size: 0.72rem !important;
-  color: rgba(217, 208, 190, 0.68) !important;
+  color: var(--ink-muted) !important;
   margin-top: 0 !important;
   letter-spacing: 0.01em;
 }
-.footer-credit span { color: var(--gold-light); opacity: 0.75; }
+.footer-credit span { color: var(--gold-ink); }
 .footer-credit .footer-heart { color: #d64545; opacity: 1; font-size: 0.85em; }
 
 /* Deliberately understated — an internal utility link, not a public
@@ -1229,11 +1236,11 @@ p { color: var(--text-muted); }
 }
 .footer-admin-link a {
   font-size: 0.68rem;
-  color: rgba(217, 208, 190, 0.32);
+  color: var(--ink-muted);
   letter-spacing: 0.02em;
   transition: color var(--transition);
 }
-.footer-admin-link a:hover { color: var(--gold-light); }
+.footer-admin-link a:hover { color: var(--gold-ink); }
 @media (max-width: 640px) {
   .footer-bottom-inner { flex-direction: column; text-align: center; gap: 0.4rem; }
 }
@@ -1459,10 +1466,10 @@ p { color: var(--text-muted); }
    two different sites. The Header and Footer are untouched — both
    already have their own explicit dark background and are unaffected
    by these body-level overrides. */
-body.page-light { background: var(--ivory); }
+body.page-light { background: var(--canvas); }
 body.page-light .section { background: transparent; }
 body.page-light .section-light-alt,
-body.page-light .section-light { background: var(--ivory-2); }
+body.page-light .section-light { background: var(--tint-beige); }
 body.page-light h1, body.page-light h2, body.page-light h3 { color: var(--ink); }
 body.page-light p { color: var(--ink-muted); }
 body.page-light .eyebrow { color: var(--gold-ink); }
@@ -1509,7 +1516,7 @@ body.page-light .form-success p { color: var(--ink-muted); }
 
 /* ============ ABOUT PAGE ============ */
 .page-hero {
-  background: var(--ivory-2);
+  background: var(--tint-cream);
   padding: 6.5rem 1.5rem 5rem;
   text-align: center;
   border-bottom: 1px solid var(--border-ink);
@@ -1544,8 +1551,7 @@ body.page-light .form-success p { color: var(--ink-muted); }
 .journey-index {
   font-family: var(--font-display);
   font-size: 1.6rem;
-  color: var(--gold-ink);
-  opacity: 0.6;
+  color: var(--gold-ink); /* full strength (was 60% opacity, 2.4:1) for WCAG AA contrast */
 }
 .journey-step h3 { font-size: 1.15rem; margin-bottom: 0.4rem; color: var(--ink); }
 .journey-step p { margin: 0; }
@@ -1566,6 +1572,46 @@ body.page-light .form-success p { color: var(--ink-muted); }
 .people-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--ink); }
 .people-card p { margin: 0; font-size: 0.94rem; }
 .people-card.people-card-full { grid-column: 1 / -1; }
+
+/* ============ ABOUT — FOUNDER ============
+   Warm-white editorial band: full (uncropped) photograph in a thin gold
+   offset frame, name/role/tags, gold accent, then the approved story. */
+.about-founder { background: var(--tint-cream); padding: 6.5rem 1.5rem; border-top: 1px solid var(--border-ink); border-bottom: 1px solid var(--border-ink); }
+.about-founder-inner {
+  max-width: 1080px; margin: 0 auto;
+  display: grid; grid-template-columns: 5fr 7fr; gap: 5rem; align-items: start;
+}
+.about-founder-photo { margin: 0.4rem 0 0; position: relative; padding: 0 1.2rem 1.2rem 0; }
+.about-founder-photo::before {
+  content: ''; position: absolute; top: 1.2rem; left: 1.2rem; right: 0; bottom: 0;
+  border: 1px solid var(--gold);
+}
+.about-founder-photo img { position: relative; width: 100%; height: auto; background: var(--ivory-2); }
+body.page-light .about-founder .eyebrow { color: var(--gold-ink); margin-bottom: 1rem; }
+body.page-light .about-founder-name {
+  font-family: var(--font-display); font-weight: 400; font-style: italic;
+  font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1.1; color: var(--ink); margin: 0 0 0.9rem;
+}
+body.page-light .about-founder-role {
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold-ink); margin: 0 0 0.35rem;
+}
+body.page-light .about-founder-tags { font-size: 0.92rem; color: var(--ink-muted); margin: 0; }
+.about-founder-rule { display: block; width: 56px; height: 2px; background: var(--gold); margin: 2rem 0; }
+.about-founder-story { max-width: 600px; }
+body.page-light .about-founder-story p { color: var(--ink-muted); font-size: 1rem; line-height: 1.8; margin: 0 0 1.1rem; }
+body.page-light .about-founder-story p:last-child { margin-bottom: 0; }
+
+@media (max-width: 960px) {
+  .about-founder { padding: 4.5rem 1.5rem; }
+  .about-founder-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .about-founder-photo { width: min(100%, 420px); margin: 0 auto; }
+}
+@media (max-width: 720px) {
+  .about-founder { padding: 3.5rem 1.25rem; }
+  .about-founder-photo { width: min(100%, 340px); }
+  .about-founder-rule { margin: 1.6rem 0; }
+}
 
 .about-cta {
   text-align: center;
@@ -1866,3 +1912,91 @@ html[lang="ta"] #contactForm .btn-gold { white-space: normal; text-align: center
 }
 #testimonials .testimonial-card p { color: var(--ink); }
 #testimonials .testimonial-card footer { color: var(--gold-ink); }
+
+/* ============ BOTANICAL CANVAS (public pages only) ============
+   One system for every public page: a warm-white canvas with original
+   cashew artwork (leaves, blossom panicles, cashew apples with the nut,
+   loose kernels) kept to the page edges and the generous whitespace at
+   the top of each page. Section surfaces above are translucent tints, so
+   the canvas reads through; cards and forms stay solid white, so artwork
+   never sits behind their text. Everything here is decorative:
+   pointer-events none, behind content (z-index -1), no overlay.
+   Admin pages (body.admin-standalone) are excluded.
+   Compositions:
+   - Home hero: left + right sprays framing the hero (css/home.css).
+   - Pages with a centred page hero (About, Contact, Wholesale…): a spray
+     on each side of the title.
+   - Store / account / policy pages (left-aligned content): one spray in
+     the top-right whitespace.
+   - Wide screens (>=1400px): sparse sprigs in the side margins + a
+     sprig at the footer's outer edge. */
+:root {
+  --bot-left: url('../images/botanical/cashew-left.svg');
+  --bot-right: url('../images/botanical/cashew-right.svg');
+  --bot-corner: url('../images/botanical/cashew-corner.svg');
+  --bot-corner-r: url('../images/botanical/cashew-corner-right.svg');
+  --bot-edge: url('../images/botanical/cashew-edge.svg');
+  --bot-edge-r: url('../images/botanical/cashew-edge-right.svg');
+}
+/* Composition variables: one place per page type / breakpoint. */
+body.page-light:not(.admin-standalone) {
+  --tr-img: var(--bot-right); --tr-w: 260px; --tr-h: 600px; --tr-x: -60px; --tr-o: 1;
+  --tl-img: var(--bot-left);  --tl-w: 250px; --tl-h: 590px; --tl-x: -60px; --tl-o: 1;
+}
+/* store / account / policy pages: left-aligned content running nearly full
+   width, so a smaller top-right spray only */
+body.page-light.store-page { --tr-w: 210px; --tr-h: 480px; --tr-x: -70px; --tr-o: 0.85; }
+
+body.page-light:not(.admin-standalone) > main,
+body.home-v2 > main { position: relative; isolation: isolate; overflow: clip; }
+
+body.page-light:not(.admin-standalone) > main::after,
+body.page-light:not(.admin-standalone):has(.page-hero) > main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/* top-right: every public page */
+body.page-light:not(.admin-standalone) > main::after {
+  right: var(--tr-x); width: var(--tr-w); height: var(--tr-h); opacity: var(--tr-o);
+  background-image: var(--tr-img); background-position: right top;
+}
+/* top-left: pages with a centred page hero */
+body.page-light:not(.admin-standalone):has(.page-hero) > main::before {
+  left: var(--tl-x); width: var(--tl-w); height: var(--tl-h); opacity: var(--tl-o);
+  background-image: var(--tl-img); background-position: left top;
+}
+
+@media (min-width: 1400px) {
+  body.page-light:not(.admin-standalone),
+  body.home-v2 {
+    background-image: var(--bot-edge), var(--bot-edge-r);
+    background-repeat: repeat-y, repeat-y;
+    background-size: 150px auto, 150px auto;
+    background-position: left -40px top 820px, right -40px top 1320px;
+  }
+  body.page-light:not(.admin-standalone) .site-footer::after,
+  body.home-v2 .site-footer::after {
+    content: '';
+    position: absolute; right: 0; bottom: 28px;
+    width: 150px; height: 120px;
+    pointer-events: none;
+    background: var(--bot-corner-r) right bottom / contain no-repeat;
+  }
+}
+@media (max-width: 1100px) {
+  body.page-light:not(.admin-standalone) { --tr-w: 190px; --tr-h: 440px; --tr-x: -85px; --tl-w: 180px; --tl-h: 425px; --tl-x: -85px; }
+  body.page-light.store-page { --tr-w: 170px; --tr-h: 390px; --tr-x: -85px; }
+}
+/* phones: small corner sprigs in the top whitespace only, never behind text */
+@media (max-width: 720px) {
+  body.page-light:not(.admin-standalone),
+  body.page-light.store-page {
+    --tr-img: var(--bot-corner-r); --tr-w: 124px; --tr-h: 100px; --tr-x: -14px; --tr-o: 0.9;
+    --tl-img: var(--bot-corner);   --tl-w: 124px; --tl-h: 100px; --tl-x: -14px; --tl-o: 0.9;
+  }
+}

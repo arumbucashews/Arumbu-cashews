@@ -185,7 +185,7 @@
     var client = window.ArumbuAdminAuth.getClient();
     client
       .from('products')
-      .select('id, grade_name, slug, short_description, full_description, status, is_featured, is_published, display_order, product_images(storage_path, is_primary)')
+      .select('id, grade_name, slug, full_name, full_name_ta, short_description, short_description_ta, full_description, full_description_ta, seo_title, seo_description, status, is_featured, is_published, display_order, product_images(storage_path, is_primary)')
       .order('display_order', { ascending: true })
       .order('created_at', { ascending: true })
       .then(function (res) {
@@ -241,7 +241,8 @@
   function openFormModal(product) {
     var isEdit = !!product;
     var p = product || {
-      grade_name: '', slug: '', short_description: '', full_description: '',
+      grade_name: '', slug: '', short_description: '', full_description: '', full_name: '', full_name_ta: '',
+      short_description_ta: '', full_description_ta: '', seo_title: '', seo_description: '',
       status: 'active', is_featured: false, is_published: true, display_order: 0
     };
 
@@ -263,7 +264,15 @@
               '<input type="text" id="pfGradeName" name="grade_name" value="' + escapeHtml(p.grade_name) + '" required maxlength="100">' +
             '</div>' +
             '<div class="form-field">' +
-              '<label for="pfSlug">Slug</label>' +
+              '<label for="pfFullName">Full name (English)</label>' +
+              '<input type="text" id="pfFullName" value="' + escapeHtml(p.full_name || '') + '" maxlength="120" placeholder="e.g. White Wholes 180">' +
+            '</div>' +
+            '<div class="form-field">' +
+              '<label for="pfFullNameTa">Full name (தமிழ்)</label>' +
+              '<input type="text" id="pfFullNameTa" value="' + escapeHtml(p.full_name_ta || '') + '" maxlength="120">' +
+            '</div>' +
+            '<div class="form-field">' +
+              '<label for="pfSlug">URL slug (/products/…)</label>' +
               '<input type="text" id="pfSlug" name="slug" value="' + escapeHtml(p.slug || '') + '" placeholder="e.g. ww180">' +
             '</div>' +
             '<div class="form-field">' +
@@ -278,6 +287,22 @@
               '<label for="pfFullDesc">Full description</label>' +
               '<textarea id="pfFullDesc" name="full_description" rows="4">' + escapeHtml(p.full_description || '') + '</textarea>' +
             '</div>' +
+            '<div class="form-field form-field-full">' +
+              '<label for="pfShortDescTa">Short description (தமிழ்)</label>' +
+              '<textarea id="pfShortDescTa" rows="2">' + escapeHtml(p.short_description_ta || '') + '</textarea>' +
+            '</div>' +
+            '<div class="form-field form-field-full">' +
+              '<label for="pfFullDescTa">Full description (தமிழ்)</label>' +
+              '<textarea id="pfFullDescTa" rows="3">' + escapeHtml(p.full_description_ta || '') + '</textarea>' +
+            '</div>' +
+            '<div class="form-field">' +
+              '<label for="pfSeoTitle">SEO title (optional, ≤ 70 chars)</label>' +
+              '<input type="text" id="pfSeoTitle" value="' + escapeHtml(p.seo_title || '') + '" maxlength="70">' +
+            '</div>' +
+            '<div class="form-field">' +
+              '<label for="pfSeoDesc">SEO description (optional, ≤ 160 chars)</label>' +
+              '<input type="text" id="pfSeoDesc" value="' + escapeHtml(p.seo_description || '') + '" maxlength="160">' +
+            '</div>' +
             '<div class="form-field">' +
               '<label for="pfDisplayOrder">Display order</label>' +
               '<input type="number" id="pfDisplayOrder" name="display_order" value="' + (p.display_order != null ? p.display_order : 0) + '" step="1">' +
@@ -288,10 +313,11 @@
             '</div>' +
             (isEdit ?
               '<div class="form-field form-field-full">' +
-                '<label>Product Image</label>' +
+                '<label>Main product image</label>' +
                 '<div class="upload-field" id="productImageManager">' +
                   '<div class="products-message" style="padding:0.9rem 1.2rem;">Loading image…</div>' +
                 '</div>' +
+                '<button type="button" class="product-form-cancel" id="productGalleryBtn" style="margin-top:.6rem">Manage gallery &amp; image descriptions</button>' +
               '</div>'
               :
               '<div class="form-field form-field-full">' +
@@ -318,6 +344,10 @@
 
     if (isEdit) {
       initProductImageManager(product.id);
+      document.getElementById('productGalleryBtn').addEventListener('click', function () {
+        closeModal();
+        if (window.ArumbuGallery) { window.ArumbuGallery.open(product.id, product.grade_name); }
+      });
     }
   }
 
@@ -338,9 +368,19 @@
     var displayOrder = displayOrderRaw === '' ? 0 : parseInt(displayOrderRaw, 10);
     if (isNaN(displayOrder)) { displayOrder = 0; }
 
+    var slug = document.getElementById('pfSlug').value.trim().toLowerCase();
+    if (slug && !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(slug)) {
+      errorEl.textContent = 'Slug: use lowercase letters, numbers and single hyphens only (e.g. ww180).';
+      errorEl.classList.add('is-visible');
+      return;
+    }
+    var v = function (id) { return document.getElementById(id).value.trim() || null; };
     var payload = {
       grade_name: gradeName,
-      slug: document.getElementById('pfSlug').value.trim() || null,
+      slug: slug || gradeName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''),
+      full_name: v('pfFullName'), full_name_ta: v('pfFullNameTa'),
+      short_description_ta: v('pfShortDescTa'), full_description_ta: v('pfFullDescTa'),
+      seo_title: v('pfSeoTitle'), seo_description: v('pfSeoDesc'),
       short_description: document.getElementById('pfShortDesc').value.trim() || null,
       full_description: document.getElementById('pfFullDesc').value.trim() || null,
       status: document.getElementById('pfStatus').value,
@@ -362,7 +402,7 @@
         submitBtn.disabled = false;
         submitBtn.textContent = existingId ? 'Save Changes' : 'Add Product';
         if (res.error.code === '23505') {
-          errorEl.textContent = 'A product with this grade name already exists.';
+          errorEl.textContent = 'A product with this grade name or slug already exists.';
         } else {
           errorEl.textContent = res.error.message || 'Something went wrong. Please try again.';
         }

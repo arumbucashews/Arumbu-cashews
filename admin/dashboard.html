@@ -5,9 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Panel | Arumbu Cashews</title>
 <meta name="robots" content="noindex, nofollow">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" type="image/x-icon" href="../images/favicon/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin-extra.css">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="../css/style.css">
 <style>
   body.admin-standalone { min-height: 100vh; background: var(--ivory); }
@@ -532,7 +535,7 @@
   <div id="adminPanel" style="display:none;">
     <div class="admin-topbar">
       <div class="admin-topbar-left">
-        <img src="../images/arumbu-logo.png" alt="Arumbu Cashews">
+        <img src="../images/brand/arumbu-cashews-logo.png" alt="Arumbu Cashews">
         <span>Arumbu Cashews — Admin</span>
       </div>
       <div class="admin-topbar-right">
@@ -547,6 +550,22 @@
         <button class="admin-nav-item" data-section="overview" type="button">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
           Overview
+        </button>
+        <button class="admin-nav-item" data-section="orders" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h12l2 4v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6z"/><path d="M4 6h16"/><path d="M9 11h6"/><path d="M9 15h4"/></svg>
+          Orders <span class="nav-badge" id="navBadgeOrders" hidden></span>
+        </button>
+        <button class="admin-nav-item" data-section="inventory" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4"/><path d="M12 11v10"/></svg>
+          Pricing &amp; Stock <span class="nav-badge" id="navBadgeStock" hidden></span>
+        </button>
+        <button class="admin-nav-item" data-section="customers" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.3 2.9-6 6.5-6s6.5 2.7 6.5 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 14c2.2.6 3.5 2.9 3.5 6"/></svg>
+          Customers
+        </button>
+        <button class="admin-nav-item" data-section="messages" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v11H8l-4 4z"/></svg>
+          Messages &amp; Gifting <span class="nav-badge" id="navBadgeMsgs" hidden></span>
         </button>
         <button class="admin-nav-item" data-section="products" type="button">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
@@ -564,6 +583,14 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 8h10"/><path d="M7 12h10"/><path d="M7 16h6"/></svg>
           Site Content
         </button>
+        <button class="admin-nav-item" data-section="cms" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M8 8h8"/><path d="M8 12h8"/><path d="M8 16h5"/></svg>
+          Website Text &amp; Pages
+        </button>
+        <button class="admin-nav-item" data-section="store-settings" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+          Store Settings
+        </button>
       </nav>
 
       <!-- ---------- Content ---------- -->
@@ -577,7 +604,18 @@
             <p>You're signed in as an authorised admin. Pick a section below, or use the
               navigation on the left, to manage products, pricing, enquiries, and site content.</p>
           </div>
+          <div class="admin-stats" id="adminStats" aria-live="polite"></div>
           <div class="admin-overview-grid">
+            <button class="admin-overview-card" type="button" data-section-link="orders">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h12l2 4v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6z"/><path d="M4 6h16"/></svg>
+              <h3>Orders</h3>
+              <p>Confirm, pack, ship and track orders; print invoices; cancel or refund.</p>
+            </button>
+            <button class="admin-overview-card" type="button" data-section-link="inventory">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4"/></svg>
+              <h3>Pricing &amp; Stock</h3>
+              <p>Set pack prices (250 g / 500 g / 1 kg), sale prices, SKUs and stock.</p>
+            </button>
             <button class="admin-overview-card" type="button" data-section-link="products">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
               <h3>Products</h3>
@@ -596,7 +634,7 @@
             <button class="admin-overview-card" type="button" data-section-link="content">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 8h10"/><path d="M7 12h10"/><path d="M7 16h6"/></svg>
               <h3>Site Content</h3>
-              <p>Edit the hero video, About page, social links, and site settings.</p>
+              <p>Edit the hero text and images, About page, social links and contact settings.</p>
             </button>
           </div>
         </section>
@@ -642,11 +680,42 @@
           <div class="admin-section-head">
             <p class="eyebrow">Website</p>
             <h1>Site Content</h1>
-            <p>Manage the hero video, About page sections, social links, and general site settings.</p>
+            <p>Manage the hero text and three hero images, About page sections, social links, and contact settings.</p>
           </div>
           <div id="siteContentRoot" class="products-root">
             <div class="products-message">Loading site content…</div>
           </div>
+        </section>
+
+        <section class="admin-section" id="section-orders" data-section="orders">
+          <div class="admin-section-head"><p class="eyebrow">Sales</p><h1>Orders</h1>
+            <p>Every order placed on the website. Prices are locked when the order is placed; status changes are recorded in the order history.</p></div>
+          <div id="ordersRoot" class="products-root"><div class="products-message">Loading…</div></div>
+        </section>
+        <section class="admin-section" id="section-inventory" data-section="inventory">
+          <div class="admin-section-head"><p class="eyebrow">Catalogue</p><h1>Pricing &amp; Stock</h1>
+            <p>Retail price per pack size and stock levels. These prices are what customers pay at checkout.</p></div>
+          <div id="inventoryRoot" class="products-root"><div class="products-message">Loading…</div></div>
+        </section>
+        <section class="admin-section" id="section-customers" data-section="customers">
+          <div class="admin-section-head"><p class="eyebrow">People</p><h1>Customers</h1>
+            <p>Registered customer accounts, their orders and saved addresses.</p></div>
+          <div id="customersRoot" class="products-root"><div class="products-message">Loading…</div></div>
+        </section>
+        <section class="admin-section" id="section-messages" data-section="messages">
+          <div class="admin-section-head"><p class="eyebrow">Leads</p><h1>Messages &amp; Gifting</h1>
+            <p>Contact-form messages and gifting enquiries from the website.</p></div>
+          <div id="messagesRoot" class="products-root"><div class="products-message">Loading…</div></div>
+        </section>
+        <section class="admin-section" id="section-cms" data-section="cms">
+          <div class="admin-section-head"><p class="eyebrow">Website</p><h1>Website Text &amp; Pages</h1>
+            <p>Homepage wording (English and Tamil), the founder photo, policy pages and FAQ.</p></div>
+          <div id="cmsRoot" class="products-root"><div class="products-message">Loading…</div></div>
+        </section>
+        <section class="admin-section" id="section-store-settings" data-section="store-settings">
+          <div class="admin-section-head"><p class="eyebrow">Configuration</p><h1>Store Settings</h1>
+            <p>Delivery, payments, GST, invoices, notifications, analytics and coupons.</p></div>
+          <div id="storeSettingsRoot" class="products-root"><div class="products-message">Loading…</div></div>
         </section>
 
       </main>
@@ -656,6 +725,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
   <script src="admin-auth.js"></script>
+  <script src="admin-common.js"></script>
   <script>
   (function () {
     var bodyEl = document.getElementById('adminBody');
@@ -685,6 +755,7 @@
         emailEl.textContent = result.profile.email || result.session.user.email || '';
         gateEl.style.display = 'none';
         panelEl.style.display = '';
+        if (window.ArumbuAdmin) { window.ArumbuAdmin.markReady(); }
       } catch (err) {
         gateEl.textContent = err.message || 'Could not verify your session.';
       }
@@ -709,7 +780,7 @@
        ArumbuAdminAuth, the Supabase client, or the session/guard logic. -->
   <script>
   (function () {
-    var VALID_SECTIONS = ['overview', 'products', 'rate-cards', 'wholesale', 'content'];
+    var VALID_SECTIONS = ['overview', 'orders', 'inventory', 'customers', 'messages', 'products', 'rate-cards', 'wholesale', 'content', 'cms', 'store-settings'];
 
     var navItems = document.querySelectorAll('.admin-nav-item');
     var sections = document.querySelectorAll('.admin-section');
@@ -728,6 +799,7 @@
       if (window.location.hash !== '#' + name) {
         history.replaceState(null, '', '#' + name);
       }
+      if (window.ArumbuAdmin) { window.ArumbuAdmin.sectionShown(name); }
     }
 
     navItems.forEach(function (btn) {
@@ -752,9 +824,17 @@
   </script>
 
   <script src="products.js"></script>
+  <script src="product-gallery.js"></script>
   <script src="rate-cards.js"></script>
   <script src="wholesale.js"></script>
   <script src="site-content.js"></script>
+  <script src="overview.js"></script>
+  <script src="orders.js"></script>
+  <script src="inventory.js"></script>
+  <script src="customers.js"></script>
+  <script src="messages.js"></script>
+  <script src="cms.js"></script>
+  <script src="store-settings.js"></script>
 
 </body>
 </html>

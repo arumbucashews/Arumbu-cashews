@@ -102,6 +102,7 @@
     if (SUPPORTED.indexOf(lang) === -1) lang = DEFAULT_LANG;
     storeLang(lang);
     applyTranslations(lang);
+    try { document.dispatchEvent(new CustomEvent('arumbu:lang', { detail: { lang: lang } })); } catch (err) {}
   }
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -117,5 +118,28 @@
 
   // Exposed in case other scripts (e.g. dynamically-built search
   // results) need to translate on demand.
-  window.arumbuI18n = { translate: translate, getLang: getStoredLang, setLang: setLanguage };
+  window.arumbuI18n = {
+    translate: translate,
+    getLang: getStoredLang,
+    setLang: setLanguage,
+    // Re-apply the current language — used after admin-managed text
+    // (content_blocks) has been merged into the dictionary, and after
+    // scripts render new data-i18n markup.
+    apply: function (root) {
+      if (!root || root === document) { applyTranslations(getStoredLang()); return; }
+      var lang = getStoredLang();
+      root.querySelectorAll('[data-i18n]').forEach(function (el) {
+        var v = translate(el.getAttribute('data-i18n'), lang); if (v !== null) el.textContent = v;
+      });
+      root.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+        var v = translate(el.getAttribute('data-i18n-html'), lang); if (v !== null) el.innerHTML = v;
+      });
+      root.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+        var v = translate(el.getAttribute('data-i18n-placeholder'), lang); if (v !== null) el.setAttribute('placeholder', v);
+      });
+      root.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+        var v = translate(el.getAttribute('data-i18n-aria'), lang); if (v !== null) el.setAttribute('aria-label', v);
+      });
+    }
+  };
 })();

@@ -1,0 +1,9 @@
+# Cloudflare Pages — clean product URLs.
+# /products/<slug> is served by product.html, which reads the slug.
+/products/:slug   /product   200
+
+# Old logo / favicon locations (kept working for caches and external links).
+/images/arumbu-logo.png        /images/brand/arumbu-cashews-logo.png   301
+/images/favicon/favicon.ico    /favicon.ico                            301
+/images/favicon/apple-touch-icon.png  /apple-touch-icon.png            301
+/images/favicon/*              /favicon-32x32.png                      301

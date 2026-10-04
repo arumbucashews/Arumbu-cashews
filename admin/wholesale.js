@@ -14,7 +14,8 @@
   var STATUS_OPTIONS = [
     { value: 'new', label: 'New' },
     { value: 'contacted', label: 'Contacted' },
-    { value: 'in_progress', label: 'In Progress' },
+    { value: 'quotation_sent', label: 'Quotation Sent' },
+    { value: 'negotiation', label: 'Negotiation' },
     { value: 'converted', label: 'Converted' },
     { value: 'closed', label: 'Closed' }
   ];
@@ -55,11 +56,11 @@
     }
 
     var all = state.enquiries || [];
-    var filtered = state.filter === 'all' ? all : all.filter(function (e) { return e.status === state.filter; });
+    var filtered = state.filter === 'all' ? all : all.filter(function (e) { return e.pipeline_status === state.filter; });
 
     var pillsHtml = '<div class="status-filter-pills">' +
       ['all'].concat(STATUS_OPTIONS.map(function (o) { return o.value; })).map(function (val) {
-        var label = val === 'all' ? 'All (' + all.length + ')' : STATUS_LABEL[val] + ' (' + all.filter(function (e) { return e.status === val; }).length + ')';
+        var label = val === 'all' ? 'All (' + all.length + ')' : STATUS_LABEL[val] + ' (' + all.filter(function (e) { return e.pipeline_status === val; }).length + ')';
         return '<button type="button" class="status-filter-pill' + (state.filter === val ? ' is-active' : '') + '" data-filter="' + val + '">' + label + '</button>';
       }).join('') +
       '</div>';
@@ -94,7 +95,7 @@
         '<td>' + escapeHtml(e.name) + (e.company ? '<br><span class="cell-muted">' + escapeHtml(e.company) + '</span>' : '') + '</td>' +
         '<td>' + escapeHtml(e.grade_requested || '—') + (e.quantity ? '<br><span class="cell-muted">' + escapeHtml(e.quantity) + '</span>' : '') + '</td>' +
         '<td>' + escapeHtml(e.phone) + (e.email ? '<br><span class="cell-muted">' + escapeHtml(e.email) + '</span>' : '') + '</td>' +
-        '<td><span class="product-status-pill" data-status="' + statusPillTone(e.status) + '">' + STATUS_LABEL[e.status] + '</span></td>' +
+        '<td><span class="product-status-pill" data-status="' + statusPillTone(e.pipeline_status) + '">' + STATUS_LABEL[e.pipeline_status] + '</span></td>' +
         '<td class="cell-muted">' + formatDate(e.created_at) + '</td>' +
         '<td class="cell-actions"><button type="button" class="product-form-cancel enquiry-view-btn" style="padding:0.4rem 0.9rem; font-size:0.8rem;">View</button></td>' +
       '</tr>'
@@ -139,7 +140,7 @@
     var client = window.ArumbuAdminAuth.getClient();
     client
       .from('wholesale_enquiries')
-      .select('id, name, company, phone, whatsapp, email, location, grade_requested, quantity, message, status, created_at, updated_at')
+      .select('id, name, company, phone, whatsapp, email, location, grade_requested, quantity, message, status, pipeline_status, admin_notes, created_at, updated_at')
       .order('created_at', { ascending: false })
       .then(function (res) {
         state.loading = false;
@@ -170,9 +171,15 @@
   function openModal(html) { var o = ensureModalOverlay(); o.innerHTML = html; o.hidden = false; }
   function closeModal() { if (modalOverlay) { modalOverlay.hidden = true; modalOverlay.innerHTML = ''; } }
 
+  function waUrl(phone) {
+    var d = String(phone || '').replace(/[^0-9]/g, '');
+    if (d.length === 10) { d = '91' + d; }
+    return d.length >= 11 ? 'https://wa.me/' + d : '';
+  }
+
   function openDetailModal(e) {
     var statusOptionsHtml = STATUS_OPTIONS.map(function (o) {
-      return '<option value="' + o.value + '"' + (e.status === o.value ? ' selected' : '') + '>' + o.label + '</option>';
+      return '<option value="' + o.value + '"' + (e.pipeline_status === o.value ? ' selected' : '') + '>' + o.label + '</option>';
     }).join('');
 
     var html =
@@ -184,9 +191,9 @@
         '<div class="enquiry-detail">' +
           '<dl>' +
             '<dt>Company</dt><dd>' + escapeHtml(e.company || '—') + '</dd>' +
-            '<dt>Phone</dt><dd>' + escapeHtml(e.phone) + '</dd>' +
+            '<dt>Phone</dt><dd><a href="tel:' + escapeHtml(e.phone) + '">' + escapeHtml(e.phone) + '</a>' + (waUrl(e.whatsapp || e.phone) ? ' · <a target="_blank" rel="noopener" href="' + waUrl(e.whatsapp || e.phone) + '">WhatsApp</a>' : '') + '</dd>' +
             '<dt>WhatsApp</dt><dd>' + escapeHtml(e.whatsapp || '—') + '</dd>' +
-            '<dt>Email</dt><dd>' + escapeHtml(e.email || '—') + '</dd>' +
+            '<dt>Email</dt><dd>' + (e.email ? '<a href="mailto:' + escapeHtml(e.email) + '">' + escapeHtml(e.email) + '</a>' : '—') + '</dd>' +
             '<dt>Location</dt><dd>' + escapeHtml(e.location || '—') + '</dd>' +
             '<dt>Grade requested</dt><dd>' + escapeHtml(e.grade_requested || '—') + '</dd>' +
             '<dt>Quantity</dt><dd>' + escapeHtml(e.quantity || '—') + '</dd>' +
@@ -199,10 +206,14 @@
               '<label for="eqStatus">Status</label>' +
               '<select id="eqStatus">' + statusOptionsHtml + '</select>' +
             '</div>' +
+            '<div class="form-field form-field-full">' +
+              '<label for="eqNotes">Internal notes (not visible to the customer)</label>' +
+              '<textarea id="eqNotes" rows="3" maxlength="4000">' + escapeHtml(e.admin_notes || '') + '</textarea>' +
+            '</div>' +
             '<div class="product-form-actions" style="grid-column: 1 / -1;">' +
               '<button type="button" class="product-icon-btn is-danger" id="eqDeleteBtn" title="Delete enquiry" aria-label="Delete" style="width:auto; padding:0.6rem 1rem;">Delete</button>' +
               '<button type="button" class="product-form-cancel" id="eqCancelBtn">Close</button>' +
-              '<button type="button" class="product-form-submit" id="eqSaveBtn">Save Status</button>' +
+              '<button type="button" class="product-form-submit" id="eqSaveBtn">Save</button>' +
             '</div>' +
           '</div>' +
         '</div>' +
@@ -225,10 +236,10 @@
     saveBtn.textContent = 'Saving…';
 
     var client = window.ArumbuAdminAuth.getClient();
-    client.from('wholesale_enquiries').update({ status: newStatus }).eq('id', e.id).then(function (res) {
+    client.from('wholesale_enquiries').update({ pipeline_status: newStatus, admin_notes: (document.getElementById('eqNotes').value || '').trim() || null }).eq('id', e.id).then(function (res) {
       if (res.error) {
         saveBtn.disabled = false;
-        saveBtn.textContent = 'Save Status';
+        saveBtn.textContent = 'Save';
         errorEl.textContent = res.error.message || 'Could not save. Please try again.';
         errorEl.classList.add('is-visible');
         return;

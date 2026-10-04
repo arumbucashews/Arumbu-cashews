@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Product URLs follow the product slugs in Admin → Products. Add a
+     line here when a new grade is published. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://arumbucashews.com/</loc>
-  </url>
-  <url>
-    <loc>https://arumbucashews.com/about.html</loc>
-  </url>
-  <url>
-    <loc>https://arumbucashews.com/contact.html</loc>
-  </url>
-  <url>
-    <loc>https://arumbucashews.com/products.html</loc>
-  </url>
-  <url>
-    <loc>https://arumbucashews.com/wholesale.html</loc>
-  </url>
+  <url><loc>https://arumbucashews.com/</loc></url>
+  <url><loc>https://arumbucashews.com/about</loc></url>
+  <url><loc>https://arumbucashews.com/products</loc></url>
+  <url><loc>https://arumbucashews.com/wholesale</loc></url>
+  <url><loc>https://arumbucashews.com/gifting</loc></url>
+  <url><loc>https://arumbucashews.com/contact</loc></url>
+  <url><loc>https://arumbucashews.com/faq</loc></url>
+  <url><loc>https://arumbucashews.com/privacy-policy</loc></url>
+  <url><loc>https://arumbucashews.com/terms</loc></url>
+  <url><loc>https://arumbucashews.com/shipping-delivery</loc></url>
+  <url><loc>https://arumbucashews.com/cancellation-refund</loc></url>
+  <url><loc>https://arumbucashews.com/products/ww180</loc></url>
+  <url><loc>https://arumbucashews.com/products/ww210</loc></url>
+  <url><loc>https://arumbucashews.com/products/ww240</loc></url>
+  <url><loc>https://arumbucashews.com/products/ww320</loc></url>
+  <url><loc>https://arumbucashews.com/products/ww400</loc></url>
+  <url><loc>https://arumbucashews.com/products/sw</loc></url>
+  <url><loc>https://arumbucashews.com/products/ssw</loc></url>
+  <url><loc>https://arumbucashews.com/products/lwp</loc></url>
+  <url><loc>https://arumbucashews.com/products/csp</loc></url>
+  <url><loc>https://arumbucashews.com/products/bb</loc></url>
+  <url><loc>https://arumbucashews.com/products/jh</loc></url>
+  <url><loc>https://arumbucashews.com/products/sjh</loc></url>
+  <url><loc>https://arumbucashews.com/products/jk</loc></url>
 </urlset>

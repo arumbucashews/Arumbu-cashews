@@ -74,14 +74,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* Account panel's Log In / Create Account are placeholders until
-     real Supabase Auth is wired in — they intentionally do nothing
-     destructive yet, just signal where that hook will go. */
-  document.querySelectorAll('[data-auth-action]').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-    });
-  });
+  /* Account / Cart / Wishlist panel contents are rendered by
+     js/store.js (Supabase Auth, cart and wishlist). */
 
   /* ---------- Products dropdown (desktop flyout) ----------
      Native <details>/<summary> gives free keyboard + accessibility
@@ -115,8 +109,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ---------- Search panel ----------
      Filters against the real, confirmed 13-grade list — no invented
-     product data, and no external search service since there's no
-     backend yet. Each result links to the Products page. */
+     product data. Each result links to that grade's product page
+     (/products/<grade>). */
   var searchToggle = document.getElementById('searchToggle');
   var searchPanel = document.getElementById('searchPanel');
   var searchInput = document.getElementById('searchInput');
@@ -152,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
     matches.forEach(function (grade) {
       var li = document.createElement('li');
       var a = document.createElement('a');
-      a.href = 'products.html';
+      a.href = 'products/' + grade.code.toLowerCase();
       a.innerHTML = '<span class="search-result-code">' + grade.code + '</span>' +
                     '<span class="search-result-name">' + grade.name + '</span>';
       li.appendChild(a);
@@ -290,76 +284,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* ---------- Wholesale enquiry form ----------
-     No backend on this static site, so the enquiry is sent through the
-     same WhatsApp channel already used across the site: submitting the
-     form opens a pre-filled WhatsApp chat with the enquiry details,
-     then the page shows a clear on-page success message. */
-  var wholesaleForm = document.getElementById('wholesaleForm');
-  var wholesaleSuccess = document.getElementById('wholesaleSuccess');
-
-  if (wholesaleForm) {
-    wholesaleForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      var name = wholesaleForm.name.value.trim();
-      var company = wholesaleForm.company.value.trim();
-      var phone = wholesaleForm.phone.value.trim();
-      var whatsapp = wholesaleForm.whatsapp.value.trim();
-      var email = wholesaleForm.email.value.trim();
-      var grade = wholesaleForm.grade.value;
-      var quantity = wholesaleForm.quantity.value.trim();
-      var message = wholesaleForm.message.value.trim();
-
-      var lines = ['Hi, I\'d like to make a wholesale enquiry.'];
-      lines.push('Name: ' + name);
-      if (company) lines.push('Company: ' + company);
-      lines.push('Phone: ' + phone);
-      if (whatsapp) lines.push('WhatsApp: ' + whatsapp);
-      if (email) lines.push('Email: ' + email);
-      lines.push('Grade: ' + grade);
-      if (quantity) lines.push('Quantity: ' + quantity);
-      if (message) lines.push('Message: ' + message);
-
-      var waText = encodeURIComponent(lines.join('\n'));
-      window.open('https://wa.me/919976055524?text=' + waText, '_blank', 'noopener');
-
-      wholesaleForm.style.display = 'none';
-      if (wholesaleSuccess) wholesaleSuccess.classList.add('is-visible');
-      wholesaleForm.reset();
-    });
-  }
-
-  /* ---------- Contact page form ----------
-     Same pattern as the wholesale enquiry: no backend on this static
-     site, so the message is sent through WhatsApp and the page shows
-     an on-page success message. */
-  var contactForm = document.getElementById('contactForm');
-  var contactSuccess = document.getElementById('contactSuccess');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      var name = contactForm.name.value.trim();
-      var phone = contactForm.phone.value.trim();
-      var email = contactForm.email.value.trim();
-      var message = contactForm.message.value.trim();
-
-      var lines = ['Hi, I have a question for Arumbu Cashews.'];
-      lines.push('Name: ' + name);
-      lines.push('Phone: ' + phone);
-      if (email) lines.push('Email: ' + email);
-      lines.push('Message: ' + message);
-
-      var waText = encodeURIComponent(lines.join('\n'));
-      window.open('https://wa.me/919080656477?text=' + waText, '_blank', 'noopener');
-
-      contactForm.style.display = 'none';
-      if (contactSuccess) contactSuccess.classList.add('is-visible');
-      contactForm.reset();
-    });
-  }
+  /* Wholesale / contact / gifting forms: see js/forms.js (saved to
+     Supabase, with a WhatsApp follow-up). */
 
   /* ---------- Opening / splash screen ----------
      Shows once per browser session on the homepage only — a repeat

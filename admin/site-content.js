@@ -138,69 +138,83 @@
 
   function renderHeroPanel() {
     var panel = document.getElementById('panel-hero');
-    var h = state.hero || {
-      heading: '', subheading: '', cta_text: '', cta_link: '',
-      is_video_enabled: true, is_active: true, video_storage_path: null, poster_storage_path: null
+    var h = state.hero || { heading: '', heading_ta: '', subheading: '', subheading_ta: '', cta_text: '', cta_text_ta: '', cta_link: '', is_active: true };
+    var field = function (id, label, val, area) {
+      return '<div class="form-field' + (area ? ' form-field-full' : '') + '"><label for="' + id + '">' + label + '</label>' +
+        (area ? '<textarea id="' + id + '" rows="2">' + escapeHtml(val || '') + '</textarea>' : '<input type="text" id="' + id + '" value="' + escapeHtml(val || '') + '">') + '</div>';
     };
-
     panel.innerHTML =
       '<div class="content-card">' +
-        '<h3>Hero content</h3>' +
+        '<h3>Hero text</h3>' +
+        '<p class="cell-muted admin-help">Wrap words in &lt;em&gt;…&lt;/em&gt; in the heading for the gold italic accent. Leave Tamil empty to use the built-in Tamil wording.</p>' +
         '<p class="product-form-error" id="heroFormError"></p>' +
         '<div class="product-form-grid">' +
-          '<div class="form-field form-field-full">' +
-            '<label for="heroHeading">Heading</label>' +
-            '<input type="text" id="heroHeading" value="' + escapeHtml(h.heading) + '">' +
-          '</div>' +
-          '<div class="form-field form-field-full">' +
-            '<label for="heroSubheading">Subheading</label>' +
-            '<textarea id="heroSubheading" rows="3">' + escapeHtml(h.subheading || '') + '</textarea>' +
-          '</div>' +
-          '<div class="form-field">' +
-            '<label for="heroCtaText">Button text</label>' +
-            '<input type="text" id="heroCtaText" value="' + escapeHtml(h.cta_text || '') + '">' +
-          '</div>' +
-          '<div class="form-field">' +
-            '<label for="heroCtaLink">Button link</label>' +
-            '<input type="text" id="heroCtaLink" value="' + escapeHtml(h.cta_link || '') + '">' +
-          '</div>' +
-          '<div class="product-form-checks">' +
-            '<label class="product-form-check"><input type="checkbox" id="heroVideoEnabled" ' + (h.is_video_enabled ? 'checked' : '') + '> Video enabled</label>' +
-            '<label class="product-form-check"><input type="checkbox" id="heroActive" ' + (h.is_active ? 'checked' : '') + '> Active on site</label>' +
-          '</div>' +
-          '<div class="product-form-actions">' +
-            '<button type="button" class="product-form-submit" id="heroSaveBtn">Save Hero Content</button>' +
-          '</div>' +
+          field('heroHeading', 'Heading (English)', h.heading, true) + field('heroHeadingTa', 'Heading (தமிழ்)', h.heading_ta, true) +
+          field('heroSubheading', 'Subheading (English)', h.subheading, true) + field('heroSubheadingTa', 'Subheading (தமிழ்)', h.subheading_ta, true) +
+          field('heroCtaText', 'Button text (English)', h.cta_text) + field('heroCtaTextTa', 'Button text (தமிழ்)', h.cta_text_ta) +
+          '<div class="form-field form-field-full"><label for="heroCtaLink">Button link (WhatsApp link, page, or https:// URL)</label><input type="text" id="heroCtaLink" value="' + escapeHtml(h.cta_link || '') + '"></div>' +
+          '<div class="product-form-checks"><label class="product-form-check"><input type="checkbox" id="heroActive" ' + (h.is_active ? 'checked' : '') + '> Use this text on the site</label></div>' +
+          '<div class="product-form-actions"><button type="button" class="product-form-submit" id="heroSaveBtn">Save Hero Text</button></div>' +
         '</div>' +
       '</div>' +
-      '<div class="content-card">' +
-        '<h3>Hero video</h3>' +
-        '<div class="upload-field">' +
-          (h.video_storage_path
-            ? '<video class="upload-preview is-video" id="heroVideoPreview" src="' + publicMediaUrl(h.video_storage_path) + '" muted></video>'
-            : '<div class="upload-preview is-video" id="heroVideoPreview"></div>') +
-          '<div>' +
-            '<input type="file" id="heroVideoInput" accept="video/mp4">' +
-            '<div class="upload-status" id="heroVideoStatus"></div>' +
-          '</div>' +
-        '</div>' +
-      '</div>' +
-      '<div class="content-card">' +
-        '<h3>Hero poster image</h3>' +
-        '<div class="upload-field">' +
-          (h.poster_storage_path
-            ? '<img class="upload-preview" id="heroPosterPreview" src="' + publicMediaUrl(h.poster_storage_path) + '" alt="">'
-            : '<div class="upload-preview" id="heroPosterPreview"></div>') +
-          '<div>' +
-            '<input type="file" id="heroPosterInput" accept="image/jpeg,image/png,image/webp">' +
-            '<div class="upload-status" id="heroPosterStatus"></div>' +
-          '</div>' +
-        '</div>' +
+      '<div class="content-card"><h3>Hero images (rotating)</h3>' +
+        '<p class="cell-muted admin-help">The homepage hero rotates these three images. Use landscape photos (JPEG/PNG/WebP, under 5 MB). The processing video stays in the project files and is not used in the hero.</p>' +
+        '<div id="heroSlides"><div class="products-message">Loading images…</div></div>' +
       '</div>';
-
     document.getElementById('heroSaveBtn').addEventListener('click', saveHero);
-    document.getElementById('heroVideoInput').addEventListener('change', function (e) { handleHeroUpload(e, 'video'); });
-    document.getElementById('heroPosterInput').addEventListener('change', function (e) { handleHeroUpload(e, 'poster'); });
+    loadSlides();
+  }
+
+  function slideUrl(s) {
+    if (s.storage_path) { return publicMediaUrl(s.storage_path); }
+    return s.image_url ? (/^https?:/.test(s.image_url) ? s.image_url : '../' + s.image_url) : '';
+  }
+
+  function loadSlides() {
+    client().from('hero_slides').select('*').order('display_order').then(function (res) {
+      var box = document.getElementById('heroSlides');
+      if (!box) { return; }
+      if (res.error) { box.innerHTML = '<div class="products-message is-error">' + escapeHtml(res.error.message) + '</div>'; return; }
+      var slides = res.data || [];
+      box.innerHTML = slides.map(function (s, i) {
+        return '<div class="slide-card content-card" data-id="' + s.id + '" style="padding:1rem">' +
+          '<img class="upload-preview" src="' + escapeHtml(slideUrl(s)) + '" alt="">' +
+          '<div><strong>Image ' + (i + 1) + '</strong>' +
+            '<div class="product-form-grid" style="margin-top:.5rem">' +
+              '<div class="form-field"><label>Description (English, for accessibility)</label><input type="text" data-f="alt_en" value="' + escapeHtml(s.alt_en || '') + '"></div>' +
+              '<div class="form-field"><label>Description (தமிழ்)</label><input type="text" data-f="alt_ta" value="' + escapeHtml(s.alt_ta || '') + '"></div>' +
+            '</div>' +
+            '<div class="upload-field"><input type="file" data-f="file" accept="image/jpeg,image/png,image/webp"><button type="button" class="social-link-save-btn" data-save>Save</button><span class="upload-status" data-st></span></div>' +
+          '</div></div>';
+      }).join('') || '<div class="products-message">No hero images configured.</div>';
+      box.querySelectorAll('.slide-card').forEach(function (card) {
+        card.querySelector('[data-save]').addEventListener('click', function () { saveSlide(card); });
+      });
+    });
+  }
+
+  function saveSlide(card) {
+    var id = card.getAttribute('data-id');
+    var st = card.querySelector('[data-st]');
+    var file = card.querySelector('[data-f="file"]').files[0];
+    var payload = { alt_en: card.querySelector('[data-f="alt_en"]').value.trim() || null, alt_ta: card.querySelector('[data-f="alt_ta"]').value.trim() || null };
+    var done = function (path) {
+      if (path) { payload.storage_path = path; payload.image_url = null; }
+      client().from('hero_slides').update(payload).eq('id', id).then(function (res) {
+        if (res.error) { st.textContent = res.error.message; st.className = 'upload-status is-error'; return; }
+        st.textContent = 'Saved.'; st.className = 'upload-status is-success';
+        if (path) { card.querySelector('img').src = publicMediaUrl(path); }
+      });
+    };
+    if (!file) { done(null); return; }
+    if (IMAGE_TYPES.indexOf(file.type) === -1 || file.size > 5 * 1024 * 1024) { st.textContent = 'Use a JPEG, PNG or WebP under 5 MB.'; st.className = 'upload-status is-error'; return; }
+    var path = 'hero/slide-' + Date.now() + '.' + extFromFile(file);
+    st.textContent = 'Uploading…'; st.className = 'upload-status';
+    client().storage.from('media').upload(path, file, { contentType: file.type }).then(function (up) {
+      if (up.error) { st.textContent = 'Upload failed: ' + up.error.message; st.className = 'upload-status is-error'; return; }
+      recordMedia(file, path, 'hero_image');
+      done(path);
+    });
   }
 
   function saveHero() {
@@ -208,87 +222,32 @@
     var saveBtn = document.getElementById('heroSaveBtn');
     errorEl.classList.remove('is-visible');
     errorEl.textContent = '';
-
+    var val = function (id) { return document.getElementById(id).value.trim(); };
     var payload = {
-      heading: document.getElementById('heroHeading').value.trim(),
-      subheading: document.getElementById('heroSubheading').value.trim() || null,
-      cta_text: document.getElementById('heroCtaText').value.trim() || null,
-      cta_link: document.getElementById('heroCtaLink').value.trim() || null,
-      is_video_enabled: document.getElementById('heroVideoEnabled').checked,
+      heading: val('heroHeading'), heading_ta: val('heroHeadingTa') || null,
+      subheading: val('heroSubheading') || null, subheading_ta: val('heroSubheadingTa') || null,
+      cta_text: val('heroCtaText') || null, cta_text_ta: val('heroCtaTextTa') || null,
+      cta_link: val('heroCtaLink') || null,
       is_active: document.getElementById('heroActive').checked
     };
-
-    if (!payload.heading) {
-      errorEl.textContent = 'Heading is required.';
-      errorEl.classList.add('is-visible');
-      return;
-    }
-
+    var bad = /<(?!\/?em>)[^>]*>/i;
+    if (!payload.heading) { errorEl.textContent = 'Heading is required.'; errorEl.classList.add('is-visible'); return; }
+    if (bad.test(payload.heading) || bad.test(payload.heading_ta || '')) { errorEl.textContent = 'Only <em>…</em> is allowed in the heading.'; errorEl.classList.add('is-visible'); return; }
+    if (payload.cta_link && !/^(https:\/\/|\/|#|[a-z0-9\-]+\.html)/i.test(payload.cta_link)) { errorEl.textContent = 'The button link must start with https://, /, # or be a page like products.html.'; errorEl.classList.add('is-visible'); return; }
     saveBtn.disabled = true;
     saveBtn.textContent = 'Saving…';
-
     var query = state.hero
       ? client().from('hero_settings').update(payload).eq('id', state.hero.id).select().single()
       : client().from('hero_settings').insert(payload).select().single();
-
     query.then(function (res) {
       saveBtn.disabled = false;
-      saveBtn.textContent = 'Save Hero Content';
+      saveBtn.textContent = 'Save Hero Text';
       if (res.error) {
         errorEl.textContent = res.error.message || 'Could not save. Please try again.';
         errorEl.classList.add('is-visible');
         return;
       }
       state.hero = res.data;
-    });
-  }
-
-  function handleHeroUpload(e, kind) {
-    var file = e.target.files && e.target.files[0];
-    if (!file) { return; }
-
-    var allowed = kind === 'video' ? VIDEO_TYPES : IMAGE_TYPES;
-    var statusEl = document.getElementById(kind === 'video' ? 'heroVideoStatus' : 'heroPosterStatus');
-
-    if (allowed.indexOf(file.type) === -1) {
-      statusEl.textContent = 'Unsupported file type.';
-      statusEl.className = 'upload-status is-error';
-      return;
-    }
-
-    var path = 'hero/' + kind + '-' + Date.now() + '.' + extFromFile(file);
-    statusEl.textContent = 'Uploading…';
-    statusEl.className = 'upload-status';
-
-    client().storage.from('media').upload(path, file, { upsert: true, contentType: file.type }).then(function (uploadRes) {
-      if (uploadRes.error) {
-        statusEl.textContent = 'Upload failed: ' + uploadRes.error.message;
-        statusEl.className = 'upload-status is-error';
-        return;
-      }
-
-      var column = kind === 'video' ? 'video_storage_path' : 'poster_storage_path';
-      var updatePayload = {}; updatePayload[column] = path;
-
-      var query = state.hero
-        ? client().from('hero_settings').update(updatePayload).eq('id', state.hero.id).select().single()
-        : client().from('hero_settings').insert(Object.assign({ heading: 'Sourced with care.' }, updatePayload)).select().single();
-
-      query.then(function (res) {
-        if (res.error) {
-          statusEl.textContent = 'Saved file, but could not update the site: ' + res.error.message;
-          statusEl.className = 'upload-status is-error';
-          return;
-        }
-        state.hero = res.data;
-        recordMedia(file, path, kind === 'video' ? 'hero_video' : 'hero_image');
-
-        var previewEl = document.getElementById(kind === 'video' ? 'heroVideoPreview' : 'heroPosterPreview');
-        if (previewEl) { previewEl.src = publicMediaUrl(path); }
-
-        statusEl.textContent = 'Updated.';
-        statusEl.className = 'upload-status is-success';
-      });
     });
   }
 
