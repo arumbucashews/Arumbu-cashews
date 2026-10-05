@@ -1583,7 +1583,7 @@ body.page-light .form-success p { color: var(--ink-muted); }
 }
 .about-founder-photo { margin: 0.4rem 0 0; position: relative; padding: 0 1.2rem 1.2rem 0; }
 .about-founder-photo::before {
-  content: ''; position: absolute; top: 1.2rem; left: 1.2rem; right: 0; bottom: 0;
+  content: ''; position: absolute; top: -10px; left: -10px; right: calc(1.2rem - 10px); bottom: calc(1.2rem - 10px);
   border: 1px solid var(--gold);
 }
 .about-founder-photo img { position: relative; width: 100%; height: auto; background: var(--ivory-2); }

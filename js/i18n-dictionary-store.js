@@ -10,9 +10,9 @@
   var T = window.ARUMBU_TRANSLATIONS = window.ARUMBU_TRANSLATIONS || {};
   var add = {
     /* meta */
-    "meta.title.cart": { en: "Your Cart | Arumbu Cashews", ta: "உங்கள் கார்ட் | அரும்பு காஜு" },
-    "meta.title.checkout": { en: "Checkout | Arumbu Cashews", ta: "செக்அவுட் | அரும்பு காஜு" },
-    "meta.description.productsV2": { en: "Browse all 13 Arumbu Cashews grades, from WW180 to Baby Bits, in 250 g, 500 g and 1 kg packs. Buy online where listed or order on WhatsApp.", ta: "WW180 முதல் சிறு துணுக்குகள் வரை அரும்பு காஜுவின் 13 தரங்களையும் 250 கி, 500 கி, 1 கி.கி பொட்டலங்களில் பாருங்கள். பட்டியலிடப்பட்டவற்றை ஆன்லைனில் வாங்கலாம் அல்லது வாட்ஸ்அப்பில் ஆர்டர் செய்யலாம்." },
+    "meta.title.cart": { en: "Your Cart | Arumbu Cashews", ta: "உங்கள் கார்ட் | அரும்பு முந்திரி" },
+    "meta.title.checkout": { en: "Checkout | Arumbu Cashews", ta: "செக்அவுட் | அரும்பு முந்திரி" },
+    "meta.description.productsV2": { en: "Browse all 13 Arumbu Cashews grades, from WW180 to Baby Bits, in 250 g, 500 g and 1 kg packs. Buy online where listed or order on WhatsApp.", ta: "WW180 முதல் சிறு துணுக்குகள் வரை அரும்பு முந்திரியின் 13 தரங்களையும் 250 கி, 500 கி, 1 கி.கி பொட்டலங்களில் பாருங்கள். பட்டியலிடப்பட்டவற்றை ஆன்லைனில் வாங்கலாம் அல்லது வாட்ஸ்அப்பில் ஆர்டர் செய்யலாம்." },
 
     /* navigation / footer */
     "nav.gifting": { en: "Gifting", ta: "பரிசுகள்" },
@@ -179,7 +179,7 @@
     "auth.show": { en: "Show", ta: "காட்டு" },
     "auth.hide": { en: "Hide", ta: "மறை" },
     "auth.forgot": { en: "Forgot your password?", ta: "கடவுச்சொல்லை மறந்துவிட்டீர்களா?" },
-    "auth.noAccount": { en: "New to Arumbu Cashews?", ta: "அரும்பு காஜுவுக்குப் புதியவரா?" },
+    "auth.noAccount": { en: "New to Arumbu Cashews?", ta: "அரும்பு முந்திரிக்குப் புதியவரா?" },
     "auth.haveAccount": { en: "Already have an account?", ta: "ஏற்கனவே கணக்கு உள்ளதா?" },
     "auth.checkEmail": { en: "Check your inbox — we've sent a link to confirm your email address. Then log in.", ta: "உங்கள் மின்னஞ்சலைப் பாருங்கள் — மின்னஞ்சல் முகவரியை உறுதிப்படுத்த இணைப்பு அனுப்பியுள்ளோம். பிறகு உள்நுழையுங்கள்." },
     "auth.forgotTitle": { en: "Forgot your password?", ta: "கடவுச்சொல்லை மறந்துவிட்டீர்களா?" },

@@ -36,6 +36,7 @@ order, in the SQL editor:
 | `supabase/migrations/0009_payment_confirm_guard.sql` | A Razorpay payment id can settle only one order (defence in depth). |
 | `supabase/migrations/0010_founder_name_consistency.sql` | Data only. Corrects the founder name in the admin-editable About “people” text to “Sivakumar L” (only if the old “Shivakumar” spelling is still there). |
 | `supabase/migrations/0011_hide_admin_notification_email.sql` | Security hardening. Keeps `notify_admin_email` available to admins and internal database functions but excludes that internal recipient from public `site_settings` reads. |
+| `supabase/migrations/0012_tamil_cashew_terminology.sql` | Data only. Corrects the Tamil brand name in admin-editable text to “அரும்பு முந்திரி” (only rows that still use the old word). |
 
 Afterwards run the Security Advisor (Dashboard → Advisors) and confirm
 there are no new warnings.

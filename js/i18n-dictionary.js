@@ -28,23 +28,23 @@ var ARUMBU_TRANSLATIONS = {
   /* ---------- <title> / meta ---------- */
   "meta.title.home": {
     en: "Arumbu Cashews | Premium Cashews from Tamil Nadu",
-    ta: "அரும்பு காஜு | தமிழ்நாட்டின் பிரீமியம் முந்திரி"
+    ta: "அரும்பு முந்திரி | தமிழ்நாட்டின் பிரீமியம் முந்திரி"
   },
   "meta.title.about": {
     en: "About | Arumbu Cashews",
-    ta: "எங்களைப் பற்றி | அரும்பு காஜு"
+    ta: "எங்களைப் பற்றி | அரும்பு முந்திரி"
   },
   "meta.title.products": {
     en: "Products | Arumbu Cashews",
-    ta: "பொருட்கள் | அரும்பு காஜு"
+    ta: "பொருட்கள் | அரும்பு முந்திரி"
   },
   "meta.title.wholesale": {
     en: "Wholesale | Arumbu Cashews",
-    ta: "மொத்த விற்பனை | அரும்பு காஜு"
+    ta: "மொத்த விற்பனை | அரும்பு முந்திரி"
   },
   "meta.title.contact": {
     en: "Contact | Arumbu Cashews",
-    ta: "தொடர்பு கொள்ள | அரும்பு காஜு"
+    ta: "தொடர்பு கொள்ள | அரும்பு முந்திரி"
   },
 
   /* ---------- Splash screen ---------- */
@@ -69,7 +69,7 @@ var ARUMBU_TRANSLATIONS = {
   "header.facebookPending": { en: "Facebook", ta: "பேஸ்புக்" },
   "header.instagramPending": { en: "Instagram", ta: "இன்ஸ்டாகிராம்" },
 
-  "account.welcome": { en: "Welcome to Arumbu Cashews", ta: "அரும்பு காஜுவிற்கு வரவேற்கிறோம்" },
+  "account.welcome": { en: "Welcome to Arumbu Cashews", ta: "அரும்பு முந்திரிக்கு வரவேற்கிறோம்" },
   "account.desc": {
     en: "Create an account to save your favourites and track enquiries. Customer accounts are launching soon.",
     ta: "உங்கள் விருப்பப் பொருட்களைச் சேமிக்கவும், விசாரணைகளைக் கண்காணிக்கவும் ஒரு கணக்கை உருவாக்குங்கள். வாடிக்கையாளர் கணக்குகள் விரைவில் தொடங்கப்படும்."
@@ -115,9 +115,9 @@ var ARUMBU_TRANSLATIONS = {
   },
   "founder.lede": {
     en: "The story behind Arumbu Cashews begins with hard work, agriculture and a commitment to doing things the right way.",
-    ta: "அரும்பு காஜுவின் கதை கடின உழைப்பு, விவசாயம், மற்றும் சரியான முறையில் செயல்படும் உறுதிப்பாட்டுடன் தொடங்குகிறது."
+    ta: "அரும்பு முந்திரியின் கதை கடின உழைப்பு, விவசாயம், மற்றும் சரியான முறையில் செயல்படும் உறுதிப்பாட்டுடன் தொடங்குகிறது."
   },
-  "founder.role": { en: "Founder, Arumbu Cashews", ta: "நிறுவனர், அரும்பு காஜு" },
+  "founder.role": { en: "Founder, Arumbu Cashews", ta: "நிறுவனர், அரும்பு முந்திரி" },
   "founder.tags": { en: "Farmer-Entrepreneur · Cashew & Jackfruit Cultivation", ta: "விவசாயி-தொழில்முனைவோர் · முந்திரி மற்றும் பலா சாகுபடி" },
   "founder.p1": {
     en: "Sivakumar L comes from a farming family and has spent his life working the land — cultivating a range of crops, with jackfruit and cashew as his main areas of focus. Years of hands-on agricultural experience shaped the way he thinks about quality: nothing beats produce that's grown, harvested and handled with genuine care.",
@@ -125,7 +125,7 @@ var ARUMBU_TRANSLATIONS = {
   },
   "founder.p2": {
     en: "His approach has always been simple — work hard, stay genuine, maintain transparency, and give customers exactly what the product actually is, without unnecessary claims or exaggeration. That same mindset became the foundation Arumbu Cashews was built on.",
-    ta: "அவரது அணுகுமுறை எப்போதுமே எளிமையானது — கடினமாக உழைப்பது, உண்மையாக இருப்பது, வெளிப்படைத்தன்மையைப் பேணுவது, மற்றும் தேவையற்ற கூற்றுகள் இல்லாமல் பொருள் உண்மையில் என்னவோ அதையே வாடிக்கையாளர்களுக்கு வழங்குவது. அதே சிந்தனையே அரும்பு காஜு கட்டமைக்கப்பட்ட அடித்தளமாக மாறியது."
+    ta: "அவரது அணுகுமுறை எப்போதுமே எளிமையானது — கடினமாக உழைப்பது, உண்மையாக இருப்பது, வெளிப்படைத்தன்மையைப் பேணுவது, மற்றும் தேவையற்ற கூற்றுகள் இல்லாமல் பொருள் உண்மையில் என்னவோ அதையே வாடிக்கையாளர்களுக்கு வழங்குவது. அதே சிந்தனையே அரும்பு முந்திரி கட்டமைக்கப்பட்ட அடித்தளமாக மாறியது."
   },
   "founder.p3": {
     en: "The name Arumbu carries personal meaning. It is the name of his mother, Arumbu, and it now carries her name forward as the identity of the brand. His father, Late Lakshmanaperumal, was an important part of the family's agricultural journey — and his legacy continues to shape the values behind the business.",
@@ -133,7 +133,7 @@ var ARUMBU_TRANSLATIONS = {
   },
   "founder.p4": {
     en: "Arumbu Cashews carries that legacy forward — rooted in family, grounded in agriculture, and built on the same honesty Sivakumar has practiced his entire working life.",
-    ta: "அரும்பு காஜு அந்த பாரம்பரியத்தை முன்னெடுத்துச் செல்கிறது — குடும்பத்தில் வேரூன்றி, விவசாயத்தில் நிலைத்து, சிவகுமார் தனது முழு உழைப்பு வாழ்க்கையிலும் கடைப்பிடித்த அதே நேர்மையின் மீது கட்டப்பட்டது."
+    ta: "அரும்பு முந்திரி அந்த பாரம்பரியத்தை முன்னெடுத்துச் செல்கிறது — குடும்பத்தில் வேரூன்றி, விவசாயத்தில் நிலைத்து, சிவகுமார் தனது முழு உழைப்பு வாழ்க்கையிலும் கடைப்பிடித்த அதே நேர்மையின் மீது கட்டப்பட்டது."
   },
 
   /* ---------- Homepage: Why choose us ---------- */
@@ -222,7 +222,7 @@ var ARUMBU_TRANSLATIONS = {
   "footer.getInTouch": { en: "Get in Touch", ta: "தொடர்பு கொள்ளுங்கள்" },
   "footer.whatsappUs": { en: "WhatsApp Us", ta: "வாட்ஸ்அப் செய்யுங்கள்" },
   "footer.findUs": { en: "Find Us", ta: "எங்களைக் கண்டறியுங்கள்" },
-  "footer.copyright": { en: "© 2026 Arumbu Cashews. All rights reserved.", ta: "© 2026 அரும்பு காஜு. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை." },
+  "footer.copyright": { en: "© 2026 Arumbu Cashews. All rights reserved.", ta: "© 2026 அரும்பு முந்திரி. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை." },
   "footer.credit.html": {
     en: "Website created by <span class=\"footer-heart\">&#10084;&#65039;</span> Sanjay Gandhi",
     ta: "இணையதளம் உருவாக்கியவர் <span class=\"footer-heart\">&#10084;&#65039;</span> சஞ்சய் காந்தி"
@@ -234,7 +234,7 @@ var ARUMBU_TRANSLATIONS = {
 
   /* ---------- About page ---------- */
   "about.hero.eyebrow": { en: "Our Story", ta: "எங்கள் கதை" },
-  "about.hero.title": { en: "From the Cashew Tree to Arumbu Cashews", ta: "முந்திரி மரத்திலிருந்து அரும்பு காஜு வரை" },
+  "about.hero.title": { en: "From the Cashew Tree to Arumbu Cashews", ta: "முந்திரி மரத்திலிருந்து அரும்பு முந்திரி வரை" },
   "about.hero.desc": {
     en: "A family journey that began with cashew cultivation and raw cashews, and gradually grew into full-fledged cashew processing.",
     ta: "முந்திரி சாகுபடி மற்றும் பச்சை முந்திரியுடன் தொடங்கிய ஒரு குடும்பப் பயணம், படிப்படியாக முழுமையான முந்திரி பதப்படுத்துதலாக வளர்ந்தது."
@@ -243,7 +243,7 @@ var ARUMBU_TRANSLATIONS = {
   "about.story.heading": { en: "Roots in cashew cultivation", ta: "முந்திரி சாகுபடியில் வேர்கள்" },
   "about.story.p1": {
     en: "Arumbu Cashews did not begin as a brand entering the cashew business. It began at the cultivation level, with a family that grew cashews and harvested raw cashews directly from the trees.",
-    ta: "அரும்பு காஜு முந்திரி வணிகத்தில் நுழையும் ஒரு பிராண்டாகத் தொடங்கவில்லை. இது சாகுபடி மட்டத்தில் தொடங்கியது, முந்திரியை வளர்த்து மரங்களிலிருந்து நேரடியாக பச்சை முந்திரியை அறுவடை செய்த ஒரு குடும்பத்துடன்."
+    ta: "அரும்பு முந்திரி முந்திரி வணிகத்தில் நுழையும் ஒரு பிராண்டாகத் தொடங்கவில்லை. இது சாகுபடி மட்டத்தில் தொடங்கியது, முந்திரியை வளர்த்து மரங்களிலிருந்து நேரடியாக பச்சை முந்திரியை அறுவடை செய்த ஒரு குடும்பத்துடன்."
   },
   "about.story.p2": {
     en: "In the early years, the family sold the harvested cashews as raw produce, without processing them into finished kernels. That raw-cashew trade was the foundation of the family's relationship with cashews — years spent understanding the crop before ever processing a single kernel.",
@@ -251,7 +251,7 @@ var ARUMBU_TRANSLATIONS = {
   },
   "about.story.p3": {
     en: "Over time, the business gradually evolved. Arumbu Cashews was started as the family moved towards processing cashews themselves, rather than only selling them raw. Today, that evolution continues — Arumbu Cashews is focused on processing cashews and providing good-quality cashew products.",
-    ta: "காலப்போக்கில், வணிகம் படிப்படியாக வளர்ந்தது. குடும்பம் பச்சையாக மட்டும் விற்பதற்குப் பதிலாக, முந்திரியை தாங்களே பதப்படுத்தும் நிலைக்கு நகர்ந்ததால் அரும்பு காஜு தொடங்கப்பட்டது. இன்று, அந்த வளர்ச்சி தொடர்கிறது — அரும்பு காஜு முந்திரியை பதப்படுத்துவதிலும் நல்ல தரமான முந்திரி பொருட்களை வழங்குவதிலும் கவனம் செலுத்துகிறது."
+    ta: "காலப்போக்கில், வணிகம் படிப்படியாக வளர்ந்தது. குடும்பம் பச்சையாக மட்டும் விற்பதற்குப் பதிலாக, முந்திரியை தாங்களே பதப்படுத்தும் நிலைக்கு நகர்ந்ததால் அரும்பு முந்திரி தொடங்கப்பட்டது. இன்று, அந்த வளர்ச்சி தொடர்கிறது — அரும்பு முந்திரி முந்திரியை பதப்படுத்துவதிலும் நல்ல தரமான முந்திரி பொருட்களை வழங்குவதிலும் கவனம் செலுத்துகிறது."
   },
   "about.journey.eyebrow": { en: "The Journey", ta: "பயணம்" },
   "about.journey.heading": { en: "Cultivation to processing", ta: "சாகுபடியிலிருந்து பதப்படுத்துதல் வரை" },
@@ -268,7 +268,7 @@ var ARUMBU_TRANSLATIONS = {
   "about.journey.step3.title": { en: "A New Beginning", ta: "ஒரு புதிய தொடக்கம்" },
   "about.journey.step3.desc": {
     en: "With the establishment of Arumbu Cashews, the family began moving into cashew processing.",
-    ta: "அரும்பு காஜு நிறுவப்பட்டதுடன், குடும்பம் முந்திரி பதப்படுத்துதலுக்கு நகரத் தொடங்கியது."
+    ta: "அரும்பு முந்திரி நிறுவப்பட்டதுடன், குடும்பம் முந்திரி பதப்படுத்துதலுக்கு நகரத் தொடங்கியது."
   },
   "about.journey.step4.title": { en: "Learning & Growing", ta: "கற்றல் & வளர்ச்சி" },
   "about.journey.step4.desc": {
@@ -278,14 +278,14 @@ var ARUMBU_TRANSLATIONS = {
   "about.journey.step5.title": { en: "Processing Today", ta: "இன்றைய பதப்படுத்துதல்" },
   "about.journey.step5.desc": {
     en: "Today, Arumbu Cashews is focused on full-fledged cashew processing and supplying quality cashew grades.",
-    ta: "இன்று, அரும்பு காஜு முழுமையான முந்திரி பதப்படுத்துதலிலும், தரமான முந்திரி வகைகளை வழங்குவதிலும் கவனம் செலுத்துகிறது."
+    ta: "இன்று, அரும்பு முந்திரி முழுமையான முந்திரி பதப்படுத்துதலிலும், தரமான முந்திரி வகைகளை வழங்குவதிலும் கவனம் செலுத்துகிறது."
   },
   "about.people.eyebrow": { en: "The People Behind Arumbu", ta: "அரும்புவின் பின்னணியில் உள்ளவர்கள்" },
   "about.people.heading": { en: "A family name", ta: "ஒரு குடும்பப் பெயர்" },
   "about.people.card1.title": { en: "Sivakumar L", ta: "Sivakumar L" },
   "about.people.card1.desc": {
     en: "Founder of Arumbu Cashews, carrying forward the family's journey with cashews — from cultivation to processing.",
-    ta: "அரும்பு காஜுவின் நிறுவனர், முந்திரியுடனான குடும்பத்தின் பயணத்தை — சாகுபடியிலிருந்து பதப்படுத்துதல் வரை — முன்னெடுத்துச் செல்கிறார்."
+    ta: "அரும்பு முந்திரியின் நிறுவனர், முந்திரியுடனான குடும்பத்தின் பயணத்தை — சாகுபடியிலிருந்து பதப்படுத்துதல் வரை — முன்னெடுத்துச் செல்கிறார்."
   },
   "about.people.card2.title": { en: "Mr. Lakshmanaperumal", ta: "திரு. லக்ஷ்மணபெருமாள்" },
   "about.people.card2.desc": {
@@ -295,7 +295,7 @@ var ARUMBU_TRANSLATIONS = {
   "about.people.card3.title": { en: "The name Arumbu", ta: "அரும்பு என்ற பெயர்" },
   "about.people.card3.desc": {
     en: "The name \"Arumbu\" comes from Sivakumar's mother. The business is named Arumbu Cashews in her memory.",
-    ta: "\"அரும்பு\" என்ற பெயர் சிவகுமாரின் தாயாரிடமிருந்து வந்தது. அவரது நினைவாக இந்த வணிகம் அரும்பு காஜு என பெயரிடப்பட்டுள்ளது."
+    ta: "\"அரும்பு\" என்ற பெயர் சிவகுமாரின் தாயாரிடமிருந்து வந்தது. அவரது நினைவாக இந்த வணிகம் அரும்பு முந்திரி என பெயரிடப்பட்டுள்ளது."
   },
   "about.raw.eyebrow": { en: "From Raw to Processed", ta: "பச்சையிலிருந்து பதப்படுத்தப்பட்டது வரை" },
   "about.raw.heading": { en: "A gradual transition", ta: "ஒரு படிப்படியான மாற்றம்" },
@@ -305,7 +305,7 @@ var ARUMBU_TRANSLATIONS = {
   },
   "about.raw.p2": {
     en: "That gradual approach means Arumbu Cashews understands cashews from their origin through to processing, not just from the processing floor.",
-    ta: "அந்த படிப்படியான அணுகுமுறை என்பது, அரும்பு காஜு முந்திரியை பதப்படுத்தும் தளத்திலிருந்து மட்டுமல்ல, அதன் தோற்றம் முதல் பதப்படுத்துதல் வரை புரிந்துகொள்கிறது என்பதாகும்."
+    ta: "அந்த படிப்படியான அணுகுமுறை என்பது, அரும்பு முந்திரி முந்திரியை பதப்படுத்தும் தளத்திலிருந்து மட்டுமல்ல, அதன் தோற்றம் முதல் பதப்படுத்துதல் வரை புரிந்துகொள்கிறது என்பதாகும்."
   },
   "about.philosophy.eyebrow": { en: "Our Philosophy", ta: "எங்கள் தத்துவம்" },
   "about.philosophy.heading": { en: "From the tree to the finished kernel", ta: "மரத்திலிருந்து முடிக்கப்பட்ட பருப்பு வரை" },
@@ -317,20 +317,20 @@ var ARUMBU_TRANSLATIONS = {
   "about.commitment.heading": { en: "A good product should speak for itself", ta: "ஒரு நல்ல பொருள் தானாகவே பேச வேண்டும்" },
   "about.commitment.p1": {
     en: "Arumbu Cashews is being built with a simple intention: to provide properly processed, carefully handled and good-quality cashew products.",
-    ta: "அரும்பு காஜு ஒரு எளிய நோக்கத்துடன் கட்டமைக்கப்படுகிறது: முறையாக பதப்படுத்தப்பட்ட, கவனமாக கையாளப்பட்ட, நல்ல தரமான முந்திரி பொருட்களை வழங்குவது."
+    ta: "அரும்பு முந்திரி ஒரு எளிய நோக்கத்துடன் கட்டமைக்கப்படுகிறது: முறையாக பதப்படுத்தப்பட்ட, கவனமாக கையாளப்பட்ட, நல்ல தரமான முந்திரி பொருட்களை வழங்குவது."
   },
   "about.commitment.p2": {
     en: "The focus is not only on selling cashews, but on continuously improving the product and giving customers a quality product they can trust.",
     ta: "கவனம் முந்திரியை விற்பதில் மட்டும் இல்லை, மாறாக தொடர்ந்து பொருளை மேம்படுத்தி வாடிக்கையாளர்களுக்கு நம்பக்கூடிய தரமான பொருளை வழங்குவதிலும் உள்ளது."
   },
-  "about.why.eyebrow": { en: "Why Arumbu Cashews", ta: "ஏன் அரும்பு காஜு" },
+  "about.why.eyebrow": { en: "Why Arumbu Cashews", ta: "ஏன் அரும்பு முந்திரி" },
   "about.why.heading": { en: "What sets us apart", ta: "எங்களை வேறுபடுத்துவது என்ன" },
   "about.why.card1.title": { en: "Rooted in Cultivation", ta: "சாகுபடியில் வேரூன்றியது" },
   "about.why.card1.desc": { en: "Our journey began with cashew cultivation and raw cashews.", ta: "எங்கள் பயணம் முந்திரி சாகுபடி மற்றும் பச்சை முந்திரியுடன் தொடங்கியது." },
   "about.why.card2.title": { en: "From Raw to Processed", ta: "பச்சையிலிருந்து பதப்படுத்தப்பட்டது வரை" },
   "about.why.card2.desc": { en: "We gradually moved from selling raw cashews to processing cashews ourselves.", ta: "பச்சை முந்திரியை விற்பதிலிருந்து அதை நாங்களே பதப்படுத்துவதற்கு படிப்படியாக நகர்ந்தோம்." },
   "about.why.card3.title": { en: "Family-Led Journey", ta: "குடும்பம் வழிநடத்தும் பயணம்" },
-  "about.why.card3.desc": { en: "Arumbu Cashews carries forward a family journey built around cashews.", ta: "அரும்பு காஜு முந்திரியை மையமாகக் கொண்ட ஒரு குடும்பப் பயணத்தை முன்னெடுத்துச் செல்கிறது." },
+  "about.why.card3.desc": { en: "Arumbu Cashews carries forward a family journey built around cashews.", ta: "அரும்பு முந்திரி முந்திரியை மையமாகக் கொண்ட ஒரு குடும்பப் பயணத்தை முன்னெடுத்துச் செல்கிறது." },
   "about.why.card4.title": { en: "Quality First", ta: "தரமே முதன்மை" },
   "about.why.card4.desc": { en: "Our focus is on giving customers a properly processed and good-quality product.", ta: "முறையாக பதப்படுத்தப்பட்ட, நல்ல தரமான பொருளை வாடிக்கையாளர்களுக்கு வழங்குவதே எங்கள் கவனம்." },
   "about.cta.heading": { en: "Explore Our Cashew Range", ta: "எங்கள் முந்திரி வரம்பை ஆராயுங்கள்" },
@@ -338,7 +338,7 @@ var ARUMBU_TRANSLATIONS = {
 
   /* ---------- Products page ---------- */
   "products.page.eyebrow": { en: "Full Range", ta: "முழு வரம்பு" },
-  "products.page.heading": { en: "Every Arumbu Cashews grade", ta: "ஒவ்வொரு அரும்பு காஜு தரமும்" },
+  "products.page.heading": { en: "Every Arumbu Cashews grade", ta: "ஒவ்வொரு அரும்பு முந்திரி தரமும்" },
 
   /* ---------- Wholesale page ---------- */
   "wholesale.eyebrow": { en: "For Businesses & Retailers", ta: "வணிகங்கள் & சில்லறை விற்பனையாளர்களுக்கு" },

@@ -268,9 +268,9 @@ body.home-v2 {
 }
 .founder-v2-portrait { margin: 0; padding: 0 1.2rem 0 0; }
 .founder-v2-photo { position: relative; }
-.founder-v2-photo::before {            /* thin gold frame offset behind the photo */
+.founder-v2-photo::before {            /* thin gold frame around the photo: a uniform 10px from each edge */
   content: '';
-  position: absolute; top: 1.2rem; left: 1.2rem; right: -1.2rem; bottom: -1.2rem;
+  position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px;
   border: 1px solid var(--gold);
 }
 .founder-v2-photo img {
