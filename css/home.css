@@ -489,3 +489,149 @@ html[lang="ta"] .why-v2-list h3 { font-size: 1.2rem; }
   min-width: 0;
   scroll-snap-align: start;
 }
+
+
+/* ============ PREMIUM EDITORIAL HERO REFRESH — 2026-11-03 ============ */
+/* Combines premium product photography, a subtle farm-to-finish story,
+   and a clear route into the 13-grade product range. */
+.home-v2 .hero-wrap {
+  background:
+    radial-gradient(ellipse at 82% 42%, rgba(201,162,39,.10), transparent 38%),
+    var(--bot-left) left -170px top 30px / 300px auto no-repeat,
+    var(--bot-right) right -110px top 10px / 310px auto no-repeat,
+    var(--canvas);
+}
+.home-v2 .hero-v2 {
+  max-width: 1440px;
+  grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+  gap: clamp(2rem, 5vw, 5.5rem);
+  padding: clamp(3.5rem, 6vw, 6rem) clamp(1.5rem, 5vw, 4.5rem);
+}
+.home-v2 .hero-v2-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 570px;
+}
+.home-v2 .hero-v2-copy::before {
+  content: "ARUMBU CASHEWS  ·  PREMIUM SELECTION";
+  display: block;
+  margin-bottom: 1.35rem;
+  color: var(--gold-ink);
+  font: 600 .68rem/1.4 var(--home-body);
+  letter-spacing: .19em;
+}
+.home-v2 .hero-v2-title {
+  max-width: 650px;
+  margin-bottom: 1.25rem;
+  font-size: clamp(3rem, 5.2vw, 5rem);
+  line-height: 1.04;
+  letter-spacing: -.035em;
+}
+.home-v2 .hero-v2-rule {
+  width: 76px;
+  height: 2px;
+  margin-bottom: 1.35rem;
+}
+.home-v2 .hero-v2-sub {
+  max-width: 450px;
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+.home-v2 .hero-v2-actions { gap: .8rem; margin-bottom: 1.35rem; }
+.home-v2 .hero-v2-actions .btn { min-height: 54px; padding: .95rem 1.45rem; }
+.home-v2 .hero-v2-visual {
+  width: 100%;
+  max-width: 650px;
+  justify-self: end;
+  aspect-ratio: 1 / 1.02;
+}
+.home-v2 .hero-v2-frame {
+  inset: 9px calc(4% + 9px) calc(7% + 9px);
+  border-radius: 48% 48% 5px 5px;
+  box-shadow: 0 24px 65px rgba(48,29,17,.13);
+}
+.home-v2 .hero-v2-arch {
+  inset: 0 4% 7%;
+  border-width: 1.5px;
+  border-radius: 48% 48% 7px 7px;
+}
+.home-v2 .hero-v2-visual::after {
+  content: "13 GRADES  ·  CAREFULLY SELECTED";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: .8rem 1.05rem;
+  background: var(--forest-deep);
+  color: var(--gold-light);
+  border-left: 2px solid var(--gold);
+  font: 600 .62rem/1.4 var(--home-body);
+  letter-spacing: .15em;
+}
+.home-v2 .hero-v2-phone { font-size: .82rem; }
+@media (max-width: 900px) {
+  .home-v2 .hero-v2 {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    padding: 2.8rem 1.5rem 3.5rem;
+  }
+  .home-v2 .hero-v2-copy { max-width: 680px; margin: 0 auto; }
+  .home-v2 .hero-v2-copy::before { margin-bottom: .9rem; }
+  .home-v2 .hero-v2-title { font-size: clamp(2.7rem, 7vw, 4.2rem); }
+  .home-v2 .hero-v2-visual {
+    width: min(100%, 520px);
+    max-width: 520px;
+    justify-self: center;
+    aspect-ratio: 1 / .94;
+  }
+}
+@media (max-width: 720px) {
+  .home-v2 .hero-v2 {
+    padding: 1.45rem 1.1rem 2.6rem;
+    gap: 1.25rem;
+  }
+  .home-v2 .hero-v2-copy::before {
+    font-size: .58rem;
+    letter-spacing: .14em;
+    margin-bottom: .75rem;
+  }
+  .home-v2 .hero-v2-title {
+    font-size: clamp(2.45rem, 10.5vw, 3.45rem);
+    line-height: 1.08;
+    margin-bottom: .9rem;
+  }
+  .home-v2 .hero-v2-rule { margin-bottom: .9rem; }
+  .home-v2 .hero-v2-sub {
+    max-width: 390px;
+    font-size: .94rem;
+    line-height: 1.65;
+    margin-bottom: 1.35rem;
+  }
+  .home-v2 .hero-v2-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: .65rem;
+    margin-bottom: .9rem;
+  }
+  .home-v2 .hero-v2-actions .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 52px;
+  }
+  .home-v2 .hero-v2-phone { margin-top: .1rem; }
+  .home-v2 .hero-v2-visual {
+    width: min(92%, 390px);
+    aspect-ratio: 1 / 1.02;
+  }
+  .home-v2 .hero-v2-visual::after {
+    right: -2%;
+    bottom: 0;
+    padding: .65rem .8rem;
+    font-size: .53rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-v2 .hero-slide { transition: none; }
+}
