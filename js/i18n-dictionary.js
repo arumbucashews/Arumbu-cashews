@@ -99,8 +99,8 @@ var ARUMBU_TRANSLATIONS = {
   /* ---------- Homepage: Hero ---------- */
   "hero.eyebrow": { en: "Est. in the cashew belt of Tamil Nadu", ta: "தமிழ்நாட்டின் முந்திரி பெல்ட்டில் தொடங்கப்பட்டது" },
   "hero.title.html": {
-    en: "Sourced with care. <em>Processed with precision.</em>",
-    ta: "அக்கறையுடன் சேகரிக்கப்பட்டது. <em>துல்லியமாக பதப்படுத்தப்பட்டது.</em>"
+    en: "Premium Cashews. <em>Perfectly Graded.</em>",
+    ta: "பிரீமியம் முந்திரி. <em>துல்லியமாக தரம் பிரிக்கப்பட்டது.</em>"
   },
   "hero.ctaWhatsapp": { en: "Order on WhatsApp", ta: "வாட்ஸ்அப்பில் ஆர்டர் செய்யுங்கள்" },
   "hero.ctaViewProducts": { en: "View Products", ta: "பொருட்களைப் பார்க்க" },
@@ -408,7 +408,7 @@ var ARUMBU_TRANSLATIONS = {
 
   /* ---------- Homepage (warm-white redesign) ---------- */
   "meta.description.homeV2": { en: "Arumbu Cashews — premium cashews from Tamil Nadu in 13 grades, from WW180 to baby bits. Order 250 g, 500 g or 1 kg packs on WhatsApp, or enquire for wholesale.", ta: "அரும்பு முந்திரி — தமிழ்நாட்டின் பிரீமியம் முந்திரி, WW180 முதல் சிறு துணுக்குகள் வரை 13 தரங்களில். 250 கி, 500 கி அல்லது 1 கி.கி பொட்டலங்களை வாட்ஸ்அப்பில் ஆர்டர் செய்யுங்கள், அல்லது மொத்த விற்பனைக்கு விசாரியுங்கள்." },
-  "hero.subV2": { en: "Thirteen cashew grades, from WW180 to Baby Bits, in 250 g, 500 g and 1 kg packs. Wholesale on enquiry.", ta: "WW180 முதல் சிறு துணுக்குகள் வரை பதிமூன்று முந்திரி தரங்கள், 250 கி, 500 கி மற்றும் 1 கி.கி பொட்டலங்களில். மொத்த விற்பனை விசாரணையின் பேரில்." },
+  "hero.subV2": { en: "Carefully sourced. Expertly processed. Quality you can trust. Explore 13 cashew grades in 250 g, 500 g and 1 kg packs.", ta: "கவனமாகத் தேர்ந்தெடுக்கப்பட்டு, நிபுணத்துவத்துடன் பதப்படுத்தப்பட்டது. நம்பிக்கைக்குரிய தரம். 250 கி, 500 கி மற்றும் 1 கி.கி பொட்டலங்களில் 13 முந்திரி தரங்களைப் பாருங்கள்." },
   "hero.ctaViewGrades": { en: "View Our Grades", ta: "எங்கள் தரங்களைக் காண்க" },
 
   "grades.eyebrow": { en: "Our Grades", ta: "எங்கள் தரங்கள்" },
