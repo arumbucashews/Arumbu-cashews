@@ -455,3 +455,22 @@ html[lang="ta"] .hero-v2-title { font-size: clamp(1.9rem, 3.6vw, 3rem); }
 html[lang="ta"] .founder-v2-heading { font-size: clamp(1.7rem, 3vw, 2.5rem); }
 html[lang="ta"] .founder-v2-quote p { font-size: clamp(1.05rem, 1.6vw, 1.3rem); }
 html[lang="ta"] .why-v2-list h3 { font-size: 1.2rem; }
+
+
+/* FORCE FULL PRODUCT PHOTOGRAPH — homepage grade cards */
+.home-v2 .grade-media {
+  aspect-ratio: 3 / 2 !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+.home-v2 .grade-media img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  transform: none !important;
+}
+.home-v2 .grade-item:hover .grade-media img {
+  transform: none !important;
+}
