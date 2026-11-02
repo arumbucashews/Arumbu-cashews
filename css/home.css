@@ -216,18 +216,20 @@ body.home-v2 {
 .grade-item { scroll-snap-align: start; display: flex; flex-direction: column; }
 .grade-media {
   position: relative;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 2;
   background: #ffffff;
   overflow: hidden;
   margin-bottom: 1.2rem;
 }
 .grade-media img {
   position: relative;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: none;
 }
-.grade-item:hover .grade-media img { transform: scale(1.04); }
+.grade-item:hover .grade-media img { transform: none; }
 .grade-placeholder {
   position: absolute; inset: 0;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.35rem;
