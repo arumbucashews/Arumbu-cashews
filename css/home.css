@@ -474,3 +474,18 @@ html[lang="ta"] .why-v2-list h3 { font-size: 1.2rem; }
 .home-v2 .grade-item:hover .grade-media img {
   transform: none !important;
 }
+
+
+/* SHOW ONE GRADE CARD AT A TIME — arrow navigation */
+.home-v2 .grades-rail {
+  grid-auto-columns: 100% !important;
+  gap: 0 !important;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.home-v2 .grades-rail > .grade-item {
+  width: 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+}
