@@ -32,12 +32,12 @@
   var WA_NUMBER = '919976055524';
 
   var STATIC_IMAGES = {
-    WW180: 'images/products/ww180.jpg', WW210: 'images/products/ww210.png',
+    WW180: 'images/products/ww180.jpg', WW210: 'images/products/ww210.jpg',
     WW240: 'images/products/ww240.jpg', WW320: 'images/products/ww320.jpg',
-    WW400: 'images/products/ww400.jpg', SW: 'images/products/sw.png',
-    SSW: 'images/products/ssw.png', CSP: 'images/products/csp.jpg',
+    WW400: 'images/products/ww400.jpg', SW: 'images/products/sw.jpg',
+    SSW: 'images/products/ssw.jpg', LWP: 'images/products/lwp.jpg', CSP: 'images/products/csp.jpg',
     BB: 'images/products/bb.jpg', JH: 'images/products/jh.jpg',
-    SJH: 'images/products/sjh.png', JK: 'images/products/jk.png'
+    SJH: 'images/products/sjh.jpg', JK: 'images/products/jk.jpg'
   };
 
   /* ---------- small utilities ---------- */
