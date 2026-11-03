@@ -1271,7 +1271,7 @@ p { color: var(--text-muted); }
   position: fixed;
   right: 1.6rem;
   bottom: calc(1.6rem + 58px + 14px);
-  width: 44px; height: 44px;
+  width: 58px; height: 58px;
   border-radius: 50%;
   background: #121212;
   border: 1px solid #D4A32C;
@@ -1455,7 +1455,7 @@ p { color: var(--text-muted); }
   .hero-stats { gap: 2rem; }
 
   .whatsapp-float { width: 52px; height: 52px; right: 1rem; bottom: 1rem; }
-  .back-to-top { width: 40px; height: 40px; right: 1rem; bottom: calc(1rem + 52px + 12px); }
+  .back-to-top { width: 52px; height: 52px; right: 1rem; bottom: calc(1rem + 52px + 12px); }
 }
 
 /* ============ INNER PAGES — LIGHT THEME ============
