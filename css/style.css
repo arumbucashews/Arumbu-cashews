@@ -2002,7 +2002,7 @@ body.page-light:not(.admin-standalone):has(.page-hero) > main::before {
 }
 
 
-/* Header wordmark: white lettering with ARUMBU as the dominant line */
+/* Header wordmark: ARUMBU and CASHEWS exactly equal in size and styling */
 .site-header .brand-wordmark {
   display: flex;
   flex-direction: column;
@@ -2015,17 +2015,13 @@ body.page-light:not(.admin-standalone):has(.page-hero) > main::before {
   letter-spacing: .045em;
   white-space: nowrap;
 }
-.site-header .brand-wordmark-main {
-  color: #FFFFFF;
-  font-size: 1em;
-  font-weight: 700;
-  letter-spacing: .055em;
-}
+.site-header .brand-wordmark-main,
 .site-header .brand-wordmark-sub {
-  color: #FFFFFF;
-  font-size: 1em;
-  font-weight: 600;
-  letter-spacing: .12em;
+  color: #FFFFFF !important;
+  font-size: 1em !important;
+  font-weight: 600 !important;
+  letter-spacing: .045em !important;
+  line-height: 1.02;
 }
 @media (max-width: 1300px) {
   .site-header .brand-wordmark { font-size: .98rem; }
