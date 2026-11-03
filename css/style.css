@@ -2015,12 +2015,18 @@ body.page-light:not(.admin-standalone):has(.page-hero) > main::before {
   letter-spacing: .045em;
   white-space: nowrap;
 }
-.site-header .brand-wordmark-main,
+.site-header .brand-wordmark-main {
+  color: #FFFFFF !important;
+  font-size: 1.08em !important;
+  font-weight: 700 !important;
+  letter-spacing: .045em !important;
+  line-height: 1.02;
+}
 .site-header .brand-wordmark-sub {
   color: #FFFFFF !important;
-  font-size: 1em !important;
-  font-weight: 600 !important;
-  letter-spacing: .045em !important;
+  font-size: .82em !important;
+  font-weight: 700 !important;
+  letter-spacing: .12em !important;
   line-height: 1.02;
 }
 @media (max-width: 1300px) {
