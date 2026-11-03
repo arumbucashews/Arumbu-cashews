@@ -408,8 +408,11 @@ var ARUMBU_TRANSLATIONS = {
 
   /* ---------- Homepage (warm-white redesign) ---------- */
   "meta.description.homeV2": { en: "Arumbu Cashews — premium cashews from Tamil Nadu in 13 grades, from WW180 to baby bits. Order 250 g, 500 g or 1 kg packs on WhatsApp, or enquire for wholesale.", ta: "அரும்பு முந்திரி — தமிழ்நாட்டின் பிரீமியம் முந்திரி, WW180 முதல் சிறு துணுக்குகள் வரை 13 தரங்களில். 250 கி, 500 கி அல்லது 1 கி.கி பொட்டலங்களை வாட்ஸ்அப்பில் ஆர்டர் செய்யுங்கள், அல்லது மொத்த விற்பனைக்கு விசாரியுங்கள்." },
-  "hero.subV2": { en: "Carefully sourced. Expertly processed. Quality you can trust. Explore 13 cashew grades in 250 g, 500 g and 1 kg packs.", ta: "கவனமாகத் தேர்ந்தெடுக்கப்பட்டு, நிபுணத்துவத்துடன் பதப்படுத்தப்பட்டது. நம்பிக்கைக்குரிய தரம். 250 கி, 500 கி மற்றும் 1 கி.கி பொட்டலங்களில் 13 முந்திரி தரங்களைப் பாருங்கள்." },
-  "hero.ctaViewGrades": { en: "View Our Grades", ta: "எங்கள் தரங்களைக் காண்க" },
+  "hero.subV2": { en: "Carefully sourced. Expertly processed. Quality you can trust.", ta: "கவனமாகத் தேர்ந்தெடுக்கப்பட்டது. நிபுணத்துவத்துடன் பதப்படுத்தப்பட்டது. நீங்கள் நம்பக்கூடிய தரம்." },
+  "hero.eyebrow": { en: "ARUMBU CASHEWS · PREMIUM SELECTION", ta: "அரும்பு முந்திரி · பிரீமியம் தேர்வு" },
+  "hero.support": { en: "13 Cashew Grades | 250 g | 500 g | 1 kg", ta: "13 முந்திரி தரங்கள் | 250 கிராம் | 500 கிராம் | 1 கிலோ" },
+  "hero.imageNote": { en: "FROM ORCHARD TO FINISHED KERNEL", ta: "தோட்டத்திலிருந்து தரமான முந்திரி பருப்பு வரை" },
+  "hero.ctaViewGrades": { en: "Explore Our Cashew Grades", ta: "எங்கள் முந்திரி தரங்களைப் பாருங்கள்" },
 
   "grades.eyebrow": { en: "Our Grades", ta: "எங்கள் தரங்கள்" },
   "grades.heading.html": { en: "Explore all <em>thirteen grades</em>", ta: "அனைத்து <em>பதிமூன்று தரங்களையும்</em> காண்க" },
