@@ -2017,13 +2017,13 @@ body.page-light:not(.admin-standalone):has(.page-hero) > main::before {
 }
 .site-header .brand-wordmark-main {
   color: #FFFFFF;
-  font-size: 1.18em;
+  font-size: 1em;
   font-weight: 700;
   letter-spacing: .055em;
 }
 .site-header .brand-wordmark-sub {
   color: #FFFFFF;
-  font-size: .78em;
+  font-size: 1em;
   font-weight: 600;
   letter-spacing: .12em;
 }
