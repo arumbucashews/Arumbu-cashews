@@ -829,3 +829,57 @@ html[lang="ta"] .why-v2-list h3 { font-size: 1.2rem; }
   .home-v2 .hero-v2-frame,
   .home-v2 .hero-slide { transition: none; }
 }
+
+
+/* HOMEPAGE SPACING REFINEMENT — reduce excessive vertical gaps
+   while preserving all sections, content, imagery and layout. */
+.home-main > .section {
+  padding-top: 4.25rem;
+  padding-bottom: 4.25rem;
+}
+.home-v2 .founder-v2-intro {
+  padding-top: 4.25rem;
+  padding-bottom: 3.75rem;
+}
+.home-v2 .founder-v2-inner { gap: 3.25rem; }
+.home-v2 .founder-v2-plate { margin-top: 1.5rem; }
+.home-v2 .founder-v2-journey {
+  padding-top: 3.25rem;
+  padding-bottom: 3.5rem;
+}
+.home-v2 .why-v2-list { margin-top: 2.5rem; }
+.home-v2 .wholesale-cta { padding-top: 3.25rem; padding-bottom: 3.25rem; }
+
+@media (max-width: 900px) {
+  .home-v2 .founder-v2-intro {
+    padding-top: 3rem;
+    padding-bottom: 2.75rem;
+  }
+  .home-v2 .founder-v2-inner { gap: 2rem; }
+}
+@media (max-width: 720px) {
+  .home-main > .section {
+    padding: 2.75rem 1.1rem;
+  }
+  .home-v2 .founder-v2-intro {
+    padding: 2.5rem 1.1rem 2.5rem;
+  }
+  .home-v2 .founder-v2-inner { gap: 1.6rem; }
+  .home-v2 .founder-v2-plate {
+    margin-top: 1.25rem;
+    padding: 1rem 1.1rem;
+  }
+  .home-v2 .founder-v2-heading { margin-bottom: .9rem; }
+  .home-v2 .founder-v2-quote { margin-top: 1.6rem; padding-top: 1.25rem; }
+  .home-v2 .founder-v2-journey { padding: 2.5rem 1.1rem; }
+  .home-v2 .founder-v2-steps li,
+  .home-v2 .founder-v2-steps li:nth-child(odd),
+  .home-v2 .founder-v2-steps li:nth-child(even) { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+  .home-v2 .founder-v2-steps li:first-child { padding-top: 0; }
+  .home-v2 .why-v2-list { margin-top: 1.75rem; }
+  .home-v2 .why-v2-list li { padding: 1.5rem 0; }
+  .home-v2 .wholesale-cta { padding: 2.5rem 1.1rem; }
+  .home-v2 .contact-v2-grid { gap: 1.5rem; }
+  .home-v2 .contact-v2-list { gap: 1rem; }
+  .home-v2 .contact-v2-list > div { padding-bottom: 1rem; }
+}
