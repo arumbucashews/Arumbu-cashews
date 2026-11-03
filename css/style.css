@@ -2000,3 +2000,36 @@ body.page-light:not(.admin-standalone):has(.page-hero) > main::before {
     --tl-img: var(--bot-corner);   --tl-w: 124px; --tl-h: 100px; --tl-x: -14px; --tl-o: 0.9;
   }
 }
+
+
+/* Header wordmark: white lettering with ARUMBU as the dominant line */
+.site-header .brand-wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  color: #FFFFFF !important;
+  font-family: "Bahamas", "Playfair Display", Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.02;
+  letter-spacing: .045em;
+  white-space: nowrap;
+}
+.site-header .brand-wordmark-main {
+  color: #FFFFFF;
+  font-size: 1.18em;
+  font-weight: 700;
+  letter-spacing: .055em;
+}
+.site-header .brand-wordmark-sub {
+  color: #FFFFFF;
+  font-size: .78em;
+  font-weight: 600;
+  letter-spacing: .12em;
+}
+@media (max-width: 1300px) {
+  .site-header .brand-wordmark { font-size: .98rem; }
+}
+@media (max-width: 480px) {
+  .site-header .brand-wordmark { font-size: .9rem; width: auto; }
+}
