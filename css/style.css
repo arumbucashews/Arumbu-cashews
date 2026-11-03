@@ -2048,3 +2048,12 @@ html:has(body.home) {
 body.home {
   background-color: #FAF8F2;
 }
+
+
+/* Safari light browser-chrome hint: keep the document canvas pure white.
+   This does not change the maroon website header or section backgrounds. */
+html,
+body.home {
+  background-color: #FFFFFF !important;
+  color-scheme: light;
+}
